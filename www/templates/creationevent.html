@@ -1,0 +1,60 @@
+<ion-view title="Création d'événement" id="page7">
+    <ion-content padding="true" scroll="true" class="has-header">
+     <div></div>
+        <div style="margin: 0px; line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        </div>
+
+
+      <ion-list style="display:inline">
+        <ion-item>
+            <ion-radio style="width:50%;float:left;text-align:center;"
+            ng-repeat:="item choice"
+             ng-model="choice"
+             ng-value="IN">IN</ion-radio>
+
+            <ion-radio style="width:50%;float:right;text-align:center;"
+            ng-repeat:="item choice"
+            ng-model="choice"
+            ng-value="OUT">OUT</ion-radio>
+        </ion-item>
+      </ion-list>
+
+        <ion-item>
+      <ion-list style="display:inline">
+        <ion-radio style="width:50%;float:left;text-align:center;"
+        ng-repeat:="item type"
+        ng-model="type"
+        ng-value="public"
+        name="type">Public</ion-radio>
+
+            <ion-radio style="width:50%;float:right;text-align:center"
+            ng-repeat:="item type"
+            ng-model="type"
+            ng-value="prive"
+            name="type">Privé</ion-radio>
+
+
+        </ion-item>
+      </ion-list>
+
+
+
+
+
+        <form class="list">
+            <label class="item item-input" name="nbperso">
+                <input type="number" placeholder="Nombre de personne">
+            </label>
+            <label class="item item-input" name="Description">
+                <input type="text" placeholder="Description">
+            </label>
+            <a ui-sref="accueil" id="creationevent-button13"
+            style="background-color:#56D165;color:white;width:80%;margin-left:10%"
+            class="button button-light button-large button-block icon ion-android-checkmark-circle"></a>
+
+
+
+        </form>
+    </ion-content>
+</ion-view>
