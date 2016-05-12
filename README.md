@@ -1,3 +1,1 @@
-"# GetAway" 
-
-test
+"# GetAway"
