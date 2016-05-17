@@ -85,7 +85,7 @@ angular.module('app.routes', [])
 
   .state('popUp', {
     url: '/page6',
-    templateUrl: 'templates/popUp.html',
+    templateUrl: 'templates/event.html',
     controller: 'popUpCtrl'
   })
 
