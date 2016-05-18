@@ -4,12 +4,10 @@
       <i class="icon ion-search placeholder-icon"></i>
       <input type="search" placeholder="Rechercher...">
     </label>
-          <button class = "button" ng-click = "showPopup()">Add Popup Show</button>
+          <button class = "button" ng-click = "modal.show()">Add Popup Show</button>
     <ion-scroll scrollbar-y="true" style="height:80vh"  >
       <form  class="list" style="" >
-
-
-        <ion-item class="item-thumbnail-left"  ui-sref="popUpContact">
+        <ion-item class="item-thumbnail-left" ng-click = "showPopup()" ui-sref="popUpContact">
           <img src="img/BY56HxMZS7idTZf24OKi_image_profile.jpg">
           <h2>anthony</h2>
           <p style="white-space:normal;height:60px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus dolor ut eleifend pharetra. Ut non porta ligula. Donec consectetur massa eu eros finibus, in faucibus diam maximus. Nunc a efficitur est, ut vestibulum magna.</p>
@@ -34,19 +32,16 @@
           <h2>anthony</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus dolor ut eleifend pharetra. Ut non porta ligula. Donec consectetur massa eu eros finibus, in faucibus diam maximus. Nunc a efficitur est, ut vestibulum magna.</p>
         </ion-item>
-
       </form>
     <a
       style="visibility:hidden;width:100%;"
       class="button button-full "></a>
     </ion-scroll>
-
   </ion-content>
-
-
-
+  
      <a
   style="position: fixed;margin:0; bottom: 0vh;width:100%;"
   class="button button-full fab fab-center fab_bottom icon ion-ios-search">    Rechercher de nouveaux contacts</a>
+
 
 </ion-view>
