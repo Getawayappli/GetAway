@@ -14,19 +14,21 @@
 
 
 
-      <div class="list">
-        <a class="item item-avatar" ng-repeat="event in events" >
-          <img src="img/material1.jpg">
-<i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
-          <h2>{{event.titre}}</h2>
-<i style="float:right" class="icon ion-beer energized"></i>
+    <div class="list">
 
-          <p>Sheets of paper</p>
+      <a class="list card item item-avatar" ng-repeat="event in events" style="padding-left:0px">
+        <div class="item item-avatar" style="padding-left:70px">
+        <img ng-src="{{event.img}}">
+        <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+        <h2>{{event.titre}}</h2>
+        <i style="float:right" class="icon ion-beer energized"></i>
 
-        </a>
-
-
+        <p>Sheets of paper</p>
       </div>
+      </a>
+
+
+    </div>
 
 
   </ion-content>
