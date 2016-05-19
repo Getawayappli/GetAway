@@ -10,6 +10,55 @@ angular.module('app.routes', [])
 
 
 
+
+      .state('tabsController.accueil', {
+    url: '/page2',
+    views: {
+      'tab1': {
+        templateUrl: 'templates/accueil.html',
+        controller: 'accueilCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.aide', {
+    url: '//page3',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/aide.html',
+        controller: 'aideCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.event', {
+    url: '/page4',
+    views: {
+      'tab3': {
+        templateUrl: 'templates/event.html',
+        controller: 'eventCtrl'
+      }
+    }
+  })
+
+  .state('tabsController', {
+    url: '/page1',
+    templateUrl: 'templates/tabsController.html',
+    abstract:true
+  })
+
+  .state('tabsController.profil', {
+    url: '/page6',
+    views: {
+      'tab4': {
+        templateUrl: 'templates/profile.html',
+        controller: 'profilCtrl'
+      }
+    }
+  })
+
+
+
       .state('login', {
     url: '/page2',
     templateUrl: 'templates/login.html',
@@ -36,7 +85,7 @@ angular.module('app.routes', [])
 
   .state('popUp', {
     url: '/page6',
-    templateUrl: 'templates/popUp.html',
+    templateUrl: 'templates/event.html',
     controller: 'popUpCtrl'
   })
 

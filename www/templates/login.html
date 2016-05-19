@@ -1,43 +1,18 @@
-<ion-view title="Login" ide-nav-bar="true" id="page2">
-    <ion-content padding="true"  class="has-header">
-        <form class="list">
-            <ion-list>
-                <label class="item item-input">
-                    <span class="input-label">Login</span>
-                    <input type="text" placeholder="">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Mot de passe</span>
-                    <input type="password" placeholder="">
-                </label>
-            </ion-list>
-            <div class="spacer" style="width: 283px; height: 0px;"></div>
-            <a ui-sref="accueil" id="login-button4" class="button button-stable  button-block">Connexion</a>
-            <a ui-sref="inscription" id="login-button5" class="button button-positive  button-block button-clear">Créer un compte</a>
-        </form>
+<ion-view title="" id="page5">
+    <ion-content padding="true" style="background: url(img/vwouAxTTtOHf9moJJlrS_background_app.jpg) no-repeat center;background-size:cover;" class="has-header">
         <div>
+            <img src="img/xZjChWrTxCoUL5eNCQ8e_Kcnez5Adi.png" width="65%" height="" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div id="page5-markdown3" style="color:#FFFFFF;font-size:18px;text-align:center;">
             <p>
-                Connectez-vous avec
-                <b>
-                    <span style="color:blue">Facebook</span>
-                </b>
+                <strong>From The Virtual TO The Real</strong>
             </p>
         </div>
-        <div>
-            <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <b>
-                    <span style="color:#2ECCFA">Twitter</span>
-                </b>
-            </p>
+        <div style="margin-right:-20px;">
+            <a ui-sref="tabsController.accueil" id="page5-button1" style="left:-10px;width:100%" class="button button-positive  button-block icon-left  ion-social-facebook">Connectez-vous avec Facebook</a>
         </div>
-        <div>
-            <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <b>
-                    <span style="color:red">Google+</span>
-                </b>
-            </p>
+        <div style="margin-right:-20px;">
+            <button ng-click="showPopup()" id="page5-button6" style="left:-10px;color:#FFFFFF;font-size:16px;" class="button button-light  button-full button-outline">Pas de compte Facebook</button>
         </div>
     </ion-content>
 </ion-view>
