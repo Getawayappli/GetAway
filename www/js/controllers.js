@@ -61,7 +61,7 @@ angular.module('app.controllers', [])
   };
 
   $scope.items = [
-    {name:'Sport',id:1},
+    {name:'Sport',id:1,img:'img/sMM12deZQcad6zASL6ky_image_profile.jpg'},
     {name:'Culture',id:2},
     {name:'Plein air',id:3},
     {name:'Restaurant',id:4},
