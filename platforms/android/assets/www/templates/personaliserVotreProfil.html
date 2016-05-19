@@ -1,28 +1,61 @@
 <ion-view title="Personaliser votre  profil" id="page9">
-    <ion-content padding="true" class="has-header">
-        <ion-list>
-            <ion-item class="item-thumbnail-left">
-                <img src="img/jVWa4PNZQ6upjUlLovT9_image_user.jpg">
-                <h2>user</h2>
-                <p>a propos de vous</p>
-            </ion-item>
-            <ion-item class="item-divider"></ion-item>
-        </ion-list>
-        <div id="personaliserVotreProfil-markdown8" style="color:#000000;"></div>
-        <form class="list">
-            <label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="Chercher votre parrain...">
-            </label>
-        </form>
-        <div id="personaliserVotreProfil-markdown11" style="color:#000000;">
-            <p>Inviter vos filleuls</p>
-        </div>
-        <button id="personaliserVotreProfil-button16" class="button button-stable  button-block icon-left ion-android-contacts">Importer vos contacts</button>
-        <button id="personaliserVotreProfil-button18" class="button button-stable  button-block icon-left ion-social-facebook">Partager sur Facebook</button>
-        <div class="spacer" style="width: 283px; height: 59px;"></div>
-        <div style="margin-right:-20px;">
-            <button id="personaliserVotreProfil-button17" style="left:-10px;color:#56D165;border-radius:9px 9px 9px 9px;" class="button button-stable  button-full icon ion-android-checkmark-circle"></button>
-        </div>
-    </ion-content>
+  <ion-content padding="true" style="padding-bottom:50px" class="has-header">
+
+    <ion-item class="item-thumbnail-left">
+      <img src="img/jVWa4PNZQ6upjUlLovT9_image_user.jpg"></img>
+      Nom Prénom
+    </ion-item>
+
+    <label class="item item-input">
+
+      <textarea placeholder="Quelques mots sur vous" class="no-resize" ></textarea>
+
+    </label>
+
+    <!--  <ion-google-place placeholder="Enter an address, Apt# and ZIP" ng-model="location" current-location="false" />-->
+
+    <div class="list" style="margin-bottom:0px">
+
+
+      <label class="item-input" style="padding-left:0px">
+        <ion-toggle toggle-class="toggle-positive" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:20px" >
+
+          <input type="text" placeholder="Ville"  ></input>
+
+        </ion-toggle>
+      </label>
+
+
+      <label class="item item-input" style="padding-left:0px">
+        <ion-toggle toggle-class="toggle-positive" ng-checked="true" style="padding-top:8px;padding-bottom:20px">
+          <input type="number" placeholder="Age" style="width:100%"></input>
+        </ion-toggle>
+      </label>
+    </div>
+
+
+    <button ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
+    ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+    style="height:60px" class="button button-block ">
+    Centres d'intérêt
+
+  </button>
+
+  <!-- Liste des centres d'interet -> rajouter images -->
+  <ul ng-show="showcheckbox"  >
+
+    <li id={{item.id}} class="item item-checkbox item-checkbox-right" ng-repeat="item in items" >
+      {{item.name}}
+      <label class="checkbox">
+        <input type="checkbox">
+
+      </input>
+    </label>
+  </li>
+</ul>
+
+<button id="personaliserVotreProfil-button17"  class="button button-block button-balanced  icon ion-android-checkmark-circle "></button>
+</ion-content>
+
+
 </ion-view>

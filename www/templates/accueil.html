@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-view title="Accueil" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
     <ion-content  style="background: url(img/vwouAxTTtOHf9moJJlrS_background_app.jpg) no-repeat center;background-size:cover;" padding="true" class="has-header">
         <ion-list>
@@ -46,5 +47,41 @@
             <p>Item</p>
         </ion-item>
     </ion-content>
+=======
+<ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
+  <div class="bar bar-header bar-energized">
+    <div class="h1 title title-center light">
+      GetAway
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-more-vertical">
+        </button>
+      </span>
+    </div>
+  </div>
+  <ion-content padding="true" class="has-header">
+
+
+
+      <div class="list">
+        <a class="item item-avatar" ng-repeat="event in events" >
+          <img src="img/material1.jpg">
+<i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+          <h2>{{event.titre}}</h2>
+<i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+
+
+      </div>
+
+
+  </ion-content>
+  <button class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
+  <button class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
+>>>>>>> c799c2672c10ac99e1170dd2d89bdef3a45e20fc
 
 </ion-view>

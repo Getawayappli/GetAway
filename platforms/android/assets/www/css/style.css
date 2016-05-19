@@ -17,3 +17,7 @@
   background-color: #fff;
   border-bottom: 0;
 }
+
+.bouton-footer{
+position: fixed;margin:0; bottom: 0vh;width:100%;
+}

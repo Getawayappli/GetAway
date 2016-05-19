@@ -8,9 +8,22 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-close-popup/ionic-close-popup.js"></script>
 
+    <script src="lib/ion-google-place/ion-google-place.js"></script>
+         
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe1PnqMzui1d9YotmLybZcPd1KgBIMdAg"
+          type="text/javascript"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -34,18 +47,21 @@
     <script src="js/services.js"></script>
     <script src="js/directives.js"></script>
 
+      <script src="js/Popup.js"></script>
+
     <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
 
   </head>
-  <body ng-app="app" animation="slide-left-right-ios7"  class="platform-android platform-cordova platform-webview">
+  <body ng-app="app" ng-controller="AppCtrl" animation="slide-left-right-ios7"  class="platform-android platform-cordova platform-webview">
   <div>
     <div>
         <ion-nav-bar class="bar-stable">
             <ion-nav-back-button class="button-icon icon ion-ios-arrow-back"></ion-nav-back-button>
         </ion-nav-bar>
         <ion-nav-view></ion-nav-view>
+
     </div>
 </div>
   </body>

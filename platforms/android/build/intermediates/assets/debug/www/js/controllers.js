@@ -1,5 +1,6 @@
 angular.module('app.controllers', [])
 
+
 .controller('loginCtrl', function($scope) {
 
 })
@@ -10,6 +11,17 @@ angular.module('app.controllers', [])
 
 .controller('accueilCtrl', function($scope) {
 
+  $scope.events = [
+    {titre:'Sport',id:1,nbpers:5},
+    {titre:'Culture ',id:2,nbpers:155},
+    {titre:'Plein air',id:3,nbpers:3},
+    {titre:'Restaurant',id:4,nbpers:4},
+    {titre:'Musique',id:5,nbpers:2},
+    {titre:'Cinéma',id:6,nbpers:1},
+    {titre:'Soirée',id:7,nbpers:10},
+    {titre:'Théâtre',id:8,nbpers:7},
+    {titre:'Spectacle',id:9,nbpers:4},
+  ];
 })
 
 .controller('profileCtrl', function($scope) {
@@ -38,42 +50,45 @@ angular.module('app.controllers', [])
 
 .controller('personaliserVotreProfilCtrl', function($scope) {
 
+  $scope.showcheckbox = false;
+
+  $scope.showcheck = function(){
+    if($scope.showcheckbox==true){
+      $scope.showcheckbox=false;
+    }else{
+    $scope.showcheckbox=true;
+  }
+  };
+
+  $scope.items = [
+    {name:'Sport',id:1},
+    {name:'Culture',id:2},
+    {name:'Plein air',id:3},
+    {name:'Restaurant',id:4},
+    {name:'Musique',id:5},
+    {name:'Cinéma',id:6},
+    {name:'Soirée',id:7},
+    {name:'Théâtre',id:8},
+    {name:'Spectacle',id:9},
+  ];
+
+
+
 })
 
 
-.controller('MyCtrl', function($scope, $ionicPopup) {
 
-   // When button is clicked, the popup will be shown...
-   $scope.showPopup = function() {
-      $scope.data = {}
+.controller('AppCtrl', function($scope, $ionicModal) {
 
-      // Custom popup
-      var myPopup = $ionicPopup.show({
-         template: '<input type = "text" ng-model = "data.model">',
-         title: 'Nom Prénom',
-         subTitle: 'Description',
-         scope: $scope,
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
 
-         buttons: [
-            { text: 'Voir le profil' }, {
-               text: 'Contacter',
-               type: 'button-positive',
-                  onTap: function(e) {
-
-                     if (!$scope.data.model) {
-                        //don't allow the user to close unless he enters model...
-                           e.preventDefault();
-                     } else {
-                        return $scope.data.model;
-                     }
-                  }
-            }
-         ]
-      });
-
-      myPopup.then(function(res) {
-         console.log('Tapped!', res);
-      });
-   };
+  $scope.createContact = function(u) {
+    $scope.contacts.push({ name: u.firstName + ' ' + u.lastName });
+    $scope.modal.hide();
+  };
 
 })
