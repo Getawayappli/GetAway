@@ -51,7 +51,7 @@ angular.module('app.routes', [])
     url: '/page6',
     views: {
       'tab4': {
-        templateUrl: 'templates/profile.html',
+        templateUrl: 'templates/profil.html',
         controller: 'profilCtrl'
       }
     }
@@ -77,10 +77,10 @@ angular.module('app.routes', [])
     controller: 'accueilCtrl'
   })
 
-  .state('profile', {
+  .state('profil', {
     url: '/page5',
-    templateUrl: 'templates/profile.html',
-    controller: 'profileCtrl'
+    templateUrl: 'templates/profil.html',
+    controller: 'profilCtrl'
   })
 
   .state('popUp', {
@@ -118,6 +118,7 @@ angular.module('app.routes', [])
     templateUrl: 'templates/personaliserVotreProfil.html',
     controller: 'personaliserVotreProfilCtrl'
   })
+  
 
 $urlRouterProvider.otherwise('/page2')
 

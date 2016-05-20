@@ -1,6 +1,7 @@
 angular.module('app.controllers', [])
 
 
+
 .controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
  // Triggered on a button click, or some other target
@@ -96,7 +97,42 @@ angular.module('app.controllers', [])
   });
 })
 
-.controller('profileCtrl', function($scope) {
+.controller('profilCtrl', function($scope,Interet,$ionicPopover) {
+
+  $scope.pers=
+  {
+    avatar:'img/paysage.jpg',
+    nom:'zaertyuiopdfqf',
+    prenom:'azertyuiop',
+    age:18,
+    ville:'Brest',
+    desc:'Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.'
+
+  };
+
+  $scope.event={
+    avatar:'img/paysage.jpg',
+    titre:'Cinéma',
+    nbpers:10
+  }
+
+  $scope.items=Interet.item;
+
+
+  // .fromTemplateUrl() method
+  $ionicPopover.fromTemplateUrl('/templates/reglage.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
 
 })
 
@@ -144,7 +180,7 @@ angular.module('app.controllers', [])
     {name:'Spectacle',id:9},
   ];
 
-  
+
 
 
 

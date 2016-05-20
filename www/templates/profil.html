@@ -1,0 +1,63 @@
+<ion-view title="profil" hide-nav-bar="true" id="page5">
+
+  <div class="bar bar-header bar-energized" >
+    <div class="h1 title title-center light">
+      Profil
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-settings" ng-click="openPopover($event)">
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <ion-content padding="true" class="has-header">
+
+    <img src={{pers.avatar}} style="margin-bottom:10px" height="120" width="120" class="center round"  >
+
+    <div style="margin-left:0%;width:100%;text-align:center"><h3>{{pers.nom}}  {{pers.prenom}} </h3></div>
+
+    <h4 style="text-align:center"> {{pers.age}} ans  {{pers.ville}}   </h4>
+    <h4>A propos de {{pers.prenom}}</h4>
+    <p>{{pers.desc}}</p>
+    <h4> Centre d'interet </h4>
+
+
+    <div class="row "  >
+      <div class="col col-33" ng-repeat="item in items" style="padding:0" >
+        <h5 class="icon {{item.icon}} "  style="color:#FF5722;text-align:center"> {{item.name}} </h5>
+      </div>
+    </div>
+
+
+    <h4>Dernier événement</h4>
+    <a class="list card item item-avatar"  ui-sref="popUp" style="padding-left:0px">
+      <div class="item item-avatar" style="padding-left:70px">
+        <img ng-src="{{event.avatar}}">
+        <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+        <h2>{{event.titre}}</h2>
+        <i style="float:right" class="icon ion-beer energized"></i>
+
+        <p>{{event.avatar}}</p>
+      </div>
+    </a>
+
+  </ion-item>
+
+</ion-content>
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view >
+
+    <ion-content>
+      <ion-list>
+          <a ui-sref="personaliserVotreProfil" ng-click="closePopover()" class="item">Personnaliser votre profil</a>
+          <a ng-click="closePopover()" class="item">Paramètre et notification</a>
+          <a ng-click="closePopover()" class="item">Partagez l'application</a>
+          <a ui-sref="login" ng-click="closePopover()" class="item">Déconnexion</a>
+      </ion-list>
+    </ion-content>
+  </ion-popover-view>
+</script>
+
+</ion-view>
