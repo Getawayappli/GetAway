@@ -102,9 +102,9 @@ angular.module('app.controllers', [])
   $scope.pers=
   {
     avatar:'img/paysage.jpg',
-    nom:'zaertyuiopdfqf',
-    prenom:'azertyuiop',
-    age:18,
+    nom:'Malgorn',
+    prenom:'Mathieu',
+    age:22,
     ville:'Brest',
     desc:'Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.'
 
@@ -120,7 +120,7 @@ angular.module('app.controllers', [])
 
 
   // .fromTemplateUrl() method
-  $ionicPopover.fromTemplateUrl('/templates/reglage.html', {
+  $ionicPopover.fromTemplateUrl('templates/reglage.html', {
     scope: $scope
   }).then(function(popover) {
     $scope.popover = popover;
@@ -133,7 +133,18 @@ angular.module('app.controllers', [])
   $scope.closePopover = function() {
     $scope.popover.hide();
   };
-
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function() {
+    // Execute action
+  });
 })
 
 .controller('popUpCtrl', function($scope) {
@@ -193,6 +204,38 @@ $scope.showcheckbox = false;
 })
 
 .controller('tchatCtrl', function($scope) {
+
+})
+
+.controller('parametre', function($scope,$ionicPopover) {
+
+
+    // .fromTemplateUrl() method
+    $ionicPopover.fromTemplateUrl('templates/reglage.html', {
+      scope: $scope
+    }).then(function(popover) {
+      $scope.popover = popover;
+    });
+
+
+    $scope.openPopover = function($event) {
+      $scope.popover.show($event);
+    };
+    $scope.closePopover = function() {
+      $scope.popover.hide();
+    };
+    //Cleanup the popover when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.popover.remove();
+    });
+    // Execute action on hide popover
+    $scope.$on('popover.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove popover
+    $scope.$on('popover.removed', function() {
+      // Execute action
+    });
 
 })
 

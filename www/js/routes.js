@@ -148,7 +148,13 @@ angular.module('app.routes', [])
     templateUrl: 'templates/personaliserVotreProfil.html',
     controller: 'personaliserVotreProfilCtrl'
   })
-  
+
+  .state('parametre', {
+    url: '/page13',
+    templateUrl: 'templates/parametre.html',
+    controller: 'parametre'
+  })
+
 
 $urlRouterProvider.otherwise('/page2')
 
