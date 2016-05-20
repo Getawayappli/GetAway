@@ -140,6 +140,46 @@ angular.module('app.controllers', [])
 
 })
 
+.controller('event1Ctrl', function($scope) {
+$scope.showcheckbox = false;
+
+  $scope.showcheck = function(){
+    if($scope.showcheckbox==true){
+      $scope.showcheckbox=false;
+    }else{
+    $scope.showcheckbox=true;
+  }
+  };
+
+  $scope.events = [
+    {titre:'Sport',id:1,nbpers:5},
+    {titre:'Culture ',id:2,nbpers:155},
+    {titre:'Plein air',id:3,nbpers:3},
+    {titre:'Restaurant',id:4,nbpers:4},
+    {titre:'Musique',id:5,nbpers:2},
+    {titre:'Cinéma',id:6,nbpers:1},
+    {titre:'Soirée',id:7,nbpers:10},
+    {titre:'Théâtre',id:8,nbpers:7},
+    {titre:'Spectacle',id:9,nbpers:4},
+  ];
+
+})
+
+.controller('event2Ctrl', function($scope) {
+ $scope.events = [
+    {titre:'Sport',id:1,nbpers:5},
+    {titre:'Culture ',id:2,nbpers:155},
+    {titre:'Plein air',id:3,nbpers:3},
+    {titre:'Restaurant',id:4,nbpers:4},
+    {titre:'Musique',id:5,nbpers:2},
+    {titre:'Cinéma',id:6,nbpers:1},
+    {titre:'Soirée',id:7,nbpers:10},
+    {titre:'Théâtre',id:8,nbpers:7},
+    {titre:'Spectacle',id:9,nbpers:4},
+  ];
+
+})
+
 .controller('popUpContactCtrl', function($scope) {
 
 })
