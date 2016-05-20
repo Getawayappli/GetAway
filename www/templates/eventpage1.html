@@ -1,8 +1,10 @@
-<ion-view title="Mes événements" hide-nav-bar="false" id="event1">
+<ion-view  hide-nav-bar="true" id="event1">
+  </div>
+
     <ion-content padding="false" class=" manual-remove-top-padding" scroll="true">
 
-       <a class="item item-icon-left item-icon-right" href="#">
-        <i class="icon icon ion-person-add calm"></i>
+       <a class="item item-icon-left item-icon-right " href="#">
+        <i class="icon icon ion-person-add "></i>
         Invitations en attente
         <i class="icon ion-arrow-right-c"></i>
       </a>
@@ -13,7 +15,7 @@
 
       <div class="list">
         <a class="item item-avatar" ui-sref="popUp" >
-          <img src="img/material1.jpg">
+          <img src="img/icon1.png">
             <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
                       <h2>{{events[0].titre}}</h2>
             <i style="float:right" class="icon ion-beer energized"></i>
@@ -29,7 +31,7 @@
   </button>
    <div class="list" ng-show="showcheckbox">
         <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
-          <img src="img/material1.jpg">
+          <img src="img/icon1.png">
             <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
                       <h2>{{event.titre}}</h2>
             <i style="float:right" class="icon ion-beer energized"></i>
@@ -45,7 +47,7 @@
 
           <div class="list">
             <a class="item item-avatar" ui-sref="popUp" >
-              <img src="img/material1.jpg">
+              <img src="img/icon1.png">
                 <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
                           <h2>{{events[0].titre}}</h2>
                 <i style="float:right" class="icon ion-beer energized"></i>
@@ -61,7 +63,7 @@
       </button>
        <div class="list" ng-show="showcheckbox">
             <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
-              <img src="img/material1.jpg">
+              <img src="img/icon1.png">
                 <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
                           <h2>{{event.titre}}</h2>
                 <i style="float:right" class="icon ion-beer energized"></i>
@@ -78,7 +80,7 @@
 
     <div class="list">
         <a class="item item-avatar" ui-sref="popUp" >
-          <img src="img/material1.jpg">
+          <img src="img/icon1.png">
             <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
                       <h2>{{events[0].titre}}</h2>
             <i style="float:right" class="icon ion-beer energized"></i>
@@ -94,7 +96,7 @@
   </button>
    <div class="list" ng-show="showcheckbox">
         <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
-          <img src="img/material1.jpg">
+          <img src="img/icon1.png">
             <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
                       <h2>{{event.titre}}</h2>
             <i style="float:right" class="icon ion-beer energized"></i>
@@ -103,7 +105,7 @@
 
         </a>
       </div>
-      
+
     </ion-content>
 
 </ion-view>
