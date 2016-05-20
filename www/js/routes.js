@@ -11,6 +11,36 @@ angular.module('app.routes', [])
 
 
 
+     .state('tabsEvent', {
+      url: '/page0',
+      templateUrl: 'templates/tabsEvent.html',
+      abstract:true
+    })
+
+      .state('tabsEvent.event1', {
+    url: '/event1',
+    views: {
+      'tab1': {
+        templateUrl: 'templates/eventpage1.html',
+        controller: 'event1Ctrl'
+      }
+    }
+  })
+
+
+      .state('tabsEvent.event2', {
+    url: '/event2',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/eventpage2.html',
+        controller: 'event2Ctrl'
+      }
+    }
+  })
+
+
+
+
       .state('tabsController.accueil', {
     url: '/page2',
     views: {
@@ -32,11 +62,11 @@ angular.module('app.routes', [])
   })
 
   .state('tabsController.event', {
-    url: '/page4',
+    url: '/event1',
     views: {
       'tab3': {
-        templateUrl: 'templates/event.html',
-        controller: 'eventCtrl'
+        templateUrl: 'templates/eventpage1.html',
+        controller: 'event1Ctrl'
       }
     }
   })

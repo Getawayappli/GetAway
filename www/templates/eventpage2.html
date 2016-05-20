@@ -1,0 +1,77 @@
+<ion-view title="Mes événements" hide-nav-bar="false" id="event2">
+
+    <ion-content padding="false" class=" manual-remove-top-padding" scroll="true">
+
+
+        <a class="item item-icon-left item-icon-right" href="#">
+        <i class="icon icon ion-paper-airplane calm"></i>
+        Demandes en attentes
+        <i class="icon ion-arrow-right-c"></i>
+      </a>
+
+     <div class="item item-divider">
+        Les événements à venir 
+      </div>
+
+      <div class="list">
+        <a class="item item-avatar" ui-sref="popUp" >
+          <img src="img/material1.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
+                      <h2>{{events[0].titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+      </div>
+      <button ng-click="showcheck();liked=!liked"
+        ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+        style="height:10px" class="button button-block ">
+    Afficher plus d'evenements
+  </button>
+   <div class="list" ng-show="showcheckbox">
+        <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+          <img src="img/material1.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+                      <h2>{{event.titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+      </div>
+
+      <div class="item item-divider">
+        Mes événements passés 
+      </div>
+
+      <div class="list">
+        <a class="item item-avatar" ui-sref="popUp" >
+          <img src="img/material1.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
+                      <h2>{{events[0].titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+      </div>
+      <button ng-click="showcheck();liked=!liked"
+        ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+        style="height:10px" class="button button-block ">
+    Afficher plus d'evenements
+  </button>
+   <div class="list" ng-show="showcheckbox">
+        <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+          <img src="img/material1.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+                      <h2>{{event.titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+      </div>
+
+    </ion-content>
+</ion-view>
