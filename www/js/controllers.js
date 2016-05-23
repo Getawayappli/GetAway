@@ -195,7 +195,19 @@ $scope.showcheckbox = false;
 
 })
 
-.controller('creationeventCtrl', function($scope) {
+.controller('creationeventCtrl', function($scope,Interet) {
+
+  $scope.showcheckbox = false;
+
+  $scope.showcheck = function(){
+    if($scope.showcheckbox==true){
+      $scope.showcheckbox=false;
+    }else{
+    $scope.showcheckbox=true;
+  }
+  };
+
+  $scope.items=Interet.item;
 
 })
 

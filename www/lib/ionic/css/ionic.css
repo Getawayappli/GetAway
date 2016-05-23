@@ -8227,7 +8227,7 @@ input:checked + .checkbox-icon:after {
   right: 0;
   z-index: 3;
   visibility: hidden;
-  padding: 14px;
+  padding: 7px;
   height: 100%;
   font-size: 24px; }
 
