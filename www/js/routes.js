@@ -154,6 +154,7 @@ angular.module('app.routes', [])
     templateUrl: 'templates/parametre.html',
     controller: 'parametre'
   })
+  
   .state('filtre', {
     url: '/page14',
     templateUrl: 'templates/filtre.html',
