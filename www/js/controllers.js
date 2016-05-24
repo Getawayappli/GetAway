@@ -62,39 +62,6 @@ angular.module('app.controllers', [])
     {titre:'Spectacle',id:9,nbpers:4,avatar:'img/icon1.png'},
   ];
 
-  // .fromTemplate() method
-  var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
-
-  $scope.popover = $ionicPopover.fromTemplate(template, {
-    scope: $scope
-  });
-
-  // .fromTemplateUrl() method
-  $ionicPopover.fromTemplateUrl('my-popover.html', {
-    scope: $scope
-  }).then(function(popover) {
-    $scope.popover = popover;
-  });
-
-
-  $scope.openPopover = function($event) {
-    $scope.popover.show($event);
-  };
-  $scope.closePopover = function() {
-    $scope.popover.hide();
-  };
-  //Cleanup the popover when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.popover.remove();
-  });
-  // Execute action on hide popover
-  $scope.$on('popover.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove popover
-  $scope.$on('popover.removed', function() {
-    // Execute action
-  });
 })
 
 .controller('profilCtrl', function($scope,Interet,$ionicPopover) {
@@ -117,34 +84,6 @@ angular.module('app.controllers', [])
   }
 
   $scope.items=Interet.item;
-
-
-  // .fromTemplateUrl() method
-  $ionicPopover.fromTemplateUrl('templates/reglage.html', {
-    scope: $scope
-  }).then(function(popover) {
-    $scope.popover = popover;
-  });
-
-
-  $scope.openPopover = function($event) {
-    $scope.popover.show($event);
-  };
-  $scope.closePopover = function() {
-    $scope.popover.hide();
-  };
-  //Cleanup the popover when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.popover.remove();
-  });
-  // Execute action on hide popover
-  $scope.$on('popover.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove popover
-  $scope.$on('popover.removed', function() {
-    // Execute action
-  });
 })
 
 .controller('popUpCtrl', function($scope) {
@@ -201,7 +140,7 @@ $scope.showcheckbox = false;
   $scope.data={
     'nbpers' : '5',
     'date' : new Date(),
-    
+
 
 };
 $scope.data.date.setSeconds(0,000);
@@ -228,34 +167,11 @@ $scope.data.date.setSeconds(0,000);
 })
 
 .controller('parametre', function($scope,$ionicPopover) {
+})
+
+.controller('filtre', function($scope,$ionicPopover) {
 
 
-    // .fromTemplateUrl() method
-    $ionicPopover.fromTemplateUrl('templates/reglage.html', {
-      scope: $scope
-    }).then(function(popover) {
-      $scope.popover = popover;
-    });
-
-
-    $scope.openPopover = function($event) {
-      $scope.popover.show($event);
-    };
-    $scope.closePopover = function() {
-      $scope.popover.hide();
-    };
-    //Cleanup the popover when we're done with it!
-    $scope.$on('$destroy', function() {
-      $scope.popover.remove();
-    });
-    // Execute action on hide popover
-    $scope.$on('popover.hidden', function() {
-      // Execute action
-    });
-    // Execute action on remove popover
-    $scope.$on('popover.removed', function() {
-      // Execute action
-    });
 
 })
 
@@ -304,5 +220,39 @@ $scope.data.date.setSeconds(0,000);
     $scope.modal.hide();
   };
 
+
+})
+
+
+.controller('regCtrl', function($scope,$ionicPopover) {
+
+//Méthode permettant d'afficher les pop-ups de réglages
+
+    // .fromTemplateUrl() method
+    $ionicPopover.fromTemplateUrl('templates/reglage.html', {
+      scope: $scope
+    }).then(function(popover) {
+      $scope.popover = popover;
+    });
+
+
+    $scope.openPopover = function($event) {
+      $scope.popover.show($event);
+    };
+    $scope.closePopover = function() {
+      $scope.popover.hide();
+    };
+    //Cleanup the popover when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.popover.remove();
+    });
+    // Execute action on hide popover
+    $scope.$on('popover.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove popover
+    $scope.$on('popover.removed', function() {
+      // Execute action
+    });
 
 })
