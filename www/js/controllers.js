@@ -195,9 +195,16 @@ $scope.showcheckbox = false;
 
 })
 
-.controller('creationeventCtrl', function($scope,Interet) {
+.controller('creationeventCtrl', function($scope,Interet,$filter) {
 
   $scope.showcheckbox = false;
+  $scope.data={
+    'nbpers' : '5',
+    'date' : new Date(),
+
+};
+$scope.data.date.setSeconds(0,000);
+//$scope.data.date.setMilliseconds(0);
 
   $scope.showcheck = function(){
     if($scope.showcheckbox==true){

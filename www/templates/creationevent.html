@@ -15,23 +15,25 @@
 
 
     <form class="list">
-      <label class="item item-input" name="Titre">
+      <div class="divi">
+      <label class="item item-input divi" name="Titre" >
         <input type="text" placeholder="Titre de l'événement">
       </label>
-      <label class="item item-input">
+    </div>
+      <label class="item item-input " style="border-bottom:1px solid lightgrey;">
 
         <textarea style="height:100px" placeholder="Quelques mots sur l'événement" class="no-resize" ></textarea>
 
       </label>
 
-            <label class="item-input" style="padding-left:0px">
-              <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:5px" >
+      <label class="item-input" style="padding-left:0px">
+        <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:5px" >
 
-                <input type="text" placeholder="Ville" style="float:left;width:87%"  ></input>
-                <i class="icon ion-beer" ></i>
-              
-              </ion-toggle>
-            </label>
+          <input type="text" placeholder="Ville" style="float:left;width:50%"  ></input>
+
+        </ion-toggle>
+      </label>
+
       <button ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
       ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
       style="height:25px" class="button button-block ">
@@ -47,7 +49,7 @@
       </label>
     </li>
   </ul>
-  <ion-list style="height:100px;">
+  <ion-list style="height:100px;"  >
     <ion-radio style="width:50%;float:left;text-align:center;"
     ng-repeat:="item type"
     ng-model="type"
@@ -62,11 +64,25 @@
   </ion-list>
 
   <label class="item item-input" name="nbperso">
-    <input type="number" placeholder="Nombre de personne">
+    <input type="number" placeholder="Nombre de personne" value={{data.nbpers}} ng-model="data.nbpers">
   </label>
-  <label class="item item-input" name="Description">
-    <input type="text" placeholder="Description">
+  <div class="item range range-possitive">
+    <input type="range" name="nbpers" min="1" max="150" ng-model="data.nbpers">
+
+  </div>
+  <p>{{data.nbpers}}</p>
+
+
+
+  <label class="item item-input" name="Date" style="width:70%;float:left;">
+    <input type="date" placeholder="Date" ng-model="data.date" >
   </label>
+  <label class="item item-input" name="Heure" style="width:30%;">
+    <input type="time" placeholder="Heure" ng-model="data.date" style="padding-right:0;">
+  </label>
+
+  {{data.date}}
+
   <a ui-sref="accueil" id="creationevent-button13"
   style="color:white;width:100%"
   class="button button-light button-block button-energized icon ion-android-checkmark-circle"></a>
