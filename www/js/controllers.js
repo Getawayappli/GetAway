@@ -201,6 +201,7 @@ $scope.showcheckbox = false;
   $scope.data={
     'nbpers' : '5',
     'date' : new Date(),
+    
 
 };
 $scope.data.date.setSeconds(0,000);
