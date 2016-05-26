@@ -1,0 +1,114 @@
+<ion-view  hide-nav-bar="true" id="event1">
+  </div>
+
+    <ion-content padding="" scroll="true">
+    
+       <a class="item item-icon-left item-icon-right item-note " ui-sref="invitation">
+        <i class="icon icon ion-person-add "></i>
+        Invitations en attente
+        <span class="badge badge-assertive">10</span>
+        <i class="icon ion-arrow-right-c"></i>
+      </a>
+
+      <div class="item item-divider">
+        Les événements à venir 
+      </div>
+
+      <div class="list">
+        <a class="item item-avatar" ui-sref="popUp" >
+          <img src="img/Tomorrowland-USA-1024x682.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
+                      <h2>{{events[0].titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+        </a>
+
+      <button ng-click="showcheck();liked=!liked"
+        ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+        class="button button-block ">
+    Afficher plus d'evenements
+  </button>
+   <div class="list" ng-show="showcheckbox">
+        <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+          <img src="img/Tomorrowland-USA-1024x682.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+                      <h2>{{event.titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+      </div>
+
+      <div class="item item-divider" >
+        Les événements en attente 
+      </div>
+
+          <div class="list">
+            <a class="item item-avatar" ui-sref="popUp" >
+              <img src="img/Tomorrowland-USA-1024x682.jpg">
+                <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
+                          <h2>{{events[0].titre}}</h2>
+                <i style="float:right" class="icon ion-beer energized"></i>
+
+              <p>Sheets of paper</p>
+
+            </a>
+          <button ng-click="showcheck();liked=!liked"
+            ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+            style="height:10px" class="button button-block ">
+        Afficher plus d'evenements
+      </button>
+       <div class="list" ng-show="showcheckbox">
+            <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+              <img src="img/Tomorrowland-USA-1024x682.jpg">
+                <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+                          <h2>{{event.titre}}</h2>
+                <i style="float:right" class="icon ion-beer energized"></i>
+
+              <p>Sheets of paper</p>
+
+            </a>
+          </div>
+
+
+      <div class="item item-divider">
+        Les événements passés
+      </div>
+
+    <div class="list">
+        <a class="item item-avatar" ui-sref="popUp" >
+          <img src="img/Tomorrowland-USA-1024x682.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
+                      <h2>{{events[0].titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+      <button ng-click="showcheck();liked=!liked"
+        ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+        style="height:10px" class="button button-block ">
+    Afficher plus d'evenements
+  </button>
+   <div class="list" ng-show="showcheckbox">
+        <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+          <img src="img/Tomorrowland-USA-1024x682.jpg">
+            <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+                      <h2>{{event.titre}}</h2>
+            <i style="float:right" class="icon ion-beer energized"></i>
+
+          <p>Sheets of paper</p>
+
+        </a>
+      </div>
+
+    </ion-content>
+    <style type="text/css">
+    .item .badge {
+  margin-right: 40px
+}
+    </style>
+
+</ion-view>

@@ -1,6 +1,6 @@
 angular.module('app.services', [])
 
-
+//Factory pour les centres d'interet
 .factory('Interet',[function(){
   return {
     item:[
@@ -13,7 +13,7 @@ angular.module('app.services', [])
       {name:'Soirée',id:7,icon:'ion-beer'},
       {name:'Théâtre',id:8},
       {name:'Spectacle',id:9,icon:'ion-mic-b'},
-      
+
 
 
     ]

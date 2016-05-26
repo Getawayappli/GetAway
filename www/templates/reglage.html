@@ -1,13 +1,11 @@
-<script id="/templates/reglage.html" type="text/ng-template">
-  <ion-popover-view >
 
+  <ion-popover-view style="height:210px" >
     <ion-content>
       <ion-list>
-          <a ui-sref="personaliserVotreProfil" ng-click="closePopover()" class="item">Personnaliser votre profil</a>
-          <a ng-click="closePopover()" class="item">Paramètre et notification</a>
-          <a ng-click="closePopover()" class="item">Partagez l'application</a>
+          <a ui-sref="personaliserVotreProfil" ng-click="closePopover()" class="item divi">Personnaliser votre profil</a>
+          <a ui-sref="parametre" ng-click="closePopover()" class="item divi">Paramètre et notification</a>
+          <a ng-click="closePopover()" class="item divi">Partagez l'application</a>
           <a ui-sref="login" ng-click="closePopover()" class="item">Déconnexion</a>
       </ion-list>
     </ion-content>
   </ion-popover-view>
-</script>
