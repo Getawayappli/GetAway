@@ -136,7 +136,7 @@ $scope.activateamis = function(){
   $scope.items=Interet.item;
 })
 
-.controller('popUpCtrl', function($scope) {
+.controller('eventCtrl', function($scope) {
    $scope.pers=
   { avatar : 'img/image_profil_fille.jpg',
     nom:'Ari',
