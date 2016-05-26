@@ -19,5 +19,68 @@
 }
 
 .bouton-footer{
-position: fixed;margin:0; bottom: 0vh;width:100%;
+position: fixed;
+margin:0;
+ bottom: 0;
+ width:100%;
+}
+
+.accueil-bouton-search{
+  position:fixed;
+  top:50px;
+  margin:0;
+  width:100%;
+
+}
+
+.center{
+  margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.round{
+  border-radius:50%
+}
+
+.row{
+  flex-wrap: wrap;
+}
+
+.item-icon-left .item-content {
+  padding-left:3em;
+}
+
+.item-icon-left i {
+  left:0;
+  right: auto;
+}
+
+.liste{
+  border: 10px solid black;
+  padding: 1px solid black;
+  margin:1px solid black
+}
+
+.divi{
+  border-bottom: 1px solid lightgrey;
+}
+
+.event{
+  padding-left:0px;
+  width:97%;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+.cent{
+
+  width:100%;
+}
+
+.card {
+    height: 40px;
+    width: 100%;
+    text-align: center;
 }

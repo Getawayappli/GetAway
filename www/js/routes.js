@@ -152,9 +152,9 @@ angular.module('app.routes', [])
   .state('parametre', {
     url: '/page13',
     templateUrl: 'templates/parametre.html',
-    controller: 'parametre'
+    controller: 'parametreCtrl'
   })
-  
+
   .state('filtre', {
     url: '/page14',
     templateUrl: 'templates/filtre.html',

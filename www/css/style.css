@@ -73,3 +73,14 @@ margin:0;
   margin-right:auto;
   display:block;
 }
+
+.cent{
+
+  width:100%;
+}
+
+.card {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}

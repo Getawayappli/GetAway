@@ -218,7 +218,18 @@ $scope.activateamis = function(){
 
 })
 
-.controller('parametre', function($scope,$ionicPopover) {
+.controller('parametreCtrl', function($scope,$ionicPopover) {
+$scope.shownot = true;
+
+//Fonction qui permets d'afficher la liste de type
+$scope.shownotif = function(){
+  if($scope.shownot==true){
+    $scope.shownot=false;
+  }else{
+    $scope.shownot=true;
+  }
+};
+
 })
 
 .controller('filtre', function($scope,$ionicPopover,Interet) {
