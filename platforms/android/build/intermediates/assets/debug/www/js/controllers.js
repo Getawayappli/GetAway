@@ -1,7 +1,5 @@
 angular.module('app.controllers', [])
 
-
-
 .controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
   // Triggered on a button click, or some other target
@@ -139,6 +137,17 @@ $scope.activateamis = function(){
 })
 
 .controller('popUpCtrl', function($scope) {
+   $scope.pers=
+  { avatar : 'img/image_profil_fille.jpg',
+    nom:'Ari',
+    prenom:'Khaoula',
+    desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac enim et urna hendrerit lacinia. Phasellus hendrerit ac tortor sit amet vestibulum. Vestibulum at dignissim arcu, nec sodales nulla. Nullam accumsan massa vel mollis tristique. Cras nec purus vitae ligula vehicula vestibulum tempus quis lectus. Curabitur vel auctor ex.',
+  }
+   $scope.items = [
+    { icon: 'ion-mic-c' },
+    { icon: 'ion-pricetag'},
+    { icon: 'ion-bag' },
+  ];
 
 })
 
@@ -165,6 +174,8 @@ $scope.activateamis = function(){
     {titre:'Spectacle',id:9,nbpers:4},
   ];
 
+
+
 })
 
 .controller('event2Ctrl', function($scope) {
@@ -179,6 +190,42 @@ $scope.activateamis = function(){
     {titre:'Théâtre',id:8,nbpers:7},
     {titre:'Spectacle',id:9,nbpers:4},
   ];
+
+})
+
+.controller('invitationCtrl', function($scope) {
+
+
+  $scope.events = [
+    {prenom:'Abel',id:1, avatar: 'img/image.jpg'},
+    {prenom:'Fabien ',id:2,avatar: 'img/image_user.jpg'},
+    {prenom:'Alice',id:3,avatar: 'img/icon1.png'},
+    {prenom:'Amelie',id:4,avatar: 'img/image.jpg'},
+    {prenom:'Noelle',id:5,avatar: 'img/image_user.jpg'},
+    {prenom:'Oceane',id:6,avatar: 'img/image.jpg'},
+    {prenom:'Pascal',id:7,avatar: 'img/image_user.jpg'},
+    {prenom:'Marine',id:8,avatar: 'img/icon1.png'},
+    {prenom:'Elodie',id:9,avatar: 'img/icon1.png'},
+  ];
+
+
+})
+
+.controller('demandeCtrl', function($scope) {
+
+
+  $scope.events = [
+    {prenom:'Abel',id:1, avatar: 'img/image.jpg'},
+    {prenom:'Fabien ',id:2,avatar: 'img/image_user.jpg'},
+    {prenom:'Alice',id:3,avatar: 'img/icon1.png'},
+    {prenom:'Amelie',id:4,avatar: 'img/image.jpg'},
+    {prenom:'Noelle',id:5,avatar: 'img/image_user.jpg'},
+    {prenom:'Oceane',id:6,avatar: 'img/image.jpg'},
+    {prenom:'Pascal',id:7,avatar: 'img/image_user.jpg'},
+    {prenom:'Marine',id:8,avatar: 'img/icon1.png'},
+    {prenom:'Elodie',id:9,avatar: 'img/icon1.png'},
+  ];
+
 
 })
 
@@ -214,7 +261,58 @@ $scope.activateamis = function(){
 
 })
 
-.controller('tchatCtrl', function($scope) {
+.controller('tchatCtrl', function($scope, $timeout, $ionicScrollDelegate) {
+
+  $scope.hideTime = true;
+
+  var alternate,
+    isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
+
+  $scope.sendMessage = function() {
+    alternate = !alternate;
+
+    var d = new Date();
+  d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
+
+    $scope.messages.push({
+      userId: alternate ? '12345' : '54321',
+      text: $scope.data.message,
+      time: d
+    });
+
+    delete $scope.data.message;
+    $ionicScrollDelegate.scrollBottom(true);
+
+  };
+
+
+  $scope.inputUp = function() {
+    if (isIOS) $scope.data.keyboardHeight = 216;
+    $timeout(function() {
+      $ionicScrollDelegate.scrollBottom(true);
+    }, 300);
+
+  };
+
+  $scope.inputDown = function() {
+    if (isIOS) $scope.data.keyboardHeight = 0;
+    $ionicScrollDelegate.resize();
+  };
+
+  $scope.closeKeyboard = function() {
+    // cordova.plugins.Keyboard.close();
+  };
+
+
+ // $scope.data = {};
+   $scope.textos = [
+    {text:'Salut',userId:1},
+    {text:'test1 ',userId:2},
+    {text:'Ca va ?',userId:3},
+    {text:'Comment vas tu?',userId:4},
+  ];
+  $scope.myId = '12345';
+  $scope.messages = [];
 
 })
 
@@ -229,6 +327,7 @@ $scope.shownotif = function(){
     $scope.shownot=true;
   }
 };
+
 
 })
 
@@ -302,9 +401,6 @@ $scope.shownotif = function(){
     {name:'Théâtre',id:8},
     {name:'Spectacle',id:9},
   ];
-
-
-
 
 
 })

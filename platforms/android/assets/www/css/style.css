@@ -21,11 +21,7 @@
 .bouton-footer{
 position: fixed;
 margin:0;
-<<<<<<< HEAD
- bottom: 0vh;
-=======
  bottom: 0;
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
  width:100%;
 }
 
@@ -49,8 +45,6 @@ margin:0;
 
 .row{
   flex-wrap: wrap;
-<<<<<<< HEAD
-=======
 }
 
 .item-icon-left .item-content {
@@ -89,5 +83,4 @@ margin:0;
     height: 40px;
     width: 100%;
     text-align: center;
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 }

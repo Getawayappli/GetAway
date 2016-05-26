@@ -1,7 +1,5 @@
 angular.module('app.controllers', [])
 
-
-
 .controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
   // Triggered on a button click, or some other target
@@ -176,7 +174,7 @@ $scope.activateamis = function(){
     {titre:'Spectacle',id:9,nbpers:4},
   ];
 
- 
+
 
 })
 
@@ -197,7 +195,7 @@ $scope.activateamis = function(){
 
 .controller('invitationCtrl', function($scope) {
 
-  
+
   $scope.events = [
     {prenom:'Abel',id:1, avatar: 'img/image.jpg'},
     {prenom:'Fabien ',id:2,avatar: 'img/image_user.jpg'},
@@ -215,7 +213,7 @@ $scope.activateamis = function(){
 
 .controller('demandeCtrl', function($scope) {
 
-  
+
   $scope.events = [
     {prenom:'Abel',id:1, avatar: 'img/image.jpg'},
     {prenom:'Fabien ',id:2,avatar: 'img/image_user.jpg'},
@@ -318,11 +316,6 @@ $scope.activateamis = function(){
 
 })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.controller('parametre', function($scope,$ionicPopover) {
-=======
 .controller('parametreCtrl', function($scope,$ionicPopover) {
 $scope.shownot = true;
 
@@ -335,7 +328,7 @@ $scope.shownotif = function(){
   }
 };
 
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
+
 })
 
 .controller('filtre', function($scope,$ionicPopover,Interet) {
@@ -384,7 +377,6 @@ $scope.shownotif = function(){
 
 
 })
->>>>>>> caff395fba9e79bf49f6d9db8fab59b62e282682
 
 .controller('personaliserVotreProfilCtrl', function($scope) {
 

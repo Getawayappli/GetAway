@@ -5,11 +5,7 @@
     </div>
     <div class="buttons buttons-right header-item">
       <span class="right-buttons">
-<<<<<<< HEAD
-        <button class="button button-icon button-clear ion-android-settings" ng-click="openPopover($event)">
-=======
         <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
         </button>
       </span>
     </div>
@@ -17,40 +13,6 @@
 
   <ion-content padding="" class="has-header">
     <div class="button-bar energized" >
-<<<<<<< HEAD
-      <button class="button active"  >A proximité</button>
-      <button class="button" >Mes Amis</button>
-    </div>
-
-    <a class="list card item item-avatar" ng-repeat="event in events" style="padding-left:0px">
-      <div class="item item-avatar" style="padding-left:70px">
-        <img ng-src="{{event.avatar}}">
-        <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
-        <h2>{{event.titre}}</h2>
-        <i style="float:right" class="icon ion-beer energized"></i>
-
-        <p>{{event.avatar}}</p>
-      </div>
-    </a>
-
-    <script id="my-popover.html" type="text/ng-template">
-      <ion-popover-view >
-
-        <ion-content>
-          <ion-list>
-              <a ui-sref="personaliserVotreProfil" ng-click="closePopover()" class="item">Personnaliser votre profil</a>
-              <a ng-click="closePopover()" class="item">Paramètre et notification</a>
-              <a ng-click="closePopover()" class="item">Partagez lapplication</a>
-              <a ui-sref="login" ng-click="closePopover()" class="item">Déconnexion</a>
-          </ion-list>
-        </ion-content>
-      </ion-popover-view>
-    </script>
-
-</ion-content>
-<button  style="bottom:60px" class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
-<button ui-sref="creationevent" style="bottom:60px" class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
-=======
       <button class="button {{active.prox}}" ng-class="{{active.prox}}" ng-click="activateprox();" >A proximité</button>
       <button class="button {{active.amis}}"  ng-class="{{active.amis}}" ng-click="activateamis();" >Mes Amis</button>
 
@@ -70,14 +32,10 @@
   </div>
 
 
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 </ion-content>
 <button ui-sref="filtre" style="bottom:60px" class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
 <button ui-sref="creationevent" style="bottom:60px" class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 </ion-view>

@@ -1,46 +1,7 @@
 angular.module('app.controllers', [])
 
-
-
 .controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
-<<<<<<< HEAD
- // Triggered on a button click, or some other target
- $scope.showPopup = function() {
-   $scope.data = {}
-
-   // An elaborate, custom popup
-   var myPopup = $ionicPopup.show({
-     template: '<input type="text" placeholder="Identifiant/Mail">'
-     			+ '</br>'
-     			+'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
-     			+'<a href="#">Pas de compte? Inscrivez-Vous </a> ',
-     title: 'Connexion',
-     subTitle: 'veuillez entrer vos informations pour se connecter',
-     scope: $scope,
-     buttons: [
-       { text: 'Cancel' },
-       {
-         text: '<b>Login</b>',
-         type: 'button-positive',
-         onTap: function(e) {
-           if (!$scope.data.wifi) {
-             //don't allow the user to close unless he enters wifi password
-             e.preventDefault();
-           } else {
-             return $scope.data.wifi;
-           }
-         }
-       },
-     ]
-   });
-   myPopup.then(function(res) {
-     console.log('Tapped!', res);
-   });
-   $timeout(function() {
-     // myPopup.close(); //close the popup after 3 seconds for some reason
-   }, 3000);
-=======
   // Triggered on a button click, or some other target
   $scope.showPopup = function() {
     $scope.data = {}
@@ -76,7 +37,6 @@ angular.module('app.controllers', [])
     $timeout(function() {
       // myPopup.close(); //close the popup after 3 seconds for some reason
     }, 3000);
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
   };
 
 })
@@ -85,12 +45,6 @@ angular.module('app.controllers', [])
 
 })
 
-<<<<<<< HEAD
-.controller('accueilCtrl', function($scope,$ionicPopover,$timeout) {
-  $scope.test1='blabla'
-
-  $scope.events = [
-=======
 .controller('accueilCtrl', function($scope,$ionicPopover,$timeout,ionicMaterialMotion,ionicMaterialInk) {
 
 
@@ -125,7 +79,6 @@ $scope.activateamis = function(){
 
 
   $scope.events1 = [
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
     {titre:'Sport',id:1,nbpers:5,avatar:'img/sMM12deZQcad6zASL6ky_image_profile.jpg'},
     {titre:'Culture ',id:2,nbpers:155,avatar:'img/icon1.png'},
     {titre:'Plein air',id:3,nbpers:3,avatar:'img/icon1.png'},
@@ -137,42 +90,6 @@ $scope.activateamis = function(){
     {titre:'Spectacle',id:9,nbpers:4,avatar:'img/icon1.png'},
   ];
 
-<<<<<<< HEAD
-  // .fromTemplate() method
-  var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
-
-  $scope.popover = $ionicPopover.fromTemplate(template, {
-    scope: $scope
-  });
-
-  // .fromTemplateUrl() method
-  $ionicPopover.fromTemplateUrl('my-popover.html', {
-    scope: $scope
-  }).then(function(popover) {
-    $scope.popover = popover;
-  });
-
-
-  $scope.openPopover = function($event) {
-    $scope.popover.show($event);
-  };
-  $scope.closePopover = function() {
-    $scope.popover.hide();
-  };
-  //Cleanup the popover when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.popover.remove();
-  });
-  // Execute action on hide popover
-  $scope.$on('popover.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove popover
-  $scope.$on('popover.removed', function() {
-    // Execute action
-  });
-})
-=======
 
     $scope.events2 = [
       {titre:'test',id:1,nbpers:5,avatar:'img/paysage.jpg'},
@@ -196,22 +113,15 @@ $scope.activateamis = function(){
               },0); // No timeout delay necessary.
         });
       })
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 .controller('profilCtrl', function($scope,Interet,$ionicPopover) {
 
   $scope.pers=
   {
     avatar:'img/paysage.jpg',
-<<<<<<< HEAD
-    nom:'zaertyuiopdfqf',
-    prenom:'azertyuiop',
-    age:18,
-=======
     nom:'Malgorn',
     prenom:'Mathieu',
     age:22,
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
     ville:'Brest',
     desc:'Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.'
 
@@ -224,24 +134,6 @@ $scope.activateamis = function(){
   }
 
   $scope.items=Interet.item;
-<<<<<<< HEAD
-
-
-  // .fromTemplateUrl() method
-  $ionicPopover.fromTemplateUrl('/templates/reglage.html', {
-    scope: $scope
-  }).then(function(popover) {
-    $scope.popover = popover;
-  });
-
-
-  $scope.openPopover = function($event) {
-    $scope.popover.show($event);
-  };
-  $scope.closePopover = function() {
-    $scope.popover.hide();
-  };
-
 })
 
 .controller('popUpCtrl', function($scope) {
@@ -256,32 +148,18 @@ $scope.activateamis = function(){
     { icon: 'ion-pricetag'},
     { icon: 'ion-bag' },
   ];
-=======
-})
-
-.controller('popUpCtrl', function($scope) {
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 })
 
 .controller('event1Ctrl', function($scope) {
-<<<<<<< HEAD
-$scope.showcheckbox = false;
-=======
   $scope.showcheckbox = false;
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
   $scope.showcheck = function(){
     if($scope.showcheckbox==true){
       $scope.showcheckbox=false;
     }else{
-<<<<<<< HEAD
-    $scope.showcheckbox=true;
-  }
-=======
       $scope.showcheckbox=true;
     }
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
   };
 
   $scope.events = [
@@ -295,14 +173,13 @@ $scope.showcheckbox = false;
     {titre:'Théâtre',id:8,nbpers:7},
     {titre:'Spectacle',id:9,nbpers:4},
   ];
-<<<<<<< HEAD
 
- 
+
 
 })
 
 .controller('event2Ctrl', function($scope) {
- $scope.events = [
+  $scope.events = [
     {titre:'Sport',id:1,nbpers:5},
     {titre:'Culture ',id:2,nbpers:155},
     {titre:'Plein air',id:3,nbpers:3},
@@ -318,7 +195,7 @@ $scope.showcheckbox = false;
 
 .controller('invitationCtrl', function($scope) {
 
-  
+
   $scope.events = [
     {prenom:'Abel',id:1, avatar: 'img/image.jpg'},
     {prenom:'Fabien ',id:2,avatar: 'img/image_user.jpg'},
@@ -336,7 +213,7 @@ $scope.showcheckbox = false;
 
 .controller('demandeCtrl', function($scope) {
 
-  
+
   $scope.events = [
     {prenom:'Abel',id:1, avatar: 'img/image.jpg'},
     {prenom:'Fabien ',id:2,avatar: 'img/image_user.jpg'},
@@ -349,23 +226,6 @@ $scope.showcheckbox = false;
     {prenom:'Elodie',id:9,avatar: 'img/icon1.png'},
   ];
 
-=======
-
-})
-
-.controller('event2Ctrl', function($scope) {
-  $scope.events = [
-    {titre:'Sport',id:1,nbpers:5},
-    {titre:'Culture ',id:2,nbpers:155},
-    {titre:'Plein air',id:3,nbpers:3},
-    {titre:'Restaurant',id:4,nbpers:4},
-    {titre:'Musique',id:5,nbpers:2},
-    {titre:'Cinéma',id:6,nbpers:1},
-    {titre:'Soirée',id:7,nbpers:10},
-    {titre:'Théâtre',id:8,nbpers:7},
-    {titre:'Spectacle',id:9,nbpers:4},
-  ];
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 })
 
@@ -456,8 +316,6 @@ $scope.showcheckbox = false;
 
 })
 
-<<<<<<< HEAD
-=======
 .controller('parametreCtrl', function($scope,$ionicPopover) {
 $scope.shownot = true;
 
@@ -469,6 +327,7 @@ $scope.shownotif = function(){
     $scope.shownot=true;
   }
 };
+
 
 })
 
@@ -518,7 +377,6 @@ $scope.shownotif = function(){
 
 
 })
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 .controller('personaliserVotreProfilCtrl', function($scope) {
 
@@ -545,12 +403,6 @@ $scope.shownotif = function(){
   ];
 
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 })
 
 
@@ -569,8 +421,6 @@ $scope.shownotif = function(){
   };
 
 
-<<<<<<< HEAD
-=======
 })
 
 
@@ -605,5 +455,4 @@ $scope.shownotif = function(){
     // Execute action
   });
 
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 })

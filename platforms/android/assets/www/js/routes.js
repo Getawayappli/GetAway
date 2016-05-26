@@ -111,7 +111,6 @@ angular.module('app.routes', [])
     url: '/page5',
     templateUrl: 'templates/profil.html',
     controller: 'profilCtrl'
-<<<<<<< HEAD
   })
       .state('chat', {
         url: "/chat/:nickname",
@@ -129,8 +128,6 @@ angular.module('app.routes', [])
     url: '/page14',
     templateUrl: 'templates/demande.html',
     controller: 'demandeCtrl'
-=======
->>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
   })
 
   .state('popUp', {
@@ -168,7 +165,6 @@ angular.module('app.routes', [])
     templateUrl: 'templates/personaliserVotreProfil.html',
     controller: 'personaliserVotreProfilCtrl'
   })
-  
 
   .state('parametre', {
     url: '/page13',
