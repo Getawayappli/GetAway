@@ -1,5 +1,6 @@
 angular.module('app.directives', [])
 
+<<<<<<< HEAD
 // All this does is allow the message
 // to be sent when you tap return
 .directive('input', function($timeout) {
@@ -41,3 +42,23 @@ angular.module('app.directives', [])
 })
 
 
+=======
+
+.directive('ngLastRepeat', function ($timeout) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            if (scope.$last === true) {
+                $timeout(function () {
+                    scope.$emit('ngLastRepeat'+ (attr.ngLastRepeat ? '.'+attr.ngLastRepeat : ''));
+                });
+            }
+        }
+    };
+})
+
+
+.directive('blankDirective', [function(){
+
+}]);
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a

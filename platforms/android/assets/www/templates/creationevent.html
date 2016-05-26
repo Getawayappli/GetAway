@@ -1,60 +1,100 @@
-<ion-view title="Création d'événement" id="page7">
-    <ion-content padding="true" scroll="true" class="has-header">
-     <div></div>
-        <div style="margin: 0px; line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
+<ion-view title="Création d'événement" hide-nav-bar="true" id="page7">
+
+  <div class="bar bar-header bar-energized" >
+    <div class="h1 title title-center light">
+      Création d'événement
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
+        </button>
+      </span>
+    </div>
+  </div>
+  <ion-content padding="true" scroll="true" class="has-header">
 
 
-      <ion-list style="display:inline">
-        <ion-item>
-            <ion-radio style="width:50%;float:left;text-align:center;"
-            ng-repeat:="item choice"
-             ng-model="choice"
-             ng-value="IN">IN</ion-radio>
+    <form class="list">
+      <div class="divi">
+        <label class="item item-input divi" name="Titre" >
+          <input type="text" ng-required="true" placeholder="Titre de l'événement">
+        </label>
+      </div>
+      <div class="divi">
+        <label class="item item-input " >
 
-            <ion-radio style="width:50%;float:right;text-align:center;"
-            ng-repeat:="item choice"
-            ng-model="choice"
-            ng-value="OUT">OUT</ion-radio>
-        </ion-item>
-      </ion-list>
+          <textarea style="height:100px" placeholder="Quelques mots sur l'événement" class="no-resize" ></textarea>
 
-        <ion-item>
-      <ion-list style="display:inline">
-        <ion-radio style="width:50%;float:left;text-align:center;"
-        ng-repeat:="item type"
-        ng-model="type"
-        ng-value="public"
-        name="type">Public</ion-radio>
+        </label>
+      </div>
 
-            <ion-radio style="width:50%;float:right;text-align:center"
-            ng-repeat:="item type"
-            ng-model="type"
-            ng-value="prive"
-            name="type">Privé</ion-radio>
+      <label class="item-input" style="padding-left:0px">
+        <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:5px" >
+
+          <input type="text" placeholder="Ville" style="float:left;"  ></input>
+
+        </ion-toggle>
+      </label>
+
+      <button ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
+      ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+      style="height:25px" class="button button-block ">
+      Type d'événement
+    </button>
+    <ul ng-show="showcheckbox"  >
+      <div class="divi">
+
+        <li id={{item.id}} class="item item-checkbox item-checkbox-right icon {{item.icon}} " ng-repeat="item in items" >
+          {{item.name}}
+          <label class="checkbox checkbox-energized">
+            <input type="checkbox" >
+          </input>
+        </label>
+      </li>
+    </ul>
+  </div>
+<div class="divi">
+  <p> Nombre de personne</p>
+  <label class="item item-input item-icon-right ion-person" name="nbperso" style="width:21%;float:left;">
+    <input type="number" placeholder="{{data.nbpers}}" value={{data.nbpers}} ng-model="data.nbpers" style="padding-right:0px" >
+  </label>
+  <div class="item range range-possitive" style="width:79%">
+    <input type="range" name="nbpers" min="1" max="150" ng-model="data.nbpers">
+  </div>
+
+</div>
+
+<p style="margin-top:9px">Date de l'événement </p>
+  <label class="item item-input" name="Date" style="width:70%;float:left;">
+    <input type="date" placeholder="Date" ng-model="data.date" style="padding-right:0;">
+  </label>
+  <label class="item item-input" name="Heure" style="width:30%;padding-left:5px">
+    <input type="time" placeholder="Heure" ng-model="data.date" style="padding-right:0;">
+  </label>
 
 
-        </ion-item>
-      </ion-list>
+  <ion-list style="height:100px;"  >
 
 
+    <ion-radio style="width:50%;text-align:center;float:left;"
+    ng-repeat:="item type"
+    ng-model="data.type"
+    ng-value="prive"
+    ng-checked="false"
+    name="type">Privé</ion-radio>
+    <ion-radio style="width:50%;text-align:center;"
+    ng-repeat:="item type"
+    ng-model="data.type"
+    ng-value="public"
+    ng-checked="true"
+    name="type">Public</ion-radio>
 
+  </ion-list>
 
+  <a ui-sref="accueil" id="creationevent-button13"
+  style="color:white;width:100%"
+  class="button button-light button-block button-energized icon ion-android-checkmark-circle"></a>
 
-        <form class="list">
-            <label class="item item-input" name="nbperso">
-                <input type="number" placeholder="Nombre de personne">
-            </label>
-            <label class="item item-input" name="Description">
-                <input type="text" placeholder="Description">
-            </label>
-            <a ui-sref="accueil" id="creationevent-button13"
-            style="background-color:#56D165;color:white;width:80%;margin-left:10%"
-            class="button button-light button-large button-block icon ion-android-checkmark-circle"></a>
-
-
-
-        </form>
-    </ion-content>
+</form>
+</ion-content>
 </ion-view>

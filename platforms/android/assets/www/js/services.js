@@ -1,6 +1,10 @@
 angular.module('app.services', [])
 
+<<<<<<< HEAD
 
+=======
+//Factory pour les centres d'interet
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 .factory('Interet',[function(){
   return {
     item:[
@@ -13,7 +17,11 @@ angular.module('app.services', [])
       {name:'Soirée',id:7,icon:'ion-beer'},
       {name:'Théâtre',id:8},
       {name:'Spectacle',id:9,icon:'ion-mic-b'},
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 
     ]

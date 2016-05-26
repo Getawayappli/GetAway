@@ -1,36 +1,41 @@
 <ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
-  <div class="bar bar-header bar-energized">
+  <div class="bar bar-header bar-energized" >
     <div class="h1 title title-center light">
       GetAway
     </div>
     <div class="buttons buttons-right header-item">
       <span class="right-buttons">
-        <button class="button button-icon button-clear ion-android-more-vertical">
+        <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
         </button>
       </span>
     </div>
   </div>
-  <ion-content padding="true" class="has-header">
 
+  <ion-content padding="" class="has-header">
+    <div class="button-bar energized" >
+      <button class="button {{active.prox}}" ng-class="{{active.prox}}" ng-click="activateprox();" >A proximité</button>
+      <button class="button {{active.amis}}"  ng-class="{{active.amis}}" ng-click="activateamis();" >Mes Amis</button>
 
+    </div>
 
-      <div class="list">
-        <a class="item item-avatar" ng-repeat="event in events" >
-          <img src="img/material1.jpg">
-<i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
-          <h2>{{event.titre}}</h2>
-<i style="float:right" class="icon ion-beer energized"></i>
+    <div class=animate-blinds>
+    <a class="list card item item-avatar event " ng-repeat="event in events" ng-last-repeat="mylist">
+      <div class="item item-avatar" style="padding-left:70px;">
+        <img ng-src="{{event.avatar}}" style="margin-top:4px">
+        <i class="icon icon-right ion-person " style="float:right;margin-top:4px">{{event.nbpers}}</i>
+        <h2 style="margin-top:3px">{{event.titre}}</h2>
+        <i style="float:right" class="icon ion-beer energized"></i>
 
-          <p>Sheets of paper</p>
-
-        </a>
-
-
+        <p>{{event.avatar}}</p>
       </div>
+    </a>
+  </div>
 
 
-  </ion-content>
-  <button class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
-  <button class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
+
+</ion-content>
+<button ui-sref="filtre" style="bottom:60px" class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
+<button ui-sref="creationevent" style="bottom:60px" class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
+
 
 </ion-view>

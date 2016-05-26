@@ -4,6 +4,7 @@ angular.module('app.controllers', [])
 
 .controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
+<<<<<<< HEAD
  // Triggered on a button click, or some other target
  $scope.showPopup = function() {
    $scope.data = {}
@@ -39,6 +40,43 @@ angular.module('app.controllers', [])
    $timeout(function() {
      // myPopup.close(); //close the popup after 3 seconds for some reason
    }, 3000);
+=======
+  // Triggered on a button click, or some other target
+  $scope.showPopup = function() {
+    $scope.data = {}
+
+    // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+      template: '<input type="text" placeholder="Identifiant/Mail">'
+      + '</br>'
+      +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
+      +'<a href="#">Pas de compte? Inscrivez-Vous </a> ',
+      title: 'Connexion',
+      subTitle: 'veuillez entrer vos informations pour se connecter',
+      scope: $scope,
+      buttons: [
+        { text: 'Cancel' },
+        {
+          text: '<b>Login</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            if (!$scope.data.wifi) {
+              //don't allow the user to close unless he enters wifi password
+              e.preventDefault();
+            } else {
+              return $scope.data.wifi;
+            }
+          }
+        },
+      ]
+    });
+    myPopup.then(function(res) {
+      console.log('Tapped!', res);
+    });
+    $timeout(function() {
+      // myPopup.close(); //close the popup after 3 seconds for some reason
+    }, 3000);
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
   };
 
 })
@@ -47,10 +85,47 @@ angular.module('app.controllers', [])
 
 })
 
+<<<<<<< HEAD
 .controller('accueilCtrl', function($scope,$ionicPopover,$timeout) {
   $scope.test1='blabla'
 
   $scope.events = [
+=======
+.controller('accueilCtrl', function($scope,$ionicPopover,$timeout,ionicMaterialMotion,ionicMaterialInk) {
+
+
+  $scope.test1='blabla'
+
+  $scope.active={
+    'prox' : 'active',
+    'amis' : '',
+  }
+
+$scope.activateprox = function(){
+  if(!(angular.equals($scope.active.prox,'active'))){
+    $scope.active={
+      'prox':'active',
+      'amis' : '',
+    }
+    $scope.events=$scope.events1;
+
+  }
+}
+
+$scope.activateamis = function(){
+  if(!(angular.equals($scope.active.amis,'active'))){
+    $scope.active={
+      'prox':'',
+      'amis' : 'active',
+    }
+    $scope.events=$scope.events2;
+
+  }
+}
+
+
+  $scope.events1 = [
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
     {titre:'Sport',id:1,nbpers:5,avatar:'img/sMM12deZQcad6zASL6ky_image_profile.jpg'},
     {titre:'Culture ',id:2,nbpers:155,avatar:'img/icon1.png'},
     {titre:'Plein air',id:3,nbpers:3,avatar:'img/icon1.png'},
@@ -62,6 +137,7 @@ angular.module('app.controllers', [])
     {titre:'Spectacle',id:9,nbpers:4,avatar:'img/icon1.png'},
   ];
 
+<<<<<<< HEAD
   // .fromTemplate() method
   var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
 
@@ -96,15 +172,46 @@ angular.module('app.controllers', [])
     // Execute action
   });
 })
+=======
+
+    $scope.events2 = [
+      {titre:'test',id:1,nbpers:5,avatar:'img/paysage.jpg'},
+      {titre:'test ',id:2,nbpers:155,avatar:'img/icon1.png'},
+      {titre:'test',id:3,nbpers:3,avatar:'img/icon1.png'},
+      {titre:'Restaurant',id:4,nbpers:4,avatar:'img/icon1.png'},
+      {titre:'Musique',id:5,nbpers:2,avatar:'img/icon1.png'},
+      {titre:'Cinéma',id:6,nbpers:1,avatar:'img/icon1.png'},
+      {titre:'Soirée',id:7,nbpers:10,avatar:'img/icon1.png'},
+      {titre:'Théâtre',id:8,nbpers:7,avatar:'img/icon1.png'},
+      {titre:'Spectacle',id:9,nbpers:4,avatar:'img/icon1.png'},
+    ];
+
+    $scope.events=$scope.events1;
+
+    // Animate list on this event
+        $scope.$on('ngLastRepeat.mylist',function(e) {
+            $timeout(function(){
+                ionicMaterialMotion.blinds();
+                ionicMaterialInk.displayEffect();
+              },0); // No timeout delay necessary.
+        });
+      })
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 .controller('profilCtrl', function($scope,Interet,$ionicPopover) {
 
   $scope.pers=
   {
     avatar:'img/paysage.jpg',
+<<<<<<< HEAD
     nom:'zaertyuiopdfqf',
     prenom:'azertyuiop',
     age:18,
+=======
+    nom:'Malgorn',
+    prenom:'Mathieu',
+    age:22,
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
     ville:'Brest',
     desc:'Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.'
 
@@ -117,6 +224,7 @@ angular.module('app.controllers', [])
   }
 
   $scope.items=Interet.item;
+<<<<<<< HEAD
 
 
   // .fromTemplateUrl() method
@@ -148,18 +256,32 @@ angular.module('app.controllers', [])
     { icon: 'ion-pricetag'},
     { icon: 'ion-bag' },
   ];
+=======
+})
+
+.controller('popUpCtrl', function($scope) {
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 })
 
 .controller('event1Ctrl', function($scope) {
+<<<<<<< HEAD
 $scope.showcheckbox = false;
+=======
+  $scope.showcheckbox = false;
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
   $scope.showcheck = function(){
     if($scope.showcheckbox==true){
       $scope.showcheckbox=false;
     }else{
+<<<<<<< HEAD
     $scope.showcheckbox=true;
   }
+=======
+      $scope.showcheckbox=true;
+    }
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
   };
 
   $scope.events = [
@@ -173,6 +295,7 @@ $scope.showcheckbox = false;
     {titre:'Théâtre',id:8,nbpers:7},
     {titre:'Spectacle',id:9,nbpers:4},
   ];
+<<<<<<< HEAD
 
  
 
@@ -226,6 +349,23 @@ $scope.showcheckbox = false;
     {prenom:'Elodie',id:9,avatar: 'img/icon1.png'},
   ];
 
+=======
+
+})
+
+.controller('event2Ctrl', function($scope) {
+  $scope.events = [
+    {titre:'Sport',id:1,nbpers:5},
+    {titre:'Culture ',id:2,nbpers:155},
+    {titre:'Plein air',id:3,nbpers:3},
+    {titre:'Restaurant',id:4,nbpers:4},
+    {titre:'Musique',id:5,nbpers:2},
+    {titre:'Cinéma',id:6,nbpers:1},
+    {titre:'Soirée',id:7,nbpers:10},
+    {titre:'Théâtre',id:8,nbpers:7},
+    {titre:'Spectacle',id:9,nbpers:4},
+  ];
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 })
 
@@ -233,7 +373,27 @@ $scope.showcheckbox = false;
 
 })
 
-.controller('creationeventCtrl', function($scope) {
+.controller('creationeventCtrl', function($scope,Interet,$filter) {
+
+  $scope.showcheckbox = false;
+  $scope.data={
+    'nbpers' : '5',
+    'date' : new Date(),
+
+
+  };
+  $scope.data.date.setSeconds(0,000);
+  //$scope.data.date.setMilliseconds(0);
+
+  $scope.showcheck = function(){
+    if($scope.showcheckbox==true){
+      $scope.showcheckbox=false;
+    }else{
+      $scope.showcheckbox=true;
+    }
+  };
+
+  $scope.items=Interet.item;
 
 })
 
@@ -296,6 +456,69 @@ $scope.showcheckbox = false;
 
 })
 
+<<<<<<< HEAD
+=======
+.controller('parametreCtrl', function($scope,$ionicPopover) {
+$scope.shownot = true;
+
+//Fonction qui permets d'afficher la liste de type
+$scope.shownotif = function(){
+  if($scope.shownot==true){
+    $scope.shownot=false;
+  }else{
+    $scope.shownot=true;
+  }
+};
+
+})
+
+.controller('filtre', function($scope,$ionicPopover,Interet) {
+
+  //cacher la liste de type par défaut
+  $scope.showcheckbox = false;
+  $scope.showville = false;
+  //chercher dans le servive les types
+  $scope.items=Interet.item;
+
+  //data récupère les informations saisies
+  $scope.data={
+    'dist' : '20',
+    'distaff' : '20 km',
+    'date' : new Date(),
+  }
+
+  //On enlève les heures/minutes de la date
+  $scope.data.date.setHours(0,0,0,0);
+
+  //Fonction qui permet d'afficher la distance
+  $scope.distmax = function(){
+    if(angular.equals($scope.data.dist,'1000')){
+      $scope.data.distaff='+ 1000 km';
+    }else{
+      $scope.data.distaff=$scope.data.dist + ' km';
+    }
+  };
+  //Fonction qui permets d'afficher la liste de type
+  $scope.showcheck = function(){
+    if($scope.showcheckbox==true){
+      $scope.showcheckbox=false;
+    }else{
+      $scope.showcheckbox=true;
+    }
+  };
+
+
+  $scope.showv = function(){
+    if($scope.showville==true){
+      $scope.showville=false;
+    }else{
+      $scope.showville=true;
+    }
+  };
+
+
+})
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 .controller('personaliserVotreProfilCtrl', function($scope) {
 
@@ -305,8 +528,8 @@ $scope.showcheckbox = false;
     if($scope.showcheckbox==true){
       $scope.showcheckbox=false;
     }else{
-    $scope.showcheckbox=true;
-  }
+      $scope.showcheckbox=true;
+    }
   };
 
   $scope.items = [
@@ -322,6 +545,12 @@ $scope.showcheckbox = false;
   ];
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 })
 
 
@@ -340,4 +569,41 @@ $scope.showcheckbox = false;
   };
 
 
+<<<<<<< HEAD
+=======
+})
+
+
+.controller('regCtrl', function($scope,$ionicPopover) {
+
+  //Méthode permettant d'afficher les pop-ups de réglages
+
+  // .fromTemplateUrl() method
+  $ionicPopover.fromTemplateUrl('templates/reglage.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function() {
+    // Execute action
+  });
+
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 })

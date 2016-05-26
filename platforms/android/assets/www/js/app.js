@@ -5,7 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+<<<<<<< HEAD
 angular.module('app', ['ionic','tabSlideBox','ion-google-place','ionic.closePopup', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
+=======
+angular.module('app', ['ionic','ionic-material','tabSlideBox','ion-google-place','ionic.closePopup', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
+>>>>>>> 309a37cacb4a799283961c8e62e6713a30e22f4a
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
