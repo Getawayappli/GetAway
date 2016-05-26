@@ -11,7 +11,7 @@ angular.module('app.controllers', [])
       template: '<input type="text" placeholder="Identifiant/Mail">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
-      +'<a href="#">Pas de compte? Inscrivez-Vous </a> ',
+      +'<a href="/#/page3">Pas de compte? Inscrivez-Vous </a> ',
       title: 'Connexion',
       subTitle: 'veuillez entrer vos informations pour se connecter',
       scope: $scope,
