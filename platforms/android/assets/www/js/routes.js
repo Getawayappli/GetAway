@@ -10,6 +10,85 @@ angular.module('app.routes', [])
 
 
 
+
+     .state('tabsEvent', {
+      url: '/page0',
+      templateUrl: 'templates/tabsEvent.html',
+      abstract:true
+    })
+
+      .state('tabsEvent.event1', {
+    url: '/event1',
+    views: {
+      'tab1': {
+        templateUrl: 'templates/eventpage1.html',
+        controller: 'event1Ctrl'
+      }
+    }
+  })
+
+
+      .state('tabsEvent.event2', {
+    url: '/event2',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/eventpage2.html',
+        controller: 'event2Ctrl'
+      }
+    }
+  })
+
+
+
+
+      .state('tabsController.accueil', {
+    url: '/page2',
+    views: {
+      'tab1': {
+        templateUrl: 'templates/accueil.html',
+        controller: 'accueilCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.aide', {
+    url: '//page3',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/aide.html',
+        controller: 'aideCtrl'
+      }
+    }
+  })
+
+  .state('tabsController.event', {
+    url: '/event1',
+    views: {
+      'tab3': {
+        templateUrl: 'templates/eventpage1.html',
+        controller: 'event1Ctrl'
+      }
+    }
+  })
+
+  .state('tabsController', {
+    url: '/page1',
+    templateUrl: 'templates/tabsController.html',
+    abstract:true
+  })
+
+  .state('tabsController.profil', {
+    url: '/page6',
+    views: {
+      'tab4': {
+        templateUrl: 'templates/profil.html',
+        controller: 'profilCtrl'
+      }
+    }
+  })
+
+
+
       .state('login', {
     url: '/page2',
     templateUrl: 'templates/login.html',
@@ -28,15 +107,32 @@ angular.module('app.routes', [])
     controller: 'accueilCtrl'
   })
 
-  .state('profile', {
+  .state('profil', {
     url: '/page5',
-    templateUrl: 'templates/profile.html',
-    controller: 'profileCtrl'
+    templateUrl: 'templates/profil.html',
+    controller: 'profilCtrl'
+  })
+      .state('chat', {
+        url: "/chat/:nickname",
+        templateUrl: "templates/chat.html"
+      })
+
+
+  .state('invitation', {
+    url: '/page13',
+    templateUrl: 'templates/invitation.html',
+    controller: 'invitationCtrl'
+  })
+
+  .state('demande', {
+    url: '/page14',
+    templateUrl: 'templates/demande.html',
+    controller: 'demandeCtrl'
   })
 
   .state('popUp', {
     url: '/page6',
-    templateUrl: 'templates/popUp.html',
+    templateUrl: 'templates/event.html',
     controller: 'popUpCtrl'
   })
 
@@ -59,7 +155,7 @@ angular.module('app.routes', [])
   })
 
   .state('tchat', {
-    url: '//page12',
+    url: '/page12',
     templateUrl: 'templates/tchat.html',
     controller: 'tchatCtrl'
   })
@@ -69,6 +165,7 @@ angular.module('app.routes', [])
     templateUrl: 'templates/personaliserVotreProfil.html',
     controller: 'personaliserVotreProfilCtrl'
   })
+  
 
 $urlRouterProvider.otherwise('/page2')
 

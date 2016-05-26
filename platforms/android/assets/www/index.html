@@ -25,6 +25,13 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
 
+
+
+
+
+
+    <link href="tabSlideBox.css" rel="stylesheet"/>
+    <script src="tabSlideBox.js"></script>
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -52,9 +59,9 @@
     <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
-
+     
   </head>
-  <body ng-app="app" ng-controller="AppCtrl" animation="slide-left-right-ios7" >
+  <body ng-app="app" ng-controller="AppCtrl" animation="slide-left-right-ios7"  class="platform-android platform-cordova platform-webview">
   <div>
     <div>
         <ion-nav-bar class="bar-stable">

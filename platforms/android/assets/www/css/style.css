@@ -19,5 +19,30 @@
 }
 
 .bouton-footer{
-position: fixed;margin:0; bottom: 0vh;width:100%;
+position: fixed;
+margin:0;
+ bottom: 0vh;
+ width:100%;
+}
+
+.accueil-bouton-search{
+  position:fixed;
+  top:50px;
+  margin:0;
+  width:100%;
+
+}
+
+.center{
+  margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.round{
+  border-radius:50%
+}
+
+.row{
+  flex-wrap: wrap;
 }

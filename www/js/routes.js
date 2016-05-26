@@ -112,6 +112,23 @@ angular.module('app.routes', [])
     templateUrl: 'templates/profil.html',
     controller: 'profilCtrl'
   })
+      .state('chat', {
+        url: "/chat/:nickname",
+        templateUrl: "templates/chat.html"
+      })
+
+
+  .state('invitation', {
+    url: '/page13',
+    templateUrl: 'templates/invitation.html',
+    controller: 'invitationCtrl'
+  })
+
+  .state('demande', {
+    url: '/page14',
+    templateUrl: 'templates/demande.html',
+    controller: 'demandeCtrl'
+  })
 
   .state('popUp', {
     url: '/page6',
@@ -138,7 +155,7 @@ angular.module('app.routes', [])
   })
 
   .state('tchat', {
-    url: '//page12',
+    url: '/page12',
     templateUrl: 'templates/tchat.html',
     controller: 'tchatCtrl'
   })

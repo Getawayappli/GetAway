@@ -1,36 +1,50 @@
 <ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
-  <div class="bar bar-header bar-energized">
+  <div class="bar bar-header bar-energized" >
     <div class="h1 title title-center light">
       GetAway
     </div>
     <div class="buttons buttons-right header-item">
       <span class="right-buttons">
-        <button class="button button-icon button-clear ion-android-more-vertical">
+        <button class="button button-icon button-clear ion-android-settings" ng-click="openPopover($event)">
         </button>
       </span>
     </div>
   </div>
-  <ion-content padding="true" class="has-header">
 
+  <ion-content padding="" class="has-header">
+    <div class="button-bar energized" >
+      <button class="button active"  >A proximité</button>
+      <button class="button" >Mes Amis</button>
+    </div>
 
+    <a class="list card item item-avatar" ng-repeat="event in events" style="padding-left:0px">
+      <div class="item item-avatar" style="padding-left:70px">
+        <img ng-src="{{event.avatar}}">
+        <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
+        <h2>{{event.titre}}</h2>
+        <i style="float:right" class="icon ion-beer energized"></i>
 
-      <div class="list">
-        <a class="item item-avatar" ng-repeat="event in events" >
-          <img src="img/material1.jpg">
-<i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
-          <h2>{{event.titre}}</h2>
-<i style="float:right" class="icon ion-beer energized"></i>
-
-          <p>Sheets of paper</p>
-
-        </a>
-
-
+        <p>{{event.avatar}}</p>
       </div>
+    </a>
 
+    <script id="my-popover.html" type="text/ng-template">
+      <ion-popover-view >
 
-  </ion-content>
-  <button class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
-  <button class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
+        <ion-content>
+          <ion-list>
+              <a ui-sref="personaliserVotreProfil" ng-click="closePopover()" class="item">Personnaliser votre profil</a>
+              <a ng-click="closePopover()" class="item">Paramètre et notification</a>
+              <a ng-click="closePopover()" class="item">Partagez lapplication</a>
+              <a ui-sref="login" ng-click="closePopover()" class="item">Déconnexion</a>
+          </ion-list>
+        </ion-content>
+      </ion-popover-view>
+    </script>
+
+</ion-content>
+<button  style="bottom:60px" class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
+<button ui-sref="creationevent" style="bottom:60px" class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
+
 
 </ion-view>

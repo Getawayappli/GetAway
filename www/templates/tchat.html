@@ -1,27 +1,78 @@
-<ion-view title="Tchat" id="page12">
-    <ion-content padding="true" class="has-header">
-        <ion-list>
-            <ion-item class="item-thumbnail-left" ui-sref="popUpContact">
-                <img>
-                <h2>Margaux</h2>
-                <p></p>
-            </ion-item>
-        </ion-list>
-        <div id="tchat-markdown5" style="color:#000000;font-size:20px;text-align:right;">
-            <p>Salut</p>
+  <ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
+  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+  <body ng-controller="tchatCtrl">
+    <ion-header-bar class="bar-calm">
+      <h1 class="title">Event Chat</h1>
+    </ion-header-bar>
+
+    <ion-content class="content-stable"
+                 on-swipe-left="hideTime = false"
+                 on-swipe-right="hideTime = true">
+
+      <div ng-repeat="message in messages"
+           ng-class="{other: message.userId != myId}"
+           class="messages">
+            <div ng-repeat="texto in textos" ng-class="{other: message.userId != myId}"
+          <span style=" color: black;background-color: #C7C7CC ; padding: 10px ; border-radius: 10px ;text-align: left; max-width: 240px;float : left; clear: left;
+          margin-bottom: 10px;padding: 10px;"> {{ texto.text }}</span>
+          
+             <div class="time" style="color : gray;  font-size:12px;" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+      </div>
+
+        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+          <span>{{ message.text }}</span>
         </div>
-        <div id="tchat-markdown6" style="color:#000000;font-size:20px;">
-            <p>Salut toi , ca va ?</p>
+
+        <div class="time" style="color : gray;  font-size:12px; float: right;
+        clear: right;" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+      </div>
+
+
         </div>
-        <div id="tchat-markdown7" style="color:#000000;font-size:20px;text-align:right;">
-            <p>Super et toi</p>
-        </div>
-        <div class="spacer" style="width: 283px; height: 226px;"></div>
-        <form class="list">
-            <label class="item item-input">
-                <span class="input-label">Input</span>
-                <input type="text" placeholder="">
-            </label>
-        </form>
+
     </ion-content>
-</ion-view>
+
+    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Saisir votre message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+      </label>
+      <button class="button button-clear icon ion-android-send" ng-click="sendMessage()">
+      </button>
+    </ion-footer-bar>
+  <style >
+    $stable:                          #f8f8f8 !default;
+
+}
+//This will change
+.texto {
+  .message {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -moz-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    text-align: right !important;
+  }
+  .message.slide-right {
+    -webkit-transform: translate3d(120px, 0, 0) !important;
+    -moz-transform: translate3d(120px, 0, 0) !important;
+    transform: translate3d(120px, 0, 0) !important;
+  }
+  span {
+    color: black;
+    background-color: #C7C7CC ;
+  }
+}
+span {
+  background: #007AFF !important;
+  display: inline-block !important;
+  color: white !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  text-align: right !important;
+  max-width: 240px !important;
+  float: right;
+  clear: right;
+}
+  </style>
+</view>
