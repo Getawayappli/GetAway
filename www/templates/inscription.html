@@ -41,15 +41,16 @@
                 </label>
 
                 <p style="padding-top:8px;margin-bottom:0;padding-left:15px">Date de naissance</p>
-                <label class="item item-input" style="padding-top:0;padding-bottom:30px">
-                  <input placeholder="Veuillez saisir une date" class="textbox-n" type="text" onfocus="(this.type='date')" nblur="(this.type='text')" id="date">
-
+                <label class="item item-input energized" style="padding-top:0;padding-bottom:0px;
+                ">
+                <!--  <input placeholder="Veuillez saisir une date" class="textbox-n" type="text" onfocus="(this.type='date')" nblur="(this.type='text')" id="date">
+                -->
+                <span ng-show="placeholderdate" style="color:#FF9800;">Cliquez ici pour saisir une date</span>
+                  <input type="date" class="dateclass "  ng-model="datenais"
+                  max="{{date | date:'yyyy-MM-dd'}}" ng-change="showplacehold(datenais)">
                 </label>
-
             </ion-list>
-
         </form>
-
     </ion-content>
 
     <a ui-sref="accueil" id="inscription-button7" style="color:#FFFFFF;margin-bottom:0" class="button button-energized  button-block bouton-footer">S'inscrire</a>

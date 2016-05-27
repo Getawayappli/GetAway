@@ -43,6 +43,21 @@ angular.module('app.controllers', [])
 
 .controller('inscriptionCtrl', function($scope) {
 
+  $scope.date= new Date();
+  $scope.date.setHours(0,0,0,0);
+  $scope.placeholderdate=true;
+
+    $scope.showplacehold = function(date){
+      console.log('show place');
+      console.log(!date);
+      if(!date){
+        $scope.placeholderdate=true;
+      }else{
+        $scope.placeholderdate=false;
+      }
+    };
+
+
 })
 
 .controller('accueilCtrl', function($scope,$ionicPopover,$timeout,ionicMaterialMotion,ionicMaterialInk) {

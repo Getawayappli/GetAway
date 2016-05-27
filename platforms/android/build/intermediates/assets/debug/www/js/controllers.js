@@ -11,7 +11,7 @@ angular.module('app.controllers', [])
       template: '<input type="text" placeholder="Identifiant/Mail">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
-      +'<a href="#">Pas de compte? Inscrivez-Vous </a> ',
+      +'<a href="/#/page3">Pas de compte? Inscrivez-Vous </a> ',
       title: 'Connexion',
       subTitle: 'veuillez entrer vos informations pour se connecter',
       scope: $scope,
@@ -42,6 +42,21 @@ angular.module('app.controllers', [])
 })
 
 .controller('inscriptionCtrl', function($scope) {
+
+  $scope.date= new Date();
+  $scope.date.setHours(0,0,0,0);
+  $scope.placeholderdate=true;
+
+    $scope.showplacehold = function(date){
+      console.log('show place');
+      console.log(!date);
+      if(!date){
+        $scope.placeholderdate=true;
+      }else{
+        $scope.placeholderdate=false;
+      }
+    };
+
 
 })
 
