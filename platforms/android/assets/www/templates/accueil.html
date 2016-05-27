@@ -20,12 +20,22 @@
 
 
     <div class=animate-blinds>
+<<<<<<< HEAD
+    <a style="  height: 40px;width: 100%;text-align: center; "class="list card item item-avatar event " ng-repeat="event in events" ng-last-repeat="mylist">
+      <div class="item item-avatar" style="padding-left:70px;">
+        <img ng-src="{{event.avatar}}" style="margin-top:4px">
+        <i class="icon icon-right ion-person " style="float:right;margin-top:4px">{{event.nbpers}}</i>
+        <h2 style="margin-top:2px">{{event.titre}}</h2>
+        <i style="float:right" class="icon ion-beer energized"></i>
+
+=======
     <a style="  height: 40px;width: 100%;text-align: center "class="list card item item-avatar event " ng-repeat="event in events" ui-sref="event" ng-last-repeat="mylist">
       <div class="item item-avatar" style="padding-left:70px;">
         <img ng-src="{{event.avatar}}" style="margin-top:4px">
         <i class="icon icon-right ion-person " style="float:right;margin-top:4px;">{{event.nbpers}}</i>
         <h2 style="margin-top:2px;">{{event.titre}}</h2>
         <i style="position:absolute;right:19px" class="ion-beer energized"> </i>
+>>>>>>> 659478ba8561a60b0af89c2d735c3e03c77816a2
         <p>{{event.avatar}}</p>
       </div>
     </a>
