@@ -7,6 +7,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', ['ionic','ionic-material','tabSlideBox','ion-google-place','ionic.closePopup', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
 
+.config(function($ionicConfigProvider){
+  $ionicConfigProvider.tabs.position('bottom');
+})
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

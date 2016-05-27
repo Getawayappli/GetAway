@@ -130,10 +130,10 @@ angular.module('app.routes', [])
     controller: 'demandeCtrl'
   })
 
-  .state('popUp', {
+  .state('event', {
     url: '/page6',
     templateUrl: 'templates/event.html',
-    controller: 'popUpCtrl'
+    controller: 'eventCtrl'
   })
 
   .state('popUpContact', {

@@ -1,6 +1,10 @@
-  <ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
-  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+<script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+
+<ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
+
+
 
   <body ng-controller="tchatCtrl">
     <ion-header-bar class="bar-calm">
@@ -8,41 +12,41 @@
     </ion-header-bar>
 
     <ion-content class="content-stable"
-                 on-swipe-left="hideTime = false"
-                 on-swipe-right="hideTime = true">
+    on-swipe-left="hideTime = false"
+    on-swipe-right="hideTime = true">
 
-      <div ng-repeat="message in messages"
-           ng-class="{other: message.userId != myId}"
-           class="messages">
-            <div ng-repeat="texto in textos" ng-class="{other: message.userId != myId}"
-          <span style=" color: black;background-color: #C7C7CC ; padding: 10px ; border-radius: 10px ;text-align: left; max-width: 240px;float : left; clear: left;
-          margin-bottom: 10px;padding: 10px;"> {{ texto.text }}</span>
-          
-             <div class="time" style="color : gray;  font-size:12px;" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
-      </div>
+    <div ng-repeat="message in messages"
+    ng-class="{other: message.userId != myId}"
+    class="messages">
+    <div ng-repeat="texto in textos" ng-class="{other: message.userId != myId}"
+    <span style=" color: black;background-color: #C7C7CC ; padding: 10px ; border-radius: 10px ;text-align: left; max-width: 240px;float : left; clear: left;
+    margin-bottom: 10px;padding: 10px;"> {{ texto.text }}</span>
 
-        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
-          <span>{{ message.text }}</span>
-        </div>
+    <div class="time" style="color : gray;  font-size:12px;" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+  </div>
 
-        <div class="time" style="color : gray;  font-size:12px; float: right;
-        clear: right;" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
-      </div>
+  <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+    <span>{{ message.text }}</span>
+  </div>
+
+  <div class="time" style="color : gray;  font-size:12px; float: right;
+  clear: right;" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+</div>
 
 
-        </div>
+</div>
 
-    </ion-content>
+</ion-content>
 
-    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
-      <label class="item-input-wrapper">
-        <input type="text" placeholder="Saisir votre message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
-      </label>
-      <button class="button button-clear icon ion-android-send" ng-click="sendMessage()">
-      </button>
-    </ion-footer-bar>
-  <style >
-    $stable:                          #f8f8f8 !default;
+<ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+  <label class="item-input-wrapper">
+    <input type="text" placeholder="Saisir votre message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+  </label>
+  <button class="button button-clear icon ion-android-send" ng-click="sendMessage()">
+  </button>
+</ion-footer-bar>
+<style >
+$stable:                          #f8f8f8 !default;
 
 }
 //This will change
@@ -74,5 +78,5 @@ span {
   float: right;
   clear: right;
 }
-  </style>
+</style>
 </view>
