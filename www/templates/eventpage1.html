@@ -1,4 +1,4 @@
-<ion-view  hide-nav-bar="true" id="event1">
+<ion-view  hide-nav-bar="true" hide-back-button="true" id="event1" hide-tabs="false">
   </div>
 
     <ion-content padding="" scroll="true">
@@ -15,7 +15,7 @@
       </div>
 
       <div class="list">
-        <a class="item item-avatar" ui-sref="popUp" >
+        <a class="item item-avatar" ui-sref="event" >
           <img src="img/Tomorrowland-USA-1024x682.jpg">
             <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
                       <h2>{{events[0].titre}}</h2>
@@ -30,7 +30,7 @@
     Afficher plus d'evenements
   </button>
    <div class="list" ng-show="showcheckbox">
-        <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+        <a class="item item-avatar" ng-repeat="event in events" ui-sref="event" >
           <img src="img/Tomorrowland-USA-1024x682.jpg">
             <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
                       <h2>{{event.titre}}</h2>
@@ -46,7 +46,7 @@
       </div>
 
           <div class="list">
-            <a class="item item-avatar" ui-sref="popUp" >
+            <a class="item item-avatar" ui-sref="event" >
               <img src="img/Tomorrowland-USA-1024x682.jpg">
                 <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
                           <h2>{{events[0].titre}}</h2>
@@ -61,7 +61,7 @@
         Afficher plus d'evenements
       </button>
        <div class="list" ng-show="showcheckbox">
-            <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+            <a class="item item-avatar" ng-repeat="event in events" ui-sref="event" >
               <img src="img/Tomorrowland-USA-1024x682.jpg">
                 <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
                           <h2>{{event.titre}}</h2>
@@ -78,7 +78,7 @@
       </div>
 
     <div class="list">
-        <a class="item item-avatar" ui-sref="popUp" >
+        <a class="item item-avatar" ui-sref="event" >
           <img src="img/Tomorrowland-USA-1024x682.jpg">
             <i class="icon icon-right ion-person " style="float:right">{{events[0].nbpers}}</i>
                       <h2>{{events[0].titre}}</h2>
@@ -93,7 +93,7 @@
     Afficher plus d'evenements
   </button>
    <div class="list" ng-show="showcheckbox">
-        <a class="item item-avatar" ng-repeat="event in events" ui-sref="popUp" >
+        <a class="item item-avatar" ng-repeat="event in events" ui-sref="event" >
           <img src="img/Tomorrowland-USA-1024x682.jpg">
             <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>
                       <h2>{{event.titre}}</h2>

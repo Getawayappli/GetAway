@@ -1,6 +1,12 @@
 angular.module('app.controllers', [])
 
-.controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
+.controller('loginCtrl', function($scope, $ionicPopup, $timeout, $rootScope) {
+
+  var hideTabsStates = ['tab.inbox-convo']; 
+
+    $rootScope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = ~hideTabsStates.indexOf($state.current.name)
+    });
 
   // Triggered on a button click, or some other target
   $scope.showPopup = function() {

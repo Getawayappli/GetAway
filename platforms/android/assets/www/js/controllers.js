@@ -1,6 +1,12 @@
 angular.module('app.controllers', [])
 
-.controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
+.controller('loginCtrl', function($scope, $ionicPopup, $timeout, $rootScope) {
+
+  var hideTabsStates = ['tab.inbox-convo']; 
+
+    $rootScope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = ~hideTabsStates.indexOf($state.current.name)
+    });
 
   // Triggered on a button click, or some other target
   $scope.showPopup = function() {
@@ -11,7 +17,7 @@ angular.module('app.controllers', [])
       template: '<input type="text" placeholder="Identifiant/Mail">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
-      +'<a href="#">Pas de compte? Inscrivez-Vous </a> ',
+      +'<a href="/#/page3">Pas de compte? Inscrivez-Vous </a> ',
       title: 'Connexion',
       subTitle: 'veuillez entrer vos informations pour se connecter',
       scope: $scope,
@@ -136,7 +142,7 @@ $scope.activateamis = function(){
   $scope.items=Interet.item;
 })
 
-.controller('popUpCtrl', function($scope) {
+.controller('eventCtrl', function($scope) {
    $scope.pers=
   { avatar : 'img/image_profil_fille.jpg',
     nom:'Ari',
