@@ -1,31 +1,49 @@
-<ion-view title="Inscription" hide-nav-bar="false" id="page3">
-    <ion-content padding="false" class=" manual-remove-top-padding" scroll="false">
+<ion-view title="Inscription" hide-nav-bar="true" id="page3">
+
+  <div class="bar bar-header bar-energized" >
+    <div class="h1 title title-center light">
+      Insciption
+    </div>
+  </div>
+
+    <ion-content padding="false" class="has-header" class=" manual-remove-top-padding" scroll="true">
         <form class="list">
 
             <ion-list>
-                <label class="item item-input" name="Login">
+                <label class="item item-input item-floating-label" name="Login">
+                  <span class="input-label" style="font-size:12px">Login</span>
                     <input type="text" placeholder="Login">
                 </label>
-                <label class="item item-input" name="mdp">
-                    <input type="password" placeholder="Mot de passe">
+
+
+                <label class="item item-input item-floating-label" name="mdp">
+                  <span class="input-label" style="font-size:12px">Mot de passe</span>
+                  <input type="password" placeholder="Mot de passe">
                 </label>
-                <label class="item item-input" name="confmdp">
+
+                <label class="item item-input item-floating-label" name="confmdp">
+                  <span class="input-label" style="font-size:12px">Confirmation mot de passe</span>
                     <input type="password" placeholder="Confirmation mot de passe">
                 </label>
-                <label class="item item-input" name="Mail">
+
+                <label class="item item-input item-floating-label" name="Mail">
+                  <span class="input-label" style="font-size:12px">Mail</span>
                     <input type="email" placeholder="Mail">
                 </label>
-                <label class="item item-input" style="float:left;width:50%" name="Nom">
+
+                <label class="item item-input item-floating-label"  name="Nom">
+                  <span class="input-label" style="font-size:12px">Nom</span>
                     <input type="text" placeholder="Nom">
                 </label>
-                <label class="item item-input" style="float:left;width:50%" name="Prénom">
+                <label class="item item-input item-floating-label"  name="Prénom">
+                  <span class="input-label" style="font-size:12px">Prénom</span>
                     <input type="text" placeholder="Prénom">
                 </label>
-                <label class="item item-input">
-                    <span class="input-label">Date de naissance :</span>
 
+                <p style="padding-top:8px;margin-bottom:0;padding-left:15px">Date de naissance</p>
+                <label class="item item-input" style="padding-top:0;padding-bottom:30px">
+                  <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
 
-                    <input type="date" placeholder="Date de naissance">
                 </label>
 
             </ion-list>
@@ -34,6 +52,6 @@
 
     </ion-content>
 
-    <a ui-sref="accueil" id="inscription-button7" style="color:#FFFFFF;" class="button button-positive  button-block bouton-footer">S'inscrire</a>
+    <a ui-sref="accueil" id="inscription-button7" style="color:#FFFFFF;margin-bottom:0" class="button button-energized  button-block bouton-footer">S'inscrire</a>
 
 </ion-view>
