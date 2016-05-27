@@ -261,6 +261,7 @@ $scope.activateamis = function(){
   //$scope.data.date.setMilliseconds(0);
 
   $scope.showcheck = function(){
+    console.log("Showcheck");
     if($scope.showcheckbox==true){
       $scope.showcheckbox=false;
     }else{

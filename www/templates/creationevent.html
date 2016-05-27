@@ -36,11 +36,11 @@
         </ion-toggle>
       </label>
 
-      <button ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
+      <a ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
       ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
-      style="height:25px" class="button button-block ">
+      style="height:25px; width:100%" class="button button-block ">
       Type d'événement
-    </button>
+    </a>
     <ul ng-show="showcheckbox"  >
       <div class="divi">
 
@@ -51,15 +51,16 @@
           </input>
         </label>
       </li>
+      </div>
     </ul>
-  </div>
+
 <div class="divi">
   <p> Nombre de personne</p>
   <label class="item item-input item-icon-right ion-person" name="nbperso" style="width:21%;float:left;padding-left:5px">
     <input type="number" min="1" max="150" placeholder="{{data.nbpers}}" value={{data.nbpers}} ng-model="data.nbpers" style="padding-right:0px;padding-left:0;" >
   </label>
   <div class="item range range-possitive" style="width:79%">
-    <input type="range" name="nbpers" min="1" max="150" ng-model="data.nbpers">
+    <input type="range" name="nbpers" min="1" step="1" max="150" ng-model="data.nbpers">
   </div>
 
 </div>
@@ -90,9 +91,9 @@
 
   </ion-list>
 
-  <a ui-sref="accueil" id="creationevent-button13"
+  <button ui-sref="accueil" id="creationevent-button13"
   style="color:white;width:100%"
-  class="button button-light button-block button-energized icon ion-android-checkmark-circle"></a>
+  class="button button-light button-block button-energized icon ion-android-checkmark-circle"></button>
 
 </form>
 </ion-content>
