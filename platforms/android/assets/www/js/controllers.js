@@ -497,3 +497,9 @@ $scope.shownotif = function(){
   });
 
 })
+
+.controller('goback',function($scope,$ionicHistory){
+  $scope.goback = function(){
+    $ionicHistory.goBack();
+  };
+})

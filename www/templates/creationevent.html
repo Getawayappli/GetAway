@@ -1,6 +1,12 @@
 <ion-view title="Création d'événement" hide-nav-bar="true" id="page7" hide-tabs="true">
 
   <div class="bar bar-header bar-energized" >
+    <div class="buttons buttons-left header-item">
+    <span class="left-buttons">
+      <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+      </button>
+    </span>
+  </div>
     <div class="h1 title title-center light">
       Création d'événement
     </div>
@@ -63,8 +69,6 @@
   <div class="item range range-possitive" style="width:79%">
     <input type="range" name="nbpers" min="1" step="1" max="150" ng-model="data.nbpers" ng-change="nbstring()">
   </div>
-  {{data.nbpers}}
-
 </div>
 
 <p style="margin-top:15px;width:60%;float:left;">Date de l'événement </p>

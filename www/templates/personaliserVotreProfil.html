@@ -1,4 +1,17 @@
-<ion-view title="Personaliser votre  profil" id="page9">
+<ion-view title="Personaliser votre  profil" hide-nav-bar="true" id="page9">
+  <div class="bar bar-header bar-energized" >
+
+    <div class="buttons buttons-left header-item">
+    <span class="left-buttons">
+      <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+      </button>
+    </span>
+  </div>
+  <div class="h1 title title-center light" style="float:left">
+    Personnaliser votre profil
+  </div>
+</div>
+
   <ion-content padding="true" style="padding-bottom:50px" class="has-header" hide-tabs>
 
     <ion-item class="item-thumbnail-left">
@@ -18,7 +31,7 @@
 
 
       <label class="item-input" style="padding-left:0px">
-        <ion-toggle toggle-class="toggle-positive" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:20px" >
+        <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:20px" >
 
           <input type="text" placeholder="Ville"  ></input>
 
@@ -27,7 +40,7 @@
 
 
       <label class="item item-input" style="padding-left:0px">
-        <ion-toggle toggle-class="toggle-positive" ng-checked="true" style="padding-top:8px;padding-bottom:20px">
+        <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-top:8px;padding-bottom:20px">
           <input type="number" placeholder="Age" style="width:100%"></input>
         </ion-toggle>
       </label>
@@ -44,9 +57,9 @@
   <!-- Liste des centres d'interet -> rajouter images -->
   <ul ng-show="showcheckbox"  >
 
-    <li id={{item.id}} class="item item-checkbox item-checkbox-right" ng-repeat="item in items" >
+    <li id={{item.id}} class="item item-checkbox item-checkbox-right " ng-repeat="item in items" >
       {{item.name}}
-      <label class="checkbox">
+      <label class="checkbox checkbox-energized">
         <input type="checkbox">
 
       </input>
@@ -54,7 +67,7 @@
   </li>
 </ul>
 
-<button id="personaliserVotreProfil-button17"  class="button button-block button-balanced  icon ion-android-checkmark-circle "></button>
+<button id="personaliserVotreProfil-button17"  class="button button-block button-energized  icon ion-android-checkmark-circle "></button>
 </ion-content>
 
 
