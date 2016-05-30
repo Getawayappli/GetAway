@@ -72,7 +72,7 @@ angular.module('app.directives', [])
                 $rootScope.hideTabs = "false";
             }); */
 
-            $scope.$on('$ionicView.afterLeave', function(){
+            scope.$on('$ionicView.afterLeave', function(){
                   alert("test changement de page");
                  $rootScope.hideTabs = "false";
               });
@@ -84,5 +84,3 @@ angular.module('app.directives', [])
 .directive('blankDirective', [function(){
 
 }]);
-
-

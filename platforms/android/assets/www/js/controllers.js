@@ -1,12 +1,6 @@
 angular.module('app.controllers', [])
 
-.controller('loginCtrl', function($scope, $ionicPopup, $timeout, $rootScope) {
-
-  var hideTabsStates = ['tab.inbox-convo']; 
-
-    $rootScope.$on('$ionicView.beforeEnter', function () {
-        $rootScope.hideTabs = ~hideTabsStates.indexOf($state.current.name)
-    });
+.controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
   // Triggered on a button click, or some other target
   $scope.showPopup = function() {
@@ -259,14 +253,18 @@ $scope.activateamis = function(){
   $scope.showcheckbox = false;
   $scope.data={
     'nbpers' : '5',
+    'nbpersint' : 5,
     'date' : new Date(),
-
-
   };
+
+
+  $scope.placeholderdate=false;
   $scope.data.date.setSeconds(0,000);
+  $scope.mindate=$scope.data.date;
   //$scope.data.date.setMilliseconds(0);
 
   $scope.showcheck = function(){
+    console.log("Showcheck");
     if($scope.showcheckbox==true){
       $scope.showcheckbox=false;
     }else{
@@ -275,6 +273,28 @@ $scope.activateamis = function(){
   };
 
   $scope.items=Interet.item;
+
+  $scope.showplacehold = function(date){
+    console.log('show place');
+    console.log(!date);
+    if(!date){
+      $scope.placeholderdate=true;
+    }else{
+      $scope.placeholderdate=false;
+    }
+  };
+
+
+    $scope.nbstring = function(){
+
+        $scope.data.nbpersint=parseInt($scope.data.nbpers);
+    };
+
+
+      $scope.nbint = function(){
+
+        $scope.data.nbpers=$scope.data.nbpersint;
+      };
 
 })
 
