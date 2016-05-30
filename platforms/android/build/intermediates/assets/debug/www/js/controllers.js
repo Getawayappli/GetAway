@@ -253,11 +253,14 @@ $scope.activateamis = function(){
   $scope.showcheckbox = false;
   $scope.data={
     'nbpers' : '5',
+    'nbpersint' : 5,
     'date' : new Date(),
-
-
   };
+
+
+  $scope.placeholderdate=false;
   $scope.data.date.setSeconds(0,000);
+  $scope.mindate=$scope.data.date;
   //$scope.data.date.setMilliseconds(0);
 
   $scope.showcheck = function(){
@@ -270,6 +273,28 @@ $scope.activateamis = function(){
   };
 
   $scope.items=Interet.item;
+
+  $scope.showplacehold = function(date){
+    console.log('show place');
+    console.log(!date);
+    if(!date){
+      $scope.placeholderdate=true;
+    }else{
+      $scope.placeholderdate=false;
+    }
+  };
+
+
+    $scope.nbstring = function(){
+
+        $scope.data.nbpersint=parseInt($scope.data.nbpers);
+    };
+
+
+      $scope.nbint = function(){
+
+        $scope.data.nbpers=$scope.data.nbpersint;
+      };
 
 })
 

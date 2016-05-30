@@ -24,4 +24,13 @@ angular.module('app', ['ionic','ionic-material','tabSlideBox','ion-google-place'
       StatusBar.styleDefault();
     }
   });
+
+
 })
+
+
+  .filter('num',function(){
+    return function(input){
+      return parseInt(input, 10);
+    }
+  });
