@@ -1,22 +1,23 @@
 
-  <ion-view title="Event Chat" hide-nav-bar="false" hide-back-button="true" hide-tabs="true"  id="page4" style="background-color:#FFFFFF;">
+  <ion-view title="Event Chat" hide-back-button="true" hide-tabs="true"  id="page4" style="background-color:#FFFFFF;">
 <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-
+  
+  <div class="bar bar-header bar-calm">
+    <h1 class="title">Event chat</h1>
+  </div>
 
 <ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
 
   <body ng-controller="tchatCtrl">
 
-    <ion-content class="content-stable has-header bar-calm"
-    on-swipe-left="hideTime = false"
-    on-swipe-right="hideTime = true"  >
+    <ion-content class="content-stable has-header" >
 
     <div ng-repeat="message in messages"
     ng-class="{other: message.userId != myId}"
     class="messages">
     <div ng-repeat="texto in textos" ng-class="{other: message.userId != myId}"
-    <span style=" color: black;background-color: #C7C7CC ; padding: 10px ; border-radius: 10px ;text-align: left; max-width: 240px;float : left; clear: left;
+    <span class="texto" style=" color: black;background-color: #C7C7CC ; padding: 10px ; border-radius: 10px ;text-align: left; max-width: 240px;float : left; clear: left;
     margin-bottom: 10px;padding: 10px;"> {{ texto.text }}</span>
 
     <div class="time" style="color : gray;  font-size:12px;" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>

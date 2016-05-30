@@ -1,7 +1,19 @@
-<ion-view  hide-nav-bar="true" hide-back-button="true" id="event1" hide-tabs="false">
+<ion-view id="event1" hide-tabs="false">
   
+   <div class="bar bar-header bar-energized" >
+    <div class="h1 title title-center light">
+      Evenement
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
+        </button>
+      </span>
+    </div>
+  </div>
 
-    <ion-content padding="" scroll="true">
+
+    <ion-content padding="" class="has-header has-tabs-top">
 
        <a class="item item-icon-left item-icon-right item-note " ui-sref="invitation">
         <i class="icon icon ion-person-add "></i>
