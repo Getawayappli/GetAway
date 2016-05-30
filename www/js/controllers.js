@@ -11,7 +11,7 @@ angular.module('app.controllers', [])
       template: '<input type="text" placeholder="Identifiant/Mail">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
-      +'<a href="/#/page3">Pas de compte? Inscrivez-Vous </a> ',
+      +'<a href="/#/page3"  ng-click="sendOrder()">Pas de compte? Inscrivez-Vous </a> ',
       title: 'Connexion',
       subTitle: 'veuillez entrer vos informations pour se connecter',
       scope: $scope,
@@ -34,6 +34,11 @@ angular.module('app.controllers', [])
     myPopup.then(function(res) {
       console.log('Tapped!', res);
     });
+    
+   $scope.sendOrder = function() {
+    myPopup.close();
+    };
+
     $timeout(function() {
       // myPopup.close(); //close the popup after 3 seconds for some reason
     }, 3000);
@@ -166,7 +171,7 @@ $scope.activateamis = function(){
 
 })
 
-.controller('event1Ctrl', function($scope) {
+.controller('event1Ctrl', function($scope,$ionicPopover) {
   $scope.showcheckbox = false;
 
   $scope.showcheck = function(){
@@ -193,7 +198,7 @@ $scope.activateamis = function(){
 
 })
 
-.controller('event2Ctrl', function($scope) {
+.controller('event2Ctrl', function($scope,$ionicPopover) {
   $scope.events = [
     {titre:'Sport',id:1,nbpers:5},
     {titre:'Culture ',id:2,nbpers:155},
