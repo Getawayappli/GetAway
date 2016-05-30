@@ -1,5 +1,6 @@
 angular.module('app.controllers', [])
 
+//Login
 .controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
   // Triggered on a button click, or some other target
@@ -11,7 +12,7 @@ angular.module('app.controllers', [])
       template: '<input type="text" placeholder="Identifiant/Mail">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
-      +'<a href="/#/page3"  ng-click="sendOrder()">Pas de compte? Inscrivez-Vous </a> ',
+      +'<a ui-sref="inscription"  ng-click="sendOrder()">Pas de compte? Inscrivez-Vous </a> ',
       title: 'Connexion',
       subTitle: 'veuillez entrer vos informations pour se connecter',
       scope: $scope,
@@ -34,7 +35,7 @@ angular.module('app.controllers', [])
     myPopup.then(function(res) {
       console.log('Tapped!', res);
     });
-    
+
    $scope.sendOrder = function() {
     myPopup.close();
     };
@@ -46,12 +47,14 @@ angular.module('app.controllers', [])
 
 })
 
+//Inscription
 .controller('inscriptionCtrl', function($scope) {
 
   $scope.date= new Date();
   $scope.date.setHours(0,0,0,0);
   $scope.placeholderdate=true;
 
+    //Fonction qui permet d'afficher ou non le placeholder de la date
     $scope.showplacehold = function(date){
       console.log('show place');
       console.log(!date);
@@ -65,16 +68,16 @@ angular.module('app.controllers', [])
 
 })
 
+//Accueil
 .controller('accueilCtrl', function($scope,$ionicPopover,$timeout,ionicMaterialMotion,ionicMaterialInk) {
 
-
-  $scope.test1='blabla'
-
+  //Variable permettant de savoir sur quel onglets est actif
   $scope.active={
     'prox' : 'active',
     'amis' : '',
   }
 
+//Fonction permettant de charger le contenu de l'onglets "à proximité"
 $scope.activateprox = function(){
   if(!(angular.equals($scope.active.prox,'active'))){
     $scope.active={
@@ -85,7 +88,7 @@ $scope.activateprox = function(){
 
   }
 }
-
+//Fonction permettant de charger le contenu de l'onglets "Mes amis"
 $scope.activateamis = function(){
   if(!(angular.equals($scope.active.amis,'active'))){
     $scope.active={
@@ -97,7 +100,7 @@ $scope.activateamis = function(){
   }
 }
 
-
+  //Temporaire -> événement à proximité
   $scope.events1 = [
     {titre:'Sport',id:1,nbpers:5,avatar:'img/sMM12deZQcad6zASL6ky_image_profile.jpg'},
     {titre:'Culture ',id:2,nbpers:155,avatar:'img/icon1.png'},
@@ -110,7 +113,7 @@ $scope.activateamis = function(){
     {titre:'Spectacle',id:9,nbpers:4,avatar:'img/icon1.png'},
   ];
 
-
+  //Temporaire -> événement de mes amis
     $scope.events2 = [
       {titre:'test',id:1,nbpers:5,avatar:'img/paysage.jpg'},
       {titre:'test ',id:2,nbpers:155,avatar:'img/icon1.png'},
@@ -125,7 +128,7 @@ $scope.activateamis = function(){
 
     $scope.events=$scope.events1;
 
-    // Animate list on this event
+    // Animation de la liste lors d'un événement
         $scope.$on('ngLastRepeat.mylist',function(e) {
             $timeout(function(){
                 ionicMaterialMotion.blinds();
@@ -134,8 +137,10 @@ $scope.activateamis = function(){
         });
       })
 
+//Profil
 .controller('profilCtrl', function($scope,Interet,$ionicPopover) {
 
+//Temporaire -> profil de la personne
   $scope.pers=
   {
     avatar:'img/paysage.jpg',
@@ -147,12 +152,14 @@ $scope.activateamis = function(){
 
   };
 
+//Temporaire dernier événement de la personne
   $scope.event={
     avatar:'img/paysage.jpg',
     titre:'Cinéma',
     nbpers:10
   }
 
+//Récupère la liste des interets
   $scope.items=Interet.item;
 })
 
@@ -253,9 +260,11 @@ $scope.activateamis = function(){
 
 })
 
+//Création d'événement
 .controller('creationeventCtrl', function($scope,Interet,$filter) {
 
   $scope.showcheckbox = false;
+  //Initialisation des valeurs de date et nbpers
   $scope.data={
     'nbpers' : '5',
     'nbpersint' : 5,
@@ -265,9 +274,11 @@ $scope.activateamis = function(){
 
   $scope.placeholderdate=false;
   $scope.data.date.setSeconds(0,000);
+
   $scope.mindate=$scope.data.date;
   //$scope.data.date.setMilliseconds(0);
 
+//Fonction permettant d'afficher le contenu des centres d'interet
   $scope.showcheck = function(){
     console.log("Showcheck");
     if($scope.showcheckbox==true){
@@ -279,6 +290,7 @@ $scope.activateamis = function(){
 
   $scope.items=Interet.item;
 
+//Fonction permettant d'afficher le placeholder de la date lorsqu'aucune n'est saisie
   $scope.showplacehold = function(date){
     console.log('show place');
     console.log(!date);
@@ -289,7 +301,7 @@ $scope.activateamis = function(){
     }
   };
 
-
+//Les deux fonctions permettent de convertir les Int en String pour permetre un affichage dans l'input et dans le range
     $scope.nbstring = function(){
 
         $scope.data.nbpersint=parseInt($scope.data.nbpers);
@@ -362,10 +374,11 @@ $scope.activateamis = function(){
 
 })
 
+//Paramètre
 .controller('parametreCtrl', function($scope,$ionicPopover) {
 $scope.shownot = true;
 
-//Fonction qui permets d'afficher la liste de type
+//Fonction qui permets d'afficher la liste de type de notifications
 $scope.shownotif = function(){
   if($scope.shownot==true){
     $scope.shownot=false;
@@ -377,6 +390,7 @@ $scope.shownotif = function(){
 
 })
 
+//Filtre
 .controller('filtre', function($scope,$ionicPopover,Interet) {
 
   //cacher la liste de type par défaut
@@ -394,6 +408,7 @@ $scope.shownotif = function(){
 
   //On enlève les heures/minutes de la date
   $scope.data.date.setHours(0,0,0,0);
+  $scope.mindate=$scope.data.date
 
   //Fonction qui permet d'afficher la distance
   $scope.distmax = function(){
@@ -422,12 +437,25 @@ $scope.shownotif = function(){
   };
 
 
+  //Fonction permettant d'afficher le placeholder de la date lorsqu'aucune n'est saisie
+    $scope.showplacehold = function(date){
+      console.log('show place');
+      console.log(!date);
+      if(!date){
+        $scope.placeholderdate=true;
+      }else{
+        $scope.placeholderdate=false;
+      }
+    };
+
 })
 
+//Personnalisation du profil
 .controller('personaliserVotreProfilCtrl', function($scope) {
 
   $scope.showcheckbox = false;
 
+//Fonction permettant d'afficher ou non les centres d'interet
   $scope.showcheck = function(){
     if($scope.showcheckbox==true){
       $scope.showcheckbox=false;
@@ -469,7 +497,7 @@ $scope.shownotif = function(){
 
 })
 
-
+//Affichage popup
 .controller('regCtrl', function($scope,$ionicPopover) {
 
   //Méthode permettant d'afficher les pop-ups de réglages
@@ -503,6 +531,7 @@ $scope.shownotif = function(){
 
 })
 
+//Bouton précedent
 .controller('goback',function($scope,$ionicHistory){
   $scope.goback = function(){
     $ionicHistory.goBack();

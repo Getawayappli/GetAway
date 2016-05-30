@@ -2,11 +2,11 @@
 
   <div class="bar bar-header bar-energized" >
     <div class="buttons buttons-left header-item">
-    <span class="left-buttons">
-      <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
-      </button>
-    </span>
-  </div>
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+        </button>
+      </span>
+    </div>
     <div class="h1 title title-center light">
       Filtre
     </div>
@@ -19,24 +19,23 @@
   </div>
 
   <ion-content padding="true" class="has-header">
+
     <div class="list">
+
       <h4 style="float:left;">Distance</h4>
       <p style="float:right;margin-top:12px">{{data.distaff}} </p>
       <div class="item range energized" >
         <input type="range" name="dist" min="1" max="1000" ng-change="distmax()" ng-model="data.dist">
       </div>
 
-
       <h4>Type d'événement</h4>
-
       <button ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
       ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
       style="height:25px" class="button button-block ">
       Type d'événement
     </button>
+
     <ul ng-show="showcheckbox"  >
-
-
       <li id={{item.id}} class="item item-checkbox item-checkbox-right icon {{item.icon}} " ng-repeat="item in items" >
         {{item.name}}
         <label class="checkbox checkbox-energized">
@@ -46,20 +45,16 @@
     </li>
   </ul>
 
-
-
   <h4>Date</h4>
-
   <label class="item item-input" name="Date" >
-    <input type="date" placeholder="Date" ng-model="data.date" style="padding-right:16px">
+    <span ng-show="placeholderdate" style="color:#FF9800;">jj/mm/aaaa</span>
+    <input type="date" placeholder="Date" min="{{mindate | date:'yyyy-MM-dd'}}" ng-model="data.date"
+    style="padding-right:16px" ng-change="showplacehold(data.date)">
   </label>
 
   <h4>Géolocalisation</h4>
-
   <ion-toggle toggle-class="toggle-energized" ng-checked="true" ng-click="showv()" style="padding-right:50px;" >
-
-<p>Utiliser la position actuel</p>
-
+    <p>Utiliser la position actuel</p>
   </ion-toggle>
 
   <div ng-show="showville">
@@ -68,11 +63,7 @@
   </div>
 </div>
 
-
-
-
 </ion-content>
 <button ui-sref="accueil" id="personaliserVotreProfil-button17"  class="button button-block button-energized bouton-footer icon ion-search "></button>
-
 
 </ion-view>

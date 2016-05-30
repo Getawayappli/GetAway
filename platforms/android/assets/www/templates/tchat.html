@@ -1,6 +1,5 @@
 
-  <ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" hide-tabs="true"  id="page4" style="background-color:#FFFFFF;">
-
+  <ion-view title="Event Chat" hide-nav-bar="false" hide-back-button="true" hide-tabs="true"  id="page4" style="background-color:#FFFFFF;">
 <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
 <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 
@@ -8,13 +7,10 @@
 <ion-view title="Accueil" hide-nav-bar="true" hide-back-button="true" id="page4" style="background-color:#FFFFFF;">
 
   <body ng-controller="tchatCtrl">
-    <ion-header-bar class="bar-calm">
-      <h1 class="title">Event Chat</h1>
-    </ion-header-bar>
 
-    <ion-content class="content-stable"
+    <ion-content class="content-stable has-header bar-calm"
     on-swipe-left="hideTime = false"
-    on-swipe-right="hideTime = true">
+    on-swipe-right="hideTime = true"  >
 
     <div ng-repeat="message in messages"
     ng-class="{other: message.userId != myId}"
