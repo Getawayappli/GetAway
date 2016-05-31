@@ -9,6 +9,14 @@ angular.module('app.routes', [])
   $stateProvider
 
 
+    .state('login', {
+      url: '/page2',
+      templateUrl: 'templates/login.html',
+      controller: 'loginCtrl'
+    })
+
+
+
 
 
      .state('tabsEvent', {
@@ -40,9 +48,9 @@ angular.module('app.routes', [])
 
 
 
-
+/*
       .state('tabsController.accueil', {
-    url: '/page2',
+    url: '/page4',
     views: {
       'tab1': {
         templateUrl: 'templates/accueil.html',
@@ -87,13 +95,9 @@ angular.module('app.routes', [])
     }
   })
 
+*/
 
-
-      .state('login', {
-    url: '/page2',
-    templateUrl: 'templates/login.html',
-    controller: 'loginCtrl'
-  })
+    
 
   .state('inscription', {
     url: '/page3',
@@ -178,7 +182,7 @@ angular.module('app.routes', [])
     controller: 'filtre'
   })
 
-$urlRouterProvider.otherwise('/page2')
+$urlRouterProvider.otherwise('/page2');
 
 
 

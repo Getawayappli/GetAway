@@ -1,6 +1,12 @@
 <ion-view title="Création d'événement" hide-nav-bar="true" id="page7" hide-tabs="true">
 
   <div class="bar bar-header bar-energized" >
+    <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+        </button>
+      </span>
+    </div>
     <div class="h1 title title-center light">
       Création d'événement
     </div>
@@ -11,29 +17,26 @@
       </span>
     </div>
   </div>
+
   <ion-content padding="true" scroll="true" class="has-header">
 
-
     <form class="list">
+
       <div class="divi">
         <label class="item item-input divi" name="Titre" >
           <input type="text" ng-required="true" placeholder="Titre de l'événement">
         </label>
       </div>
+
       <div class="divi">
         <label class="item item-input " >
-
-
           <textarea style="height:100px" placeholder="Quelques mots sur l'événement" class="no-resize" ></textarea>
-
         </label>
       </div>
 
       <label class="item-input" style="padding-left:0px">
         <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:5px" >
-
           <input type="text" placeholder="Ville" style="float:left;"  ></input>
-
         </ion-toggle>
       </label>
 
@@ -42,9 +45,9 @@
       style="height:25px; width:100%" class="button button-block ">
       Type d'événement
     </a>
+
     <ul ng-show="showcheckbox"  >
       <div class="divi">
-
         <li id={{item.id}} class="item item-checkbox item-checkbox-right icon {{item.icon}} " ng-repeat="item in items" >
           {{item.name}}
           <label class="checkbox checkbox-energized">
@@ -52,28 +55,26 @@
           </input>
         </label>
       </li>
-      </div>
-    </ul>
+    </div>
+  </ul>
 
-<div class="divi">
-  <p> Nombre de personne</p>
-  <label class="item item-input item-icon-right ion-person" name="nbperso" style="width:21%;float:left;padding-left:5px">
-    <input type="number" min="1" max="150"  ng-value="data.nbpersint" ng-model="data.nbpersint" style="padding-right:0px;padding-left:0;" ng-change="nbint();" >
-  </label>
-  <div class="item range range-possitive" style="width:79%">
-    <input type="range" name="nbpers" min="1" step="1" max="150" ng-model="data.nbpers" ng-change="nbstring()">
+  <div class="divi">
+    <p> Nombre de personne</p>
+    <label class="item item-input item-icon-right ion-person" name="nbperso" style="width:21%;float:left;padding-left:5px">
+      <input type="number" min="1" max="150"  ng-value="data.nbpersint" ng-model="data.nbpersint" style="padding-right:0px;padding-left:0;" ng-change="nbint();" >
+    </label>
+    <div class="item range range-possitive" style="width:79%">
+      <input type="range" name="nbpers" min="1" step="1" max="150" ng-model="data.nbpers" ng-change="nbstring()">
+    </div>
   </div>
-  {{data.nbpers}}
 
-</div>
-
-<p style="margin-top:15px;width:60%;float:left;">Date de l'événement </p>
+  <p style="margin-top:15px;width:60%;float:left;">Date de l'événement </p>
   <label class="item item-input" name="Date" style="width:40%;float:left;">
     <span ng-show="placeholderdate" style="color:#FF9800;">jj/mm/aaaa</span>
     <input type="date" min="{{mindate | date:'yyyy-MM-dd'}}" ng-model="data.date" style="padding-right:0;" ng-change="showplacehold(data.date)">
   </label>
 
-<p style="margin-top:15px;width:60%;float:left;">Heure de l'événement </p>
+  <p style="margin-top:15px;width:60%;float:left;">Heure de l'événement </p>
   <label class="item item-input" name="Heure" style="width:40%;">
     <span ng-show="placeholderdate" style="color:#FF9800;">--:--</span>
     <input type="time"  ng-model="data.date" style="padding-right:0;" ng-change="showplacehold(data.date)">
@@ -81,9 +82,7 @@
   <div class="divi">
   </div>
 
-
   <ion-list style="height:100px;"  >
-
     <ion-radio style="width:50%;text-align:center;float:left;"
     ng-repeat:="item type"
     ng-model="data.type"
@@ -96,7 +95,6 @@
     ng-value="public"
     ng-checked="true"
     name="type">Public</ion-radio>
-
   </ion-list>
 
   <button  id="creationevent-button13"
