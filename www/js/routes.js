@@ -116,7 +116,10 @@ angular.module('app.routes', [])
     templateUrl: 'templates/profil.html',
     controller: 'profilCtrl'
   })
-    
+      .state('chat', {
+        url: "/chat/:nickname",
+        templateUrl: "templates/chat.html"
+      })
 
 
   .state('invitation', {

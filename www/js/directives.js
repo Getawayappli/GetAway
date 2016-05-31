@@ -73,7 +73,7 @@ angular.module('app.directives', [])
             }); */
 
             $scope.$on('$ionicView.afterLeave', function(){
-                 alert("test changement de page");
+                 // alert("test changement de page");
                  $rootScope.hideTabs = "false";
               });
         }

@@ -14,14 +14,14 @@
     ng-class="{other: message.userId != myId}"
     class="messages">
     <div ng-repeat="texto in textos" ng-class="{other: message.userId != myId}"
-    <span class="texto" style=" color: black;background-color: #C7C7CC ; padding: 10px ; border-radius: 10px ;text-align: left; max-width: 240px;float : left; clear: left;
+    <span class="texto " style=" color: black;background-color: #C7C7CC ; padding: 10px ; border-radius: 10px ;text-align: left; max-width: 240px;float : left; clear: left;
     margin-bottom: 10px;padding: 10px;"> {{ texto.text }}</span>
     <p></p>
 
     <div class="time" style="color : gray;  font-size:12px;">{{message.time}}</div>
   </div>
 
-  <div class="message" >
+  <div class="message messagespan" >
     <span>{{ message.text }}</span>
   </div>
 
@@ -52,27 +52,8 @@ $stable:                          #f8f8f8 !default;
     transform: translate3d(0, 0, 0) !important;
     text-align: right !important;
   }
-  .message.slide-right {
-    -webkit-transform: translate3d(120px, 0, 0) !important;
-    -moz-transform: translate3d(120px, 0, 0) !important;
-    transform: translate3d(120px, 0, 0) !important;
-  }
-  span {
-    color: black;
-    background-color: #C7C7CC ;
-  }
-}
-span {
-  background: orange !important;
-  display: inline-block !important;
-  color: white !important;
-  padding: 10px !important;
-  border-radius: 10px !important;
-  text-align: right !important;
-  max-width: 240px !important;
-  float: right;
-  clear: right;
-  margin-top: 80px;
+  
+
 }
 </style>
 </view>

@@ -93,3 +93,17 @@ content:attr(placeholder);
 width:0%;
 content:"";
 }
+
+
+.messagespan {
+  background: orange !important;
+  display: inline-block !important;
+  color: white !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  text-align: right !important;
+  max-width: 240px !important;
+  float: right;
+  clear: right;
+  margin-top: 80px;
+}
