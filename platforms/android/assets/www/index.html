@@ -22,7 +22,7 @@
     <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="lib/ionic-material/dist/ionic.material.js"
-    
+
 
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
@@ -65,7 +65,7 @@
 
   </head>
   <body ng-app="app" ng-controller="AppCtrl" animation="slide-left-right-ios7"  class="platform-android platform-cordova platform-webview">
-    
+
      <ion-tabs class="tabs-stable tabs-icon-top"  ng-class="{'tabs-item-hide': hideTabs}">
            <!--acceder au page d'accueil-->   <ion-tab hidden="true" ui-sref="login">
         <ion-tab title="Accueil" icon="ion-android-home" ui-sref="accueil">
@@ -74,7 +74,7 @@
         <ion-tab title="Profil" icon="ion-android-person" ui-sref="profil">
             <ion-nav-view name="tab4"></ion-nav-view>
         </ion-tab>
-        <ion-tab title="My way" icon="ion-ios-cloud" href="#/page0/event1">
+        <ion-tab title="My way" icon="ion-ios-cloud" ui-sref="tabsEvent.event1">
             <ion-nav-view name="tab3"></ion-nav-view>
         </ion-tab>
         <ion-tab title="Aide" icon="ion-help-circled" href="#/page1//page3">

@@ -15,7 +15,7 @@
   <ion-content padding="true" class="has-header">
 
 
-    <img  src={{pers.avatar}} style="margin-bottom:10px" height="120" width="120" class="center round"  >
+    <img  ng-src={{pers.avatar}} style="margin-bottom:10px" height="120" width="120" class="center round"  >
 
     <div style="margin-left:0%;width:100%;text-align:center"><h3>{{pers.nom}}  {{pers.prenom}} </h3></div>
 
@@ -36,7 +36,7 @@
     </div>
 
     <h4>Dernier événement</h4>
-    <a class="list card item item-avatar"  ui-sref="popUp" style="padding-left:0px">
+    <a class="list card item item-avatar"  ui-sref="event" style="padding-left:0px">
       <div class="item item-avatar" style="padding-left:70px">
         <img ng-src="{{event.avatar}}">
         <i class="icon icon-right ion-person " style="float:right">{{event.nbpers}}</i>

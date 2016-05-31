@@ -7,6 +7,8 @@ angular.module('app.controllers', [])
   $scope.showPopup = function() {
     $scope.data = {}
 
+  
+
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
       template: '<input type="text" placeholder="Identifiant/Mail">'
@@ -354,8 +356,6 @@ $scope.jourus= $filter('date')($scope.event.date,'EEEE');
 })
 
 .controller('tchatCtrl', function($scope, $timeout, $ionicScrollDelegate) {
-
-  $scope.hideTime = true;
 
   var alternate,
     isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();

@@ -59,7 +59,7 @@ angular.module('app.directives', [])
 .directive('hideTabs', function($rootScope) {
      return {
         restrict: 'A',
-        link: function(scope, element, attributes) {
+        link: function( scope, element, attributes) {
 
             scope.$on('$ionicView.beforeEnter', function() {
                 scope.$watch(attributes.hideTabs, function(value){
@@ -72,8 +72,8 @@ angular.module('app.directives', [])
                 $rootScope.hideTabs = "false";
             }); */
 
-            scope.$on('$ionicView.afterLeave', function(){
-                  alert("test changement de page");
+            $scope.$on('$ionicView.afterLeave', function(){
+                 // alert("test changement de page");
                  $rootScope.hideTabs = "false";
               });
         }

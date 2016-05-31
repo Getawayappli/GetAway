@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\mathieu\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="C:\Users\mathieu\GetAway\platforms\android\build\intermediates\pre-dexed\debug\okio-1.8.0_3442fcb2fd17837eacd20fafb9e888fe6e8f1af9.jar" />
-    </item>
-    <item
         jar="C:\Users\mathieu\GetAway\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -21,6 +14,13 @@
         revision="23.0.1"
         sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
         <dex dex="C:\Users\mathieu\GetAway\platforms\android\build\intermediates\pre-dexed\debug\okhttp-3.3.1_b0aaf8090194979206f1cf14c28c878cf84c23ab.jar" />
+    </item>
+    <item
+        jar="C:\Users\mathieu\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\mathieu\GetAway\platforms\android\build\intermediates\pre-dexed\debug\okio-1.8.0_3442fcb2fd17837eacd20fafb9e888fe6e8f1af9.jar" />
     </item>
 
 </items>

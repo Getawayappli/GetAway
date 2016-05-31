@@ -1,5 +1,5 @@
 <ion-view id="event1" hide-tabs="false">
-  
+
    <div class="bar bar-header bar-energized" >
     <div class="h1 title title-center light">
       Evenement
@@ -13,7 +13,7 @@
   </div>
 
 
-    <ion-content padding="" class="has-header has-tabs-top">
+    <ion-content padding="" class="has-header has-subheader has-tabs-top" style="margin-top:40px">
 
        <a class="item item-icon-left item-icon-right item-note " ui-sref="invitation">
         <i class="icon icon ion-person-add "></i>
@@ -35,7 +35,7 @@
 
           <p>Sheets of paper</p>
         </a>
-
+      </div>
       <button ng-click="showcheck();liked=!liked"
         ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
         class="button button-block ">
@@ -67,6 +67,7 @@
               <p>Sheets of paper</p>
 
             </a>
+          </div>
           <button ng-click="showcheck();liked=!liked"
             ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
             style="height:10px" class="button button-block ">
@@ -99,6 +100,7 @@
           <p>Sheets of paper</p>
 
         </a>
+      </div>
       <button ng-click="showcheck();liked=!liked"
         ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
         style="height:10px" class="button button-block ">
@@ -119,7 +121,7 @@
     </ion-content>
     <style type="text/css">
     .item .badge {
-  margin-right: 40px
+  margin-right: 15px
 }
     </style>
 
