@@ -156,14 +156,15 @@ $scope.activateamis = function(){
   $scope.event={
     avatar:'img/paysage.jpg',
     titre:'Cinéma',
-    nbpers:10
+    nbpers:10,
+
   }
 
 //Récupère la liste des interets
   $scope.items=Interet.item;
 })
 
-.controller('eventCtrl', function($scope) {
+.controller('eventCtrl', function($scope,$filter) {
    $scope.pers=
   { avatar : 'img/image_profil_fille.jpg',
     nom:'Ari',
@@ -175,6 +176,39 @@ $scope.activateamis = function(){
     { icon: 'ion-pricetag'},
     { icon: 'ion-bag' },
   ];
+  $scope.event= {
+    date : new Date(),
+    jour : 'lundi',
+  }
+
+$scope.jourus= $filter('date')($scope.event.date,'EEEE');
+
+  switch ($scope.jourus) {
+    case "Monday":
+        $scope.event.jour='Lundi';
+      break;
+      case "Tuesday" :
+        $scope.event.jour='Mardi';
+        break;
+        case "Wednesday" :
+          $scope.event.jour='Mercredi';
+          break;
+          case "Thursday" :
+          $scope.event.jour='Jeudi';
+          break;
+          case "Friday" :
+          $scope.event.jour='Vendredi';
+          break;
+          case "Saturday" :
+          $scope.event.jour='Samedi';
+          break;
+          case "Sunday" :
+          $scope.event.jour='Dimanche';
+          break;
+    default:
+      $scope.event.jour='Erreur';
+
+  }
 
 })
 
