@@ -1,55 +1,79 @@
 <ion-view title="Event" id="page6" hide-nav-bar="true" hide-back-button="true" hide-tabs="true" >
-    <ion-content style="background: url(img/vwouAxTTtOHf9moJJlrS_background_app.jpg) no-repeat center;background-size:cover;" padding="true" class="has-header" >
+
+  <div class="bar bar-header bar-energized" >
+    <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+        </button>
+      </span>
+    </div>
+    <div class="h1 title title-center light">
+      Evénnement
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
+        </button>
+      </span>
+    </div>
+  </div>
 
 
-        <div class="list card " id="event-card1">
-            <div class="item item-divider">Tomorrowland concert</div>
-            <div class="item item-body">
-                
-                <div style="margin: 0px; line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
-                </div>
+  <ion-content padding="true" class="has-header" >
 
-                <div id="event-form2" class="list ">
-                    <img style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;" src="../img/Tomorrowland-USA-1024x682.jpg"/ >
-                <!--img style="width: 30px; float:left;"  src="../img/icon1.png" />
-                <img style="width: 30px; float:left;"  src="../img/dj.png" /-->
-                    </br>
-                     <div id="event-markdown4" style="color:#000000;" class=" ">
-                    <p>
-                        {{pers.desc}}
-                    </p>
-                </br>
-                </div>
-                   <b><i class="icon ion-android-locate"> La cantine brest 29200</i></b>
-                    <div id="event-markdown4" style="color:#000000;" class=" ">
-                    <p>Qui organise ?
-                    </p>
-                </div>
 
-         <a class="list card item item-avatar" style="padding-left:0px">
-              <div class="item item-avatar" style="padding-left:70px">
-                <img src={{pers.avatar}} style="margin-bottom:10px" height="120" width="120" class="center round"  >
-                 <h2>{{pers.prenom}} {{pers.nom}}</h2>
-                <div class="row "  >
-                  <div class="col col-33" ng-repeat="item in items" style="padding:0" >
-                    <h2 class="icon {{item.icon}} positive"  ></h2>
-                  </div>
-                </div>
+    <div class="list  " id="event-card1">
+      <h3  style="text-align:center">Tomorrowland concert</h3>
+      <div class="item item-body">
 
-              </div>
-            </a>
-
-            <div id="event-markdown4" style="color:#000000;" class=" ">
-                    <p>Qui participe ?
-
-                    </p>
-                    <img style="width: 50px; float:left;"  src="../img/image.jpg" />
-                    <h2>&nbsp; Prénom</h2>
-                </div>
-              </div>
-            </div>
+        <div style="margin: 0px; line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
         </div>
-        <button  id="event-button7" style="left:-10px;color:#FFFFFF;font-size:16px;" class="button button-light  button-full button-outline">Participer</button>
-        <button  id="event-button7" style="left:-10px;color:#FFFFFF;font-size:16px;" class="button button-light  button-full button-outline" ui-sref="tchat">Tchat</button>
-    </ion-content>
+
+        <div id="event-form2" class="list ">
+          <img style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;" width="100%" src="img/Tomorrowland-USA-1024x682.jpg"/ >
+          <!--img style="width: 30px; float:left;"  src="../img/icon1.png" />
+          <img style="width: 30px; float:left;"  src="../img/dj.png" /-->
+        </br>
+        <div id="event-markdown4" style="color:#000000;" class=" ">
+          <p style="margin-bottom:0">
+            {{pers.desc}}
+          </p>
+        </br>
+      </div>
+
+      <h3 style="margin-top:0">Ou ?</h3>
+      <b><i class="icon ion-android-locate"> La cantine brest 29200</i></b>
+
+      <h3>Quand ?</h3>
+      <p>{{event.jour}} {{event.date | date : "dd/MM/yyyy hh'h'mm" }}</p>
+
+
+      <div id="event-markdown4" style="color:#000000;" class=" ">
+        <h3>Qui organise ?</h3>
+      </div>
+
+      <a class="list card item item-avatar" style="padding-left:0px">
+        <div class="item item-avatar" style="padding-left:70px">
+          <img src={{pers.avatar}} style="margin-bottom:10px" height="120" width="120" class="center round"  >
+          <h2>{{pers.prenom}} {{pers.nom}}</h2>
+          <div class="row">
+            <div class="col col-33" ng-repeat="item in items" style="padding:0" >
+              <h2 class="icon {{item.icon}} energized"  ></h2>
+            </div>
+          </div>
+
+        </div>
+      </a>
+
+      <div id="event-markdown4" style="color:#000000;" class=" ">
+        <h3>Qui participe ?</h3>
+        <img style="width: 50px; float:left;"  src="img/image.jpg" />
+        <h2>&nbsp; Prénom</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<button  id="event-button7" style="font-size:16px;" class="button button-energized  button-full ">Participer</button>
+<button  id="event-button7" style="font-size:16px;" class="button button-energized  button-full " ui-sref="tchat">Tchat</button>
+</ion-content>
 </ion-view>
