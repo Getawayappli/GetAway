@@ -7,7 +7,7 @@ angular.module('app.controllers', [])
   $scope.showPopup = function() {
     $scope.data = {}
 
-  
+
 
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
@@ -569,5 +569,6 @@ $scope.shownotif = function(){
 .controller('goback',function($scope,$ionicHistory){
   $scope.goback = function(){
     $ionicHistory.goBack();
+    $ionicHistory.clearCache();
   };
 })
