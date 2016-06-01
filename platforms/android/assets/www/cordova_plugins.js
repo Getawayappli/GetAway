@@ -49,6 +49,17 @@ module.exports = [
         "merges": [
             "launchnavigator"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+        "id": "cordova-plugin-x-toast.Toast",
+        "clobbers": [
+            "window.plugins.toast"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+        "id": "cordova-plugin-x-toast.tests"
     }
 ];
 module.exports.metadata = 
@@ -61,7 +72,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "ionic-plugin-keyboard": "2.0.1",
     "cordova-plugin-actionsheet": "2.2.2",
-    "uk.co.workingedge.phonegap.plugin.launchnavigator": "3.0.4"
+    "uk.co.workingedge.phonegap.plugin.launchnavigator": "3.0.4",
+    "cordova-plugin-x-toast": "2.5.1"
 };
 // BOTTOM OF METADATA
 });

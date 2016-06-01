@@ -6,8 +6,6 @@ angular.module('app.controllers', [])
   // Triggered on a button click, or some other target
   $scope.showPopup = function(e) {
     $scope.data = {}
-     //$myPopup.closeThis();
-     // 
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
       template: '<div class="energized" click-outside="closeThis()" outside-if-not="myPopup()">'
@@ -583,6 +581,7 @@ $scope.shownotif = function(){
 .controller('goback',function($scope,$ionicHistory){
   $scope.goback = function(){
     $ionicHistory.goBack();
+    $ionicHistory.clearCache();
   };
 })
 

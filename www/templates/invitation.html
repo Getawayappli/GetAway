@@ -1,24 +1,31 @@
 <ion-view title="Mes invitations" hide-nav-bar="true" hide-back-button="false" id="page13" hide-tabs="true">
     <div class="bar bar-header bar-energized">
+      <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+        </button>
+      </span>
+    </div>
+      
       <h1 class="title">Mes invitations</h1>
     </div>
 
     <ion-content padding="true" scroll="true" class="has-header">
-    
+
     <class="list card item item-avatar" ng-repeat="event in events" style="padding-left:0px ;width:100%">
 
       <div class="item item-avatar " style="padding-left:70px" id="Global">
-        
+
         <img ng-src="{{event.avatar}}">
         <div id="gauche">
-        <h2>{{event.prenom}}</h2>        
+        <h2>{{event.prenom}}</h2>
         <p>{{event.avatar}}</p>
         </div>
         <div id="droite">
           <h1><a class=" icon-right ion-ios-close-outline light"  style="margin-right: 5px ;color:red "  href="#"></a>
             <a class=" dark"  style="margin-right: 10px " >|</a>
           <a class="icon-right ion-ios-checkmark-outline light " style="margin-right: 40px ; color:#56D165;" href="#"></a></h1>
-          
+
         </div>
 
       </div>
