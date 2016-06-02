@@ -4,17 +4,16 @@ angular.module('app.controllers', [])
 .controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
 
   // Triggered on a button click, or some other target
-  $scope.showPopup = function() {
+  $scope.showPopup = function(e) {
     $scope.data = {}
-
-
-
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
-      template: '<input type="text" placeholder="Identifiant/Mail">'
+      template: '<div class="energized" click-outside="closeThis()" outside-if-not="myPopup()">'
+      +'<input type="text" placeholder="Identifiant/Mail" click-outside="closeThis()">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
-      +'<a ui-sref="inscription"  ng-click="sendOrder()">Pas de compte? Inscrivez-Vous </a> ',
+      +'<a ui-sref="inscription"  ng-click="sendOrder()">Pas de compte? Inscrivez-Vous </a> '
+      +'</div>',
       title: 'Connexion',
       subTitle: 'veuillez entrer vos informations pour se connecter',
       scope: $scope,
@@ -34,16 +33,29 @@ angular.module('app.controllers', [])
         },
       ]
     });
+    e.stopPropagation();
     myPopup.then(function(res) {
       console.log('Tapped!', res);
     });
+
+    function closeThis() {
+            console.log('clicked outside');
+            $scope.showDropdown = false;
+        }
+
 
    $scope.sendOrder = function() {
     myPopup.close();
     };
 
+
+
+      $(document).on("click", function() {
+        $("#myPopup").hide("myPopup");
+      });
+
     $timeout(function() {
-      // myPopup.close(); //close the popup after 3 seconds for some reason
+      myPopup.close(); //close the popup after 3 seconds for some reason
     }, 3000);
   };
 
@@ -571,4 +583,38 @@ $scope.shownotif = function(){
     $ionicHistory.goBack();
     $ionicHistory.clearCache();
   };
+})
+
+//Affichage popup
+.controller('lgCtrl', function($scope,$ionicPopover) {
+
+  //Méthode permettant d'afficher les pop-ups de réglages
+
+  // .fromTemplateUrl() method
+  $ionicPopover.fromTemplateUrl('templates/lgpopup.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function() {
+    // Execute action
+  });
+
 })

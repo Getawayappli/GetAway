@@ -107,3 +107,11 @@ content:"";
   clear: right;
   margin-top: 80px;
 }
+
+      #Global #gauche {
+          float:left;
+          width:50%;
+      }
+      #Global #droite {
+          margin-left:50%
+      }

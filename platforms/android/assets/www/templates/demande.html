@@ -6,7 +6,7 @@
         </button>
       </span>
     </div>
-      
+
       <h1 class="title">Mes Demandes</h1>
     </div>
 
@@ -17,14 +17,14 @@
       <div class="item item-avatar " style="padding-left:70px" id="Global">
 
         <img ng-src="{{event.avatar}}">
-        <div id="gauche">
+        <div id="gauche" >
         <h2>{{event.prenom}}</h2>
         <p>{{event.avatar}}</p>
         </div>
-          <div id="droite">
+          <div id="droite" >
           <h1><a class=" icon-right ion-ios-close-outline light"  style="margin-right: 5px ;color:red "  href="#"></a>
             <a class=" dark"  style="margin-right: 10px " >|</a>
-          <a class="icon-right ion-ios-checkmark-outline light " style="margin-right: 40px ; color:#56D165;" href="#"></a></h1>
+          <a class="icon-right ion-ios-checkmark-outline light " style="margin-right: 5px ; color:#56D165;" href="#"></a></h1>
 
         </div>
 
@@ -36,8 +36,11 @@
     width:50%;
 }
 #Global #droite {
-    margin-left:50%
+
+    margin-right:0;
+    float:right;
 }
+
     </style>
     </ion-content>
 </ion-view>
