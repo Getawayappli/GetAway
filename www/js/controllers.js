@@ -659,12 +659,22 @@ $scope.shownotif = function(){
 
     var AuthObject = new $firebaseAuth(ref);
 
-    AuthObject.$authWithOAuthPopup('facebook').then (function(error, authData) {
+   /* AuthObject.$authWithOAuthPopup('facebook').then (function(error, authData) {
         console.log(authData);
       }).catch(function(error){
 
       console.log('error' + error);        
-      })
+      }) */
+    ref.authWithOAuthPopup("facebook", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    // the access token will allow us to make Open Graph API calls
+    console.log(authData.facebook.accessToken);
+  }
+}, {
+  scope: "email,user_likes" // the permissions requested
+});
     
   }
 })
