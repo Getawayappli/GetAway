@@ -1,4 +1,4 @@
-angular.module('app.services', [])
+angular.module('app.services', ['firebase'])
 
 //Factory pour les centres d'interet
 .factory('Interet',[function(){
@@ -24,6 +24,39 @@ angular.module('app.services', [])
 .factory('BlankFactory', [function(){
 
 }])
+
+
+ // <!-- CONNEXION A LA DATABASE FIREBASE -->
+  .factory("user", function($firebaseArray) {
+  var DataRef =  new Firebase('https://test-e06ab.firebaseio.com/user'); 
+  return $firebaseArray(DataRef);
+})
+
+
+  // ...
+.factory('facebookService', function($q) {
+    return {
+        getMyLastName: function() {
+            var deferred = $q.defer();
+            FB.api('/me', {
+                fields: 'last_name'
+            }, function(response) {
+                if (!response || response.error) {
+                    deferred.reject('Error occured');
+                } else {
+                    deferred.resolve(response);
+                }
+            });
+            return deferred.promise;
+        }
+    }
+})
+
+  .factory("Auth", function($firebaseAuth) {
+  var usersRef = new Firebase('https://test-e06ab.firebaseio.com/user');
+  return $firebaseAuth(usersRef);
+})
+
 
 .service('BlankService', [function(){
 

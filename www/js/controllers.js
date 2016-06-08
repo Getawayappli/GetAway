@@ -1,7 +1,7 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['firebase'])
 
 //Login
-.controller('loginCtrl', function($scope, $ionicPopup, $timeout) {
+.controller('loginCtrl', function($scope, $ionicPopup, $timeout, $firebaseArray) {
 
   // Triggered on a button click, or some other target
   $scope.showPopup = function(e) {
@@ -55,11 +55,45 @@ angular.module('app.controllers', [])
 })
 
 //Inscription
-.controller('inscriptionCtrl', function($scope) {
+.controller('inscriptionCtrl', function($scope,$firebaseArray,user,$stateParams) {
+$scope.input = {
+   "age" : 22,
+      "amis" :"",
+      "desc" : "",
+      "event" : "",
+      "img" : "",
+      "interet" :"",
+      "lastevent" : "",
+      "nom" : "",
+      "prenom" : "",
+      "ville" : "Bret"
 
-  $scope.date= new Date();
-  $scope.date.setHours(0,0,0,0);
-  $scope.placeholderdate=true;
+}
+
+$scope.addUser = function() {
+
+var DataRef =  new Firebase('https://test-e06ab.firebaseio.com/user/key'); 
+ 
+  var key =  DataRef.ref().push().key();
+  //$scope.items = user;
+
+DataRef.ref().update($scope.input);
+}
+
+    //
+
+      //$scope.items.$add($scope.input);
+  //
+ 
+   /* $scope.Nom="";
+    $scope.Prenom="";
+    $scope.r = function(){
+   myDataRef.push({usr1: $scope.Nom}); }// Ecrit dans Firebase */
+  
+
+      $scope.date= new Date();
+      $scope.date.setHours(0,0,0,0);
+      $scope.placeholderdate=true;
 
     //Fonction qui permet d'afficher ou non le placeholder de la date
     $scope.showplacehold = function(date){
@@ -615,4 +649,22 @@ $scope.shownotif = function(){
     // Execute action
   });
 
+})
+
+
+.controller('cnxfb',function($scope,$firebaseAuth,facebookService){
+  $scope.login = function(){
+
+    var ref = new Firebase('https://test-e06ab.firebaseio.com/');
+
+    var AuthObject = new $firebaseAuth(ref);
+
+    AuthObject.$authWithOAuthPopup('facebook').then (function(error, authData) {
+        console.log(authData);
+      }).catch(function(error){
+
+      console.log('error' + error);        
+      })
+    
+  }
 })

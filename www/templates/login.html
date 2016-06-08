@@ -1,5 +1,22 @@
 <ion-view id="page2" hide-nav-bar="true" hide-back-button="true" hide-tabs="true" >
 
+ <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '712796735489434',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 
     <ion-content padding="true" style="background: url(img/vwouAxTTtOHf9moJJlrS_background_app.jpg) no-repeat center;background-size:cover;" >
@@ -14,15 +31,24 @@
             </p>
         </div>
         <div style="margin-right:-20px;">
-            <a ui-sref="accueil" id="page5-button1" style="left:-10px;width:100%" class="button button-positive  button-block icon-left  ion-social-facebook">Connectez-vous avec Facebook</a>
+            <a  ng-controller="cnxfb"  ng-click="login()" id="page5-button1" style="left:-10px;width:100%" class="button button-positive  button-block icon-left  ion-social-facebook">Connectez-vous avec Facebook</a>
         </div>
-        <div style="margin-right:-20px;">
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+         <div
+           class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-show-faces="true">
+         </div>
+        <!--div style="margin-right:-20px;">
             <button ng-click="showPopup()" id="page5-button6" style="left:-10px;color:#FFFFFF;font-size:16px;" class="button button-light  button-full button-outline">Pas de compte Facebook</button>
-        </div>
+        </div-->
 
          <div style="margin-right:-20px;">
             <button ng-controller="lgCtrl" ng-click="openPopover($event)" style="left:-10px;color:#FFFFFF;font-size:16px;" class="button button-light  button-full button-outline">Pas de compte Facebook</button>
         </div>
 
     </ion-content>
+</div>
 </ion-view>

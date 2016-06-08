@@ -65,27 +65,10 @@ angular.module('app.directives', [])
       scope.$on('$ionicView.beforeEnter', function() {
         scope.$watch(attributes.hideTabs, function(value){
           $rootScope.hideTabs = value;
-          console.log("beforeEnter");
-          console.log(attributes.hideTabs);
         });
       });
-      /*
-      scope.$on('$ionicView.beforeLeave', function() {
-      alert("test changement de page");
-      $rootScope.hideTabs = "false";
-    }); */
-    /*$timeout(function(){
-    $scope.$on('$ionicView.afterLeave', function(){
-      // alert("test changement de page");
-      $rootScope.hideTabs = "false";
-      attributes.hideTabs="false";
-      console.log("afterLeave");
-      console.log(attributes.hideTabs);
-
-    });
-  });*/
-  }
-};
+    }
+  };
 })
 
 

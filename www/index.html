@@ -16,6 +16,7 @@
           type="text/javascript"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.0.1/angularfire.min.js"></script>
 
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -28,6 +29,13 @@
     <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
 
   <script type="text/javascript" src="/js/clickoutside.directive.js"></script>
+
+      <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
 
 
 
@@ -58,13 +66,41 @@
     <script src="js/directives.js"></script>
 
       <script src="js/Popup.js"></script>
-
+     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
 
   </head>
   <body ng-app="app" ng-controller="AppCtrl" animation="slide-left-right-ios7" >
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '712796735489434',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDYhZtbxONsCdgu1V2jtChtU_g9RWXw8NY",
+    authDomain: "test-e06ab.firebaseapp.com",
+    databaseURL: "https://test-e06ab.firebaseio.com",
+    storageBucket: "test-e06ab.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
     
      <ion-tabs class="tabs-stable tabs-icon-top"  ng-class="{'tabs-item-hide': hideTabs}">
            <!--acceder au page d'accueil-->   <ion-tab hidden="true" ui-sref="login">

@@ -8,7 +8,7 @@ angular.module('app.controllers', [])
     $scope.data = {}
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
-      template: '<div class="energized" click-outside="closeThis()" outside-if-not="myPopup()">'
+      template: '<div class="energized">'
       +'<input type="text" placeholder="Identifiant/Mail" click-outside="closeThis()">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
@@ -33,16 +33,9 @@ angular.module('app.controllers', [])
         },
       ]
     });
-    e.stopPropagation();
     myPopup.then(function(res) {
       console.log('Tapped!', res);
     });
-
-    function closeThis() {
-            console.log('clicked outside');
-            $scope.showDropdown = false;
-        }
-
 
    $scope.sendOrder = function() {
     myPopup.close();
@@ -596,6 +589,11 @@ $scope.shownotif = function(){
   }).then(function(popover) {
     $scope.popover = popover;
   });
+
+  
+     $scope.sendOrder = function() {
+    myPopup.close();
+    };
 
 
   $scope.openPopover = function($event) {
