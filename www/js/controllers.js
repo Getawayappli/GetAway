@@ -8,7 +8,7 @@ angular.module('app.controllers', [])
     $scope.data = {}
     // An elaborate, custom popup
     var myPopup = $ionicPopup.show({
-      template: '<div class="energized" click-outside="closeThis()" outside-if-not="myPopup()">'
+      template: '<div class="energized">'
       +'<input type="text" placeholder="Identifiant/Mail" click-outside="closeThis()">'
       + '</br>'
       +'<input type="password" placeholder="Mot de passe " ng-model="data.wifi">'
@@ -33,10 +33,10 @@ angular.module('app.controllers', [])
         },
       ]
     });
-    e.stopPropagation();
     myPopup.then(function(res) {
       console.log('Tapped!', res);
     });
+
 
     function closeThis() {
       console.log('clicked outside');
@@ -46,6 +46,7 @@ angular.module('app.controllers', [])
 
     $scope.sendOrder = function() {
       myPopup.close();
+
     };
 
 
@@ -85,8 +86,8 @@ angular.module('app.controllers', [])
 //Accueil
 .controller('accueilCtrl', function($scope,$state,$ionicPopover,$timeout,$filter,$cordovaGeolocation,ionicMaterialMotion,ionicMaterialInk,Items,Event,Interet) {
 
-  var nbevent = 5;
-  var nbeventChar = 5;
+  var nbevent = 10;
+  var nbeventChar = 10;
   var interest = Interet;
   var date = new Date();
   var dist = 100;
@@ -101,27 +102,6 @@ angular.module('app.controllers', [])
   var lat = 0;
   var long =0 ;
   var itembuf=[];
-  // Get a database reference to our posts
-
-  /*var ref = new Firebase("https://blinding-fire-6945.firebaseio.com/event");
-  var quaryref=ref.orderByChild("date").startAt($filter('date')(date , "yyyy-MM-dd'T'HH':'mm'" )).limitToLast(nbevent);
-
-  // Attach an asynchronous callback to read the data at our posts reference
-  quaryref.on("value", function(snapshot) {
-    console.log(snapshot.key() +  snapshot) ;
-
-    //  $scope.items=snapshot.val();
-    //    console.log($scope.items.test.lieu);
-
-
-    $scope.items=snapshot.val();
-    item=$scope.items;
-    findIcon();
-
-  }, function (errorObject) {
-    console.log("The read failed: " + errorObject.code);
-  });
-*/
 
 
   var posOptions = {maximumAge:0,timeout: 10000, enableHighAccuracy: true};
@@ -833,6 +813,11 @@ switch ($scope.jourus) {
   }).then(function(popover) {
     $scope.popover = popover;
   });
+
+
+     $scope.sendOrder = function() {
+    myPopup.close();
+    };
 
 
   $scope.openPopover = function($event) {

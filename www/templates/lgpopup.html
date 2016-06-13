@@ -1,22 +1,31 @@
-  <ion-popover-view >
-    <ion-content>
-
-    <h3>Connexion</h3>
-      <label class="item item-input item-floating-label" name="Login">
-          <span class="input-label" style="font-size:12px">Login</span>
-          <input type="text" placeholder="Identifiant/Mail">
-        </label>
-
-        <label class="item item-input item-floating-label" name="mdp">
-          <span class="input-label" style="font-size:12px">Mot de passe</span>
-          <input type="password" placeholder="Mot de passe">
-        </label>
-      </br>
-        <a ui-sref="inscription"  ng-click="sendOrder()">Pas de compte? Inscrivez-Vous </a>
-      </br>
-      <div class="button-bar">
-        <a class="button button-stable">cancel</a>
-        <a class="button button-positive">login</a>
+  <ion-popover-view height="200px" style="" >
+    <ion-content  scroll="false">
+      <div style="text-align: center ">
+        <h4>Connexion</h4>
+        <p>veuillez entrer vos informations pour se connecter</p>
       </div>
+
+   
+       <hr >
+      <input style="margin: 0 auto; border-radius: 10px; "  type="text" placeholder="Mot de passe" >
+      <hr >
+       <input style="margin: 0 auto; border-radius: 10px;"  type="text" placeholder="Identifiant/Mail">
+      <hr >
+        <a style="color : orange" ui-sref="inscription"  ng-click="closePopover()">Pas de compte? Inscrivez-Vous </a>
+      <p></p>
+      <div class="button-bar">
+        <a class="button button-stable" ng-click="closePopover()">cancel</a>
+        <a class="button button-positive" ui-sref="accueil" ng-click="closePopover()">login</a>
+      </div>
+
+
+
+
+  <style >
+      input {
+                border: 1px #cf3fc3 solid;
+                }
+                </style>
+
     </ion-content>
   </ion-popover-view>

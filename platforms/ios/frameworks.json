@@ -1,0 +1,5 @@
+{
+    "QuartzCore.framework": 1,
+    "MapKit.framework": 1,
+    "CoreLocation.framework": 2
+}

@@ -39,6 +39,7 @@ angular.module('app.controllers', [])
     });
 
     function closeThis() {
+<<<<<<< HEAD
       console.log('clicked outside');
       $scope.showDropdown = false;
     }
@@ -46,13 +47,28 @@ angular.module('app.controllers', [])
 
     $scope.sendOrder = function() {
       myPopup.close();
+=======
+            console.log('clicked outside');
+            $scope.showDropdown = false;
+        }
+
+
+   $scope.sendOrder = function() {
+    myPopup.close();
+>>>>>>> 3414fea3fc5e54d42dcc1131d129b1ae4f8e6f16
     };
 
 
 
+<<<<<<< HEAD
     $(document).on("click", function() {
       $("#myPopup").hide("myPopup");
     });
+=======
+      $(document).on("click", function() {
+        $("#myPopup").hide("myPopup");
+      });
+>>>>>>> 3414fea3fc5e54d42dcc1131d129b1ae4f8e6f16
 
     $timeout(function() {
       myPopup.close(); //close the popup after 3 seconds for some reason
@@ -833,4 +849,8 @@ switch ($scope.jourus) {
     // Execute action
   });
 
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> 3414fea3fc5e54d42dcc1131d129b1ae4f8e6f16

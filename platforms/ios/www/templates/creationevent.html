@@ -1,0 +1,123 @@
+<ion-view title="Création d'événement" hide-nav-bar="true" id="page7" hide-tabs="true">
+
+  <div class="bar bar-header bar-energized" >
+    <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+        </button>
+      </span>
+    </div>
+    <div class="h1 title title-center light">
+      Création d'événement
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <ion-content padding="true" scroll="true" class="has-header">
+
+    <form class="list"  ng-submit="createEvent()">
+
+      <div class="divi">
+        <label class="item item-input divi" name="Titre" >
+          <input type="text" ng-model="event.name"
+          ng-required="true" ng-minlength="5"
+          ng-maxlength="25" placeholder="Titre de l'événement">
+        </label>
+      </div>
+
+      <div class="divi">
+        <label class="item item-input " name="desc" >
+          <textarea style="height:100px" ng-model="event.desc"
+          ng-required="true" ng-minlength="10" ng-maxlenght="250" placeholder="Quelques mots sur l'événement" class="no-resize" ></textarea>
+        </label>
+      </div>
+
+      <ion-google-place placeholder="Saisisez le lieu de votre événement" ng-model="adress.locate" style="width:100%;" current-location="true">
+      </ion-google-place>
+      {{adress.locate.geometry.location}}
+    <!--  {{adress.formatted_address}}
+      {{adress.geometry.location}}
+    <a href="{{adress.url}}">  {{adress.url}}</a>
+      {{adress}}-->
+
+
+
+              <!--<label class="item-input" name="ville" style="padding-left:0px">
+                <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:5px" >
+
+                  <input type="text" ng-model="event.ville"
+                  ng-required="true" placeholder="Ville" style="float:left;"  ></input>
+                </ion-toggle>
+              </label>-->
+
+              <a ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
+              ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+              style="height:25px; width:100%" class="button button-block ">
+              Type d'événement
+            </a>
+
+            <ul ng-show="showcheckbox" ng-model="event.type"
+            name="type"  >
+            <div class="divi">
+              <li id={{item.id}} class="item item-checkbox item-checkbox-right icon {{item.icon}} " ng-repeat="item in items" >
+                {{item.name}}
+                <label class="checkbox checkbox-energized" >
+                  <input  type="checkbox" value="{{item.name}}" name="selectedType[]" ng-model="item.selected">
+                </input>
+              </label>
+            </li>
+          </div>
+        </ul>
+
+        <div class="divi">
+          <p> Nombre de personne</p>
+          <label class="item item-input item-icon-right ion-person" name="nbperso" style="width:21%;float:left;padding-left:5px">
+            <input type="number" min="1" max="150" ng-required="true" ng-value="event.nbpersint" ng-model="event.nbpersint" style="padding-right:0px;padding-left:0;" ng-change="nbint();" >
+          </label>
+          <div class="item range range-possitive" style="width:79%">
+            <input ng-required="true" type="range" name="nbpers" min="1" step="1" max="150" ng-model="event.nbpers" ng-change="nbstring()">
+          </div>
+        </div>
+
+        <p style="margin-top:15px;width:60%;float:left;">Date de l'événement </p>
+        <label class="item item-input" name="Date" style="width:40%;float:left;">
+          <span ng-show="placeholderdate" style="color:#FF9800;">jj/mm/aaaa</span>
+          <input type="date" ng-required="true" min="{{mindate | date:'yyyy-MM-dd'}}" ng-model="event.date" style="padding-right:0;" ng-change="showplacehold(event.date)">
+        </label>
+
+        <p style="margin-top:15px;width:60%;float:left;">Heure de l'événement </p>
+        <label class="item item-input" name="Heure" style="width:40%;">
+          <span ng-show="placeholderdate" style="color:#FF9800;">--:--</span>
+          <input type="time"  ng-required="true" ng-model="event.date" style="padding-right:0;" ng-change="showplacehold(event.date)">
+        </label>
+        <div class="divi">
+        </div>
+
+        <ion-list style="height:100px;" name="visu"  >
+          <ion-radio style="width:50%;text-align:center;float:left;"
+          ng-repeat:="item type"
+          ng-model="event.visu"
+          value="prive"
+          ng-checked="false"
+          name="type">Privé</ion-radio>
+          <ion-radio style="width:50%;text-align:center;"
+          ng-repeat:="item type"
+          ng-model="event.visu"
+          value="public"
+          ng-checked="true"
+          name="type">Public</ion-radio>
+        </ion-list>
+
+
+        <button  id="creationevent-button13"
+        style="color:white;width:100%"
+        class="button button-light button-block button-energized icon ion-android-checkmark-circle"></button>
+
+      </form>
+    </ion-content>
+  </ion-view>

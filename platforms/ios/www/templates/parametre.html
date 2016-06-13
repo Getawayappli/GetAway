@@ -1,0 +1,59 @@
+<ion-view title="parametre" hide-nav-bar="true" id="page13" hide-tabs="true">
+
+  <div class="bar bar-header bar-energized" >
+    <div class="buttons buttons-left header-item">
+    <span class="left-buttons">
+      <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+      </button>
+    </span>
+  </div>
+    <div class="h1 title title-center light">
+      Paramètres et notifications
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <ion-content padding="true" class="has-header">
+
+    <form >
+      <h4 style="margin-top:0;margin-bottom:5px">Changement de mot de passe</h4>
+
+      <input  type="password" placeholder="Ancien mot de passe" class="cent" ></input>
+      <div class="divi"></div>
+      <input type="password" placeholder="Nouveau mot de passe" class="cent" ></input>
+      <div class="divi"></div>
+      <input type="password" placeholder="Confirmer mot de passe" class="cent" ></input>
+      <a ui-sref="accueil" class="button button-energized" style="width:100%;padding-left:auto;pa"><p style="padding-top:2px;">Changer de mot de passe</p></a>
+
+    </form>
+    <div class="list">
+    <h4>Notifications</h4>
+
+    <ion-toggle toggle-class="toggle-energized" ng-checked="true" ng-click="shownotif()" style="padding-right:50px;padding-left:0" >
+
+      <p>Activer les notifications</p>
+
+    </ion-toggle>
+
+    <div ng-show="shownot">
+
+      <ion-toggle toggle-class="toggle-energized" ng-checked="true"  style="padding-right:65px;" >
+        <p >Invitations aux événnements</p>
+      </ion-toggle>
+      <ion-toggle toggle-class="toggle-energized" ng-checked="true"  style="padding-right:65px;" >
+        <p>Participations aux événnements</p>
+      </ion-toggle>
+      <ion-toggle toggle-class="toggle-energized" ng-checked="true"  style="padding-right:65px;" >
+        <p>Nouveaux messages</p>
+      </ion-toggle>
+    </div>
+</div>
+
+
+  </ion-content>
+</ion-view>

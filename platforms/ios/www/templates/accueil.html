@@ -1,0 +1,52 @@
+<ion-view title="Accueil" hide-tabs="false" hide-nav-bar="true" id="page4"  >
+  <div class="bar bar-header bar-energized" >
+    <div class="h1 title title-center light">
+      GetAway
+    </div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+        <button class="button button-icon button-clear ion-android-settings" ng-controller="regCtrl" ng-click="openPopover($event)">
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <div class="button-bar energized" style="margin-top:44px;">
+    <button class="button {{active.prox}}" ng-class="{{active.prox}}" ng-click="activateprox();" >A proximité</button>
+    <button class="button {{active.amis}}"  ng-class="{{active.amis}}" ng-click="activateamis();" >Mes Amis</button>
+  </div>
+
+  <ion-content padding="" class="has-header has-subheader" style="margin-top:5px" >
+    <!--
+    <div ng-repeat="item in items | orderObjectBy : 'date'">
+    <p> {{item.name}}</p>
+  </div>
+-->
+<div class=animate-blinds>
+  <a style="  height: 40px;width: 100%;text-align: center "class="list card item item-avatar event " ng-repeat="item in items | orderObjectBy : 'date'"
+  ng-last-repeat="mylist" ng-click="openEvent(item.key);">
+  <div class="item item-avatar" style="padding-left:70px;" >
+    <img ng-src="{{event.avatar}}" style="margin-top:4px">
+    <i class="icon icon-right ion-person " style="float:right;margin-top:4px;">{{item.ptp | numKeys}}</i>
+    <h2 style="margin-top:2px;">{{item.name}}</h2>
+    <!--<p ng-repeat="it in item.icon">  {{it.name}}</p>-->
+    <p style="position:absolute;right:19px">{{item.orga}}</p>
+    <i ng-repeat="it in item.icon | limitTo:3" style="right:19px"  class="icon {{it.name}} energized"> </i>
+
+  </div>
+</a>
+</div>
+<ion-infinite-scroll
+on-infinite="loadMore()"
+distance="10%"
+>
+</ion-infinite-scroll>
+
+
+
+</ion-content>
+<button ui-sref="filtre" style="bottom:60px" class="button button-fab button-fab-bottom-right  button-positive icon ion-search" ></button>
+<button ui-sref="creationevent" style="bottom:60px" class="button button-fab button-fab-bottom-left  button-energized icon ion-plus" ></button>
+
+
+</ion-view>

@@ -1,0 +1,62 @@
+<ion-view title="Personaliser votre  profil" hide-nav-bar="true" id="page9" hide-tabs="true">
+
+  <div class="bar bar-header bar-energized" >
+    <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-chevron-left" ng-controller="goback" ng-click="goback();">
+        </button>
+      </span>
+    </div>
+    <div class="h1 title title-center light" style="float:left">
+      Personnaliser votre profil
+    </div>
+  </div>
+
+  <ion-content padding="true" style="padding-bottom:50px" class="has-header" hide-tabs>
+
+    <ion-item class="item-thumbnail-left">
+      <img src="img/jVWa4PNZQ6upjUlLovT9_image_user.jpg"></img>
+      Nom Prénom
+    </ion-item>
+
+    <label class="item item-input">
+      <textarea placeholder="Quelques mots sur vous" class="no-resize" ></textarea>
+    </label>
+
+    <!--<ion-google-place placeholder="Enter an address, Apt# and ZIP" ng-model="location" current-location="true" />-->
+
+    <div class="list" style="margin-bottom:0px">
+
+      <label class="item-input" style="padding-left:0px">
+        <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:20px" >
+          <input type="text" placeholder="Ville"  ></input>
+        </ion-toggle>
+      </label>
+
+      <label class="item item-input" style="padding-left:0px">
+        <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-top:8px;padding-bottom:20px">
+          <input type="number" placeholder="Age" style="width:100%"></input>
+        </ion-toggle>
+      </label>
+    </div>
+
+    <button ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
+    ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
+    style="height:60px" class="button button-block ">
+    Centres d'intérêt
+  </button>
+
+  <!-- Liste des centres d'interet -> rajouter images -->
+  <ul ng-show="showcheckbox"  >
+    <li id={{item.id}} class="item item-checkbox item-checkbox-right " ng-repeat="item in items" >
+      {{item.name}}
+      <label class="checkbox checkbox-energized">
+        <input type="checkbox">
+      </input>
+    </label>
+  </li>
+</ul>
+
+<button id="personaliserVotreProfil-button17"  class="button button-block button-energized  icon ion-android-checkmark-circle "></button>
+</ion-content>
+</ion-view>
