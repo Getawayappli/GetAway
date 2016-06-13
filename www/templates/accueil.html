@@ -11,25 +11,43 @@
     </div>
   </div>
 
-        <div class="button-bar energized" style="margin-top:44px;">
-          <button class="button {{active.prox}}" ng-class="{{active.prox}}" ng-click="activateprox();" >A proximité</button>
-          <button class="button {{active.amis}}"  ng-class="{{active.amis}}" ng-click="activateamis();" >Mes Amis</button>
-        </div>
 
-  <ion-content padding="" class="has-header has-subheader" style="margin-top:5px" >
-
-
-    <div class=animate-blinds>
-    <a style="  height: 40px;width: 100%;text-align: center "class="list card item item-avatar event " ng-repeat="event in events" ui-sref="event" ng-last-repeat="mylist">
-      <div class="item item-avatar" style="padding-left:70px;">
-        <img ng-src="{{event.avatar}}" style="margin-top:4px">
-        <i class="icon icon-right ion-person " style="float:right;margin-top:4px;">{{event.nbpers}}</i>
-        <h2 style="margin-top:2px;">{{event.titre}}</h2>
-        <i style="position:absolute;right:19px" class="ion-beer energized"> </i>
-        <p>{{event.avatar}}</p>
-      </div>
-    </a>
+  <div class="button-bar energized" style="margin-top:44px;">
+    <button class="button {{active.prox}}" ng-class="{{active.prox}}" ng-click="activateprox();" >A proximité</button>
+    <button class="button {{active.amis}}"  ng-class="{{active.amis}}" ng-click="activateamis();" >Mes Amis</button>
   </div>
+
+  <ion-content  padding="" class="has-header has-subheader" style="margin-top:5px;margin-bottom:25px" >
+
+    <!--
+    <div ng-repeat="item in items | orderObjectBy : 'date'">
+    <p> {{item.name}}</p>
+  </div>
+-->
+<div class=animate-blinds>
+  <a style="  height: 40px;width: 100%;text-align: center "class="list card item item-avatar event " ng-repeat="item in items | orderObjectBy : 'date'"
+  ng-last-repeat="mylist" ng-click="openEvent(item.key);">
+  <div class="item item-avatar" style="padding-left:70px;" >
+    <img ng-src="{{event.avatar}}" style="margin-top:4px">
+    <i class="icon icon-right ion-person " style="float:right;margin-top:4px;">{{item.ptp | numKeys}}</i>
+    <h2 style="margin-top:2px;">{{item.name}}</h2>
+    <!--<p ng-repeat="it in item.icon">  {{it.name}}</p>-->
+    <p style="position:absolute;right:19px">{{item.orga}}</p>
+    <i ng-repeat="it in item.icon | limitTo:3" style="right:19px"  class="icon {{it.name}} energized"> </i>
+
+  </div>
+</a>
+</div>
+  <div ng-show="showCharg">
+    <p>Il n'y a plus d'événement à charger</p>
+  </div>
+    <ion-infinite-scroll
+    ng-show="!showCharg"
+    distance="10%"
+    on-infinite="loadMore()"
+
+    >
+</ion-infinite-scroll>
 
 
 

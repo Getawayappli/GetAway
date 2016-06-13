@@ -22,7 +22,7 @@
 
 
     <div class="list  " id="event-card1">
-      <h3  style="text-align:center">Tomorrowland concert</h3>
+      <h3  style="text-align:center">{{event.name}}</h3>
       <div class="item item-body">
 
         <div style="margin: 0px; line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
@@ -33,18 +33,22 @@
           <!--img style="width: 30px; float:left;"  src="../img/icon1.png" />
           <img style="width: 30px; float:left;"  src="../img/dj.png" /-->
         </br>
+        <div style="text-align:center;margin-top:5px">
+        <i ng-repeat="it in event.icon " style="font-size:30px"  class="icon {{it.name}} energized"> </i>
+      </div>
         <div id="event-markdown4" style="color:#000000;" class=" ">
+          <h3>Description</h3>
           <p style="margin-bottom:0">
-            {{pers.desc}}
+            {{event.desc}}
           </p>
         </br>
       </div>
 
       <h3 style="margin-top:0">Ou ?</h3>
-      <b><i class="icon ion-android-locate"> La cantine brest 29200</i></b>
+      <b><a ng-click="goMaps()" class="icon-left ion-android-locate"> {{event.address}}</a></b>
 
       <h3>Quand ?</h3>
-      <p>{{event.jour}} {{event.date | date : "dd/MM/yyyy hh'h'mm" }}</p>
+      <p>{{event.jour}} {{event.date | date : "dd/MM/yyyy HH'h'mm" }}</p>
 
 
       <div id="event-markdown4" style="color:#000000;" class=" ">

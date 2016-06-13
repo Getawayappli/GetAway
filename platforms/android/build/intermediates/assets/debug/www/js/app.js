@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic','ionic-material','tabSlideBox','ion-google-place','ionic.closePopup', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
+angular.module('app', ['ionic','firebase','ionic-material','ngCordova','tabSlideBox','ion-google-place','ionic.closePopup', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
 
 .config(function($ionicConfigProvider){
   $ionicConfigProvider.tabs.position('bottom');
@@ -24,13 +24,30 @@ angular.module('app', ['ionic','ionic-material','tabSlideBox','ion-google-place'
       StatusBar.styleDefault();
     }
   });
-
-
 })
-
 
   .filter('num',function(){
     return function(input){
       return parseInt(input, 10);
     }
-  });
+  })
+
+  .filter('orderObjectBy', function() {
+  return function(items, field, reverse) {
+    var filtered = [];
+    angular.forEach(items, function(item) {
+      filtered.push(item);
+    });
+    filtered.sort(function (a, b) {
+      return (a[field] > b[field] ? 1 : -1);
+    });
+    if(reverse) filtered.reverse();
+    return filtered;
+  };
+})
+.filter('numKeys', function() {
+    return function(json) {
+        var keys = Object.keys(json)
+        return keys.length;
+    }
+})

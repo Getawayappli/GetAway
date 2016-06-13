@@ -20,8 +20,9 @@
             <button ng-click="showPopup()" id="page5-button6" style="left:-10px;color:#FFFFFF;font-size:16px;" class="button button-light  button-full button-outline">Pas de compte Facebook</button>
         </div>
 
-        <!--div style="margin-right:-20px;">
-            <a ui-sref="inscription" id="page5-button1" style="left:-10px;width:100%" class="button button-positive  button-block icon-left  ion-social-facebook">Connectez-vous avec Facebook</a>
-        </div-->
+         <div style="margin-right:-20px;">
+            <button ng-controller="lgCtrl" ng-click="openPopover($event)" style="left:-10px;color:#FFFFFF;font-size:16px;" class="button button-light  button-full button-outline">Pas de compte Facebook</button>
+        </div>
+
     </ion-content>
 </ion-view>
