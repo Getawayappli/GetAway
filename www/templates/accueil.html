@@ -17,30 +17,32 @@
     <button class="button {{active.amis}}"  ng-class="{{active.amis}}" ng-click="activateamis();" >Mes Amis</button>
   </div>
 
-  <ion-content  padding="" class="has-header has-subheader" style="margin-top:5px;margin-bottom:25px" >
+  <ion-content  padding="" class="has-header has-subheader" style="margin-top:5px;margin-bottom:50px" >
 
     <!--
     <div ng-repeat="item in items | orderObjectBy : 'date'">
     <p> {{item.name}}</p>
   </div>
 -->
-<div class=animate-blinds>
+<div class=animate-blinds >
   <a style="  height: 40px;width: 100%;text-align: center "class="list card item item-avatar event " ng-repeat="item in items | orderObjectBy : 'date'"
   ng-last-repeat="mylist" ng-click="openEvent(item.key);">
-  <div class="item item-avatar" style="padding-left:70px;" >
+  <div class="item item-avatar" style="padding-left:70px;padding-top:8px" >
     <img ng-src="{{event.avatar}}" style="margin-top:4px">
     <i class="icon icon-right ion-person " style="float:right;margin-top:4px;">{{item.ptp | numKeys}}</i>
     <h2 style="margin-top:2px;">{{item.name}}</h2>
     <!--<p ng-repeat="it in item.icon">  {{it.name}}</p>-->
     <p style="position:absolute;right:19px">{{item.orga}}</p>
     <i ng-repeat="it in item.icon | limitTo:3" style="right:19px"  class="icon {{it.name}} energized"> </i>
-
+    <p style="width:75%;">{{item.dateForm}}</p>
+    <p style="float:left;position:absolute;right:19px;top:50px">{{item.dist | number:0}}km</p>
   </div>
 </a>
+<div ng-show="showCharg">
+  <p style="text-align:center">Il n'y a plus d'événement à charger</p>
 </div>
-  <div ng-show="showCharg">
-    <p>Il n'y a plus d'événement à charger</p>
-  </div>
+</div>
+
     <ion-infinite-scroll
     ng-show="!showCharg"
     distance="10%"

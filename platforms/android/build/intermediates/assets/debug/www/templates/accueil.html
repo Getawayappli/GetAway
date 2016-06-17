@@ -29,7 +29,7 @@
   ng-last-repeat="mylist" ng-click="openEvent(item.key);">
   <div class="item item-avatar" style="padding-left:70px;" >
     <img ng-src="{{event.avatar}}" style="margin-top:4px">
-    <i class="icon icon-right ion-person " style="float:right;margin-top:4px;"><!--{{item.ptp | numKeys}}--></i>
+    <i class="icon icon-right ion-person " style="float:right;margin-top:4px;">{{item.ptp | numKeys}}</i>
     <h2 style="margin-top:2px;">{{item.name}}</h2>
     <!--<p ng-repeat="it in item.icon">  {{it.name}}</p>-->
     <p style="position:absolute;right:19px">{{item.orga}}</p>

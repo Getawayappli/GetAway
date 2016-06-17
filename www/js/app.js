@@ -26,12 +26,14 @@ angular.module('app', ['ionic','firebase','ionic-material','ngCordova','ngStorag
   });
 })
 
+//Filte permettant de convertir une chaine de caractère en entier
   .filter('num',function(){
     return function(input){
       return parseInt(input, 10);
     }
   })
 
+//Filtre permettant de trier des objets
   .filter('orderObjectBy', function() {
   return function(items, field, reverse) {
     var filtered = [];
@@ -45,6 +47,8 @@ angular.module('app', ['ionic','firebase','ionic-material','ngCordova','ngStorag
     return filtered;
   };
 })
+
+//Filtre permettant de retourner le nombre d'object contenu dans un object
 .filter('numKeys', function() {
     return function(json) {
         var keys = Object.keys(json)

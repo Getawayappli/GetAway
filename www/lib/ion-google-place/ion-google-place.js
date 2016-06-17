@@ -29,11 +29,10 @@ angular.module('ion-google-place', [])
                   '<i class="icon ion-ios7-search placeholder-icon"></i>',
                   '<input class="google-place-search" type="search" ng-model="searchQuery" placeholder="">',
                   '</label>',
-                  '<button class="button button-clear">',
-                  'Cancel',
+                  '<button class="button icon ion-close-circled" style="float:left;width:5%;min-width:0">',
                   '</button>',
                   '</div>',
-                  '<ion-content class="has-header has-header">',
+                  '<ion-content class="has-header has-header" ng-click="onCancel();">',
                   '<ion-list>',
                   '<ion-item ng-repeat="location in locations" style="background-color:white" type="item-text-wrap" ng-click="selectLocation(location)">',
                   '{{location.description}}',
@@ -111,14 +110,20 @@ angular.module('ion-google-place', [])
                      setTimeout(function () {
                         searchInputElement[0].focus();
                      }, 0);
-                  };
-
+                  }
                   var onCancel = function (e) {
+                    console.log("CLICK !!");
                      scope.searchQuery = '';
                      $ionicBackdrop.release();
                      el.element.css('display', 'none');
                   };
 
+                                    scope.onCancel = function (e) {
+                                      
+                                       scope.searchQuery = '';
+                                       $ionicBackdrop.release();
+                                       el.element.css('display', 'none');
+                                    };
                   element.bind('click', onClick);
                   element.bind('touchend', onClick);
 

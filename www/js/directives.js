@@ -43,7 +43,8 @@ angular.module('app.directives', [])
 
 
 
-
+//Directive permettant de stoper un ng-repeat lorsque celui-ci est terminer
+//Cela permet de faire fonctionner le ion-scroll-infinite
 .directive('ngLastRepeat', function ($timeout) {
   return {
     restrict: 'A',

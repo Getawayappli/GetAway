@@ -115,3 +115,8 @@ content:"";
       #Global #droite {
           margin-left:50%
       }
+
+
+.msgerr{
+  color: #F44336;
+}

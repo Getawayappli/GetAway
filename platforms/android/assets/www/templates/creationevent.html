@@ -20,40 +20,39 @@
 
   <ion-content padding="true" scroll="true" class="has-header">
 
-    <form class="list"  ng-submit="createEvent()">
-
+    <div class="divi">
+    <p style="text-align:center">Veuillez completer les champs suivants et valider avec le bouton <i class="icon ion-android-checkmark-circle"
+      ></i> pour créer votre événement</p>
+    </div>
+    <form class="list"  ng-submit="createEvent()" name="formEvent" novalidate>
       <div class="divi">
         <label class="item item-input divi" name="Titre" >
           <input type="text" ng-model="event.name"
-          ng-required="true" ng-minlength="5"
-          ng-maxlength="25" placeholder="Titre de l'événement">
+          placeholder="Titre de l'événement"
+          ng-blur="verifFormName()">
         </label>
+        <p ng-show="errTitreVide"  class="msgerr" style="margin-left:15px"> Veuillez saisir un titre pour l'événement</p>
+        <p ng-show="errTitreM"  class="msgerr" style="margin-left:15px"> Veuillez saisir un titre de minimum 5 caractères</p>
+        <p ng-show="errTitreP"  class="msgerr" style="margin-left:15px"> Veuillez saisir un titre de maximum 25 caractères</p>
+
       </div>
 
       <div class="divi">
         <label class="item item-input " name="desc" >
           <textarea style="height:100px" ng-model="event.desc"
-          ng-required="true" ng-minlength="10" ng-maxlenght="250" placeholder="Quelques mots sur l'événement" class="no-resize" ></textarea>
+          placeholder="Quelques mots sur l'événement" class="no-resize"
+          ng-blur="verifFormDesc()"></textarea>
         </label>
+        <p ng-show="errDescVide" class="msgerr" style="margin-left:15px"> Veuillez saisir une description pour l'événement</p>
+        <p ng-show="errDescM" class="msgerr" style="margin-left:15px"> Veuillez saisir une description de minimum 10 caractères</p>
+        <p ng-show="errDescP" class="msgerr" style="margin-left:15px"> Veuillez saisir une description de maximum 250 caractères</p>
       </div>
-
-      <ion-google-place placeholder="Saisisez le lieu de votre événement" ng-model="adress.locate" style="width:100%;" current-location="true">
+<div class="divi">
+      <ion-google-place placeholder="Saisisez le lieu de votre événements" ng-model="adress.locate" style="width:100%;" current-location="true">
       </ion-google-place>
-      {{adress.locate.geometry.location}}
-    <!--  {{adress.formatted_address}}
-      {{adress.geometry.location}}
-    <a href="{{adress.url}}">  {{adress.url}}</a>
-      {{adress}}-->
-
-
-
-              <!--<label class="item-input" name="ville" style="padding-left:0px">
-                <ion-toggle toggle-class="toggle-energized" ng-checked="true" style="padding-right:50px;padding-top:8px;padding-bottom:5px" >
-
-                  <input type="text" ng-model="event.ville"
-                  ng-required="true" placeholder="Ville" style="float:left;"  ></input>
-                </ion-toggle>
-              </label>-->
+<p ng-show="errLieuVide" class="msgerr" style="margin-left:15px"> Veuillez saisir un lieu pour l'événement</p>
+</div>
+<p ng-show="errTypeVide" class="msgerr" style="margin-left:15px"> Veuillez saisir au moins un type d'événement</p>
 
               <a ng-click="showcheck();liked=!liked" id="personaliserVotreProfil-button17"
               ng-class="{'icon-right ion-chevron-up' : liked,'icon-right ion-chevron-down' : !liked}"
@@ -61,13 +60,12 @@
               Type d'événement
             </a>
 
-            <ul ng-show="showcheckbox" ng-model="event.type"
-            name="type"  >
+            <ul ng-show="showcheckbox"  name="type">
             <div class="divi">
               <li id={{item.id}} class="item item-checkbox item-checkbox-right icon {{item.icon}} " ng-repeat="item in items" >
                 {{item.name}}
                 <label class="checkbox checkbox-energized" >
-                  <input  type="checkbox" value="{{item.name}}" name="selectedType[]" ng-model="item.selected">
+                  <input  type="checkbox" value="{{item.name}}" name="selectedType[]" ng-change="verifFormType();" ng-model="item.selected">
                 </input>
               </label>
             </li>
@@ -76,25 +74,34 @@
 
         <div class="divi">
           <p> Nombre de personne</p>
+
+          <p ng-show="errNbVide" class="msgerr" style="margin-left:15px"> Veuillez saisir le nombre de personnes autorisées à l'événement</p>
+          <p ng-show="errNbM" class="msgerr" style="margin-left:15px"> Veuillez saisir un nombre de personne supérieur à 1 personne</p>
+          <p ng-show="errNbP" class="msgerr" style="margin-left:15px"> Veuillez saisir un nombre de personne inférieur à 150 personnes</p>
+
           <label class="item item-input item-icon-right ion-person" name="nbperso" style="width:21%;float:left;padding-left:5px">
-            <input type="number" min="1" max="150" ng-required="true" ng-value="event.nbpersint" ng-model="event.nbpersint" style="padding-right:0px;padding-left:0;" ng-change="nbint();" >
+            <input type="number" ng-value="event.nbpersint" ng-model="event.nbpersint" style="padding-right:0px;padding-left:0;" ng-change="nbint();verifFormNb();" >
           </label>
           <div class="item range range-possitive" style="width:79%">
-            <input ng-required="true" type="range" name="nbpers" min="1" step="1" max="150" ng-model="event.nbpers" ng-change="nbstring()">
+            <input ng-required="true" type="range" name="nbpers" min="1" step="1" max="150" ng-model="event.nbpers" ng-change="nbstring();verifFormNb();">
           </div>
         </div>
 
-        <p style="margin-top:15px;width:60%;float:left;">Date de l'événement </p>
+        <p ng-show="errDateVide" class="msgerr" style="margin-left:15px;margin-top:10px;margin-bottom:0"> Veuillez saisir une date pour l'événement</p>
+        <p ng-show="errDateM" class="msgerr" style="margin-left:15px;margin-top:10px;margin-bottom:0"> Veuillez saisir une date non futur pour l'événement</p>
+
+        <p style="margin-top:15px;width:60%;float:left;">Date de l'événement  </p>
         <label class="item item-input" name="Date" style="width:40%;float:left;">
           <span ng-show="placeholderdate" style="color:#FF9800;">jj/mm/aaaa</span>
-          <input type="date" ng-required="true" min="{{mindate | date:'yyyy-MM-dd'}}" ng-model="event.date" style="padding-right:0;" ng-change="showplacehold(event.date)">
+          <input type="date" ng-change="verifFormDate();" min="{{mindate | date:'yyyy-MM-dd'}}" ng-model="event.date" style="padding-right:0;" ng-change="showplacehold(event.date)">
         </label>
 
-        <p style="margin-top:15px;width:60%;float:left;">Heure de l'événement </p>
+        <p style="margin-top:15px;width:60%;float:left;">Heure de l'événement  </p>
         <label class="item item-input" name="Heure" style="width:40%;">
           <span ng-show="placeholderdate" style="color:#FF9800;">--:--</span>
-          <input type="time"  ng-required="true" ng-model="event.date" style="padding-right:0;" ng-change="showplacehold(event.date)">
+          <input type="time" ng-change="verifFormDate();" ng-model="event.date" style="padding-right:0;" ng-change="showplacehold(event.date)">
         </label>
+
         <div class="divi">
         </div>
 

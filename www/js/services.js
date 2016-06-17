@@ -17,6 +17,7 @@ angular.module('app.services', [])
   };
 }])
 
+//Factory permettant de stocker l'id d'un événement
 .factory('Event',function(){
 
     var event='';
@@ -36,6 +37,7 @@ angular.module('app.services', [])
 return 0;
 })
 
+//Factory permettant la sauvegarde d'informations dans la mémoire du mobile
 .factory ("StorageService", function($localStorage){
 
   $localStorage = $localStorage.$default({
