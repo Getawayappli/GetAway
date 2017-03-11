@@ -1,0 +1,60 @@
+.divi{
+  border-bottom: 1px solid lightgrey;
+}
+.divi > p {
+  text-align: center;
+}
+.msgerr{
+  color: #F44336;
+  margin-left:15px;
+}
+ion-google-place {
+  width: 100%;
+}
+input.ion-google-place{
+  width:100%;
+}
+#personaliserVotreProfil-button17 {
+  height:25px;
+  width:100%;
+}
+label.item-input.ion-person {
+  width:21%;
+  float:left;
+  padding-left:5px
+}
+label.item-input.ion-person > input {
+  padding-right:0px;
+  padding-left:0;
+}
+#date-event, #time-event {
+  margin-top:15px;
+  width:60%;
+  float:left;
+}
+
+#date-event + label {
+  width:40%;
+  float:left;
+}
+#date-event  .placeholder, #time-event .placeholder{
+  color:#FF9800;
+}
+#date-event + label > input, #time-event + label > input {
+  padding-right:0;
+}
+#time-event + label {
+  width:40%;
+}
+/*#event-type {
+  height:100px;
+}
+#event-type label {
+  width:50%;
+  text-align:center;
+  display: inline;
+}*/
+.creationevent-button13 {
+  color:white;
+  width:100%
+}
